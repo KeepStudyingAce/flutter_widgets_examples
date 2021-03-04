@@ -3,6 +3,7 @@ import 'package:flutter_widgets_example/pages/home/animation/animation_container
 import 'package:flutter_widgets_example/pages/home/animation/animation_cross_fade_page.dart';
 import 'package:flutter_widgets_example/pages/home/animation/flip_text_page.dart';
 import 'package:flutter_widgets_example/pages/home/animation/hide_bottom_bar_page.dart';
+import 'package:flutter_widgets_example/pages/home/animation/spinkit_page.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
 import 'package:flutter_widgets_example/routes/routes.dart';
 import 'package:fluro/fluro.dart' as Fluro;
@@ -41,6 +42,14 @@ class AnimationRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _hideBottomBarPage);
   }
 
+  /// SpinkitPage
+  static String _spinkitPage = "/_spinkitPage";
+
+  /// 跳到SpinkitPage页面
+  static goSpinkitPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _spinkitPage);
+  }
+
   @override
   void initRouter(FluroRouter router) {
     // FlipTextPage页面
@@ -73,6 +82,14 @@ class AnimationRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             HideBottomBarPage(),
+      ),
+    );
+    // SpinkitPage页面
+    router.define(
+      _spinkitPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            SpinkitPage(),
       ),
     );
   }

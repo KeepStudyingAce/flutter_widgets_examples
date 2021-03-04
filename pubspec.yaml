@@ -40,6 +40,8 @@ dependencies:
   # 轮播图
   flutter_swiper: ^1.1.6
   cupertino_icons: ^1.0.0
+  #一个优秀的动画库
+  flutter_spinkit: ^2.1.0
 
 dev_dependencies:
   flutter_test:

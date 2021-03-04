@@ -31,6 +31,7 @@ class _AnimationListPageState extends State<AnimationListPage> {
               () => AnimationRouter.goAnimatedCrossFadePage(context)),
           _buildItem("HideBottomBar",
               () => AnimationRouter.goHideBottomBarPage(context)),
+          _buildItem("Spinkit", () => AnimationRouter.goSpinkitPage(context)),
         ],
       ),
     );
