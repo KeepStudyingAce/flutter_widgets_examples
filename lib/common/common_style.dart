@@ -9,6 +9,10 @@ class CommonColors {
   static const Color themeColor = Color(0xFFBF9264);
   // 分割线颜色
   static const Color separatorColor = Color(0x20000000);
+  // 文本样式
+  static const Color subTextColor = Color(0xFF666666);
+  // 白色
+  static const Color whiteColor = Color(0xFFFFFFFF);
 
   //根据Color返回正确的MaterialColor
   static MaterialColor getMaterialColorFrom(Color color) {

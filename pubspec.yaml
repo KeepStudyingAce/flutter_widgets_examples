@@ -23,13 +23,19 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  #国际化
   flutter_localizations:
     sdk: flutter
   fluro: ^1.6.3
+  #上拉加载下拉刷新
   # pull_to_refresh: ^1.6.3
+  #状态管理
   provider: ^4.3.1
+  #国际化
   intl_utils: ^1.9.0
+  #事件传递
   event_bus: ^1.1.1
+  #简易弹框
   easy_alert: ^0.0.8
   cupertino_icons: ^1.0.0
 

@@ -84,7 +84,7 @@ class _MyAppState extends State<MyApp> {
         onGenerateTitle: (context) => S.of(context).app_name,
         theme: ThemeData(
                 primarySwatch:
-                    CommonColors.getMaterialColorFrom(CommonColors.themeColor),
+                    CommonColors.getMaterialColorFrom(CommonColors.whiteColor),
                 visualDensity: VisualDensity.adaptivePlatformDensity,
                 scaffoldBackgroundColor:
                     CommonColors.background) //设置所有Scafford的背景色
