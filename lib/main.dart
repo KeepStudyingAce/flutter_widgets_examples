@@ -33,7 +33,10 @@ void main() {
       );
     }, (Object error, StackTrace stackTrace) {
       _reportError(error, stackTrace.toString());
-    });
+    }, zoneSpecification:
+        ZoneSpecification(print: (zone1, delegate, zone2, content) {
+      delegate.print(zone2, "全局封装Print：$content");
+    }));
   });
 }
 

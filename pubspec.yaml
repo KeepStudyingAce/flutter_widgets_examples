@@ -37,6 +37,8 @@ dependencies:
   event_bus: ^1.1.1
   #简易弹框
   easy_alert: ^0.0.8
+  # 轮播图
+  flutter_swiper: ^1.1.6
   cupertino_icons: ^1.0.0
 
 dev_dependencies:

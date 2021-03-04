@@ -13,6 +13,10 @@ class CommonColors {
   static const Color subTextColor = Color(0xFF666666);
   // 白色
   static const Color whiteColor = Color(0xFFFFFFFF);
+  // 黑色
+  static const Color blackColor = Color(0xFF000000);
+  // 轮播图未选中颜色
+  static const Color inactiveColor = Color(0x99FFFFFF);
 
   //根据Color返回正确的MaterialColor
   static MaterialColor getMaterialColorFrom(Color color) {
