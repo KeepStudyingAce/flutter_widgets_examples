@@ -25,6 +25,12 @@ class _AnimationListPageState extends State<AnimationListPage> {
       body: ListView(
         children: [
           _buildItem("FlipText", () => AnimationRouter.goFlipTextPage(context)),
+          _buildItem("AnimatedContainer",
+              () => AnimationRouter.goAnimatedContainerPage(context)),
+          _buildItem("AnimatedCrossFade",
+              () => AnimationRouter.goAnimatedCrossFadePage(context)),
+          _buildItem("HideBottomBar",
+              () => AnimationRouter.goHideBottomBarPage(context)),
         ],
       ),
     );
