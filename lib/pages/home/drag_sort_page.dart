@@ -51,11 +51,12 @@ class _DragSortPageState extends State<DragSortPage> {
         ],
       ),
       body: ListView(
+        padding: EdgeInsets.all(10),
         children: <Widget>[
+          Text("长按拖动图片顺序以及删除："),
           DragSortView(
             imageList,
             space: 5,
-            margin: EdgeInsets.all(20),
             padding: EdgeInsets.all(0),
             itemBuilder: (BuildContext context, int index) {
               ImageBean bean = imageList[index];

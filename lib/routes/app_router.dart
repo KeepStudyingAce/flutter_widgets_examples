@@ -1,4 +1,5 @@
 import 'package:fluro/fluro.dart';
+import 'package:flutter_widgets_example/pages/home/animation_list_page.dart';
 import 'package:flutter_widgets_example/pages/home/drag_sort_page.dart';
 import 'package:flutter_widgets_example/pages/home/swiper_page.dart';
 import 'package:flutter_widgets_example/pages/root.dart';
@@ -35,6 +36,13 @@ class AppRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _dragSortPage);
   }
 
+  static String _animationListPage = "/_animation_list_page";
+
+  /// 跳到AnimationList页面
+  static goAnimationListPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _animationListPage);
+  }
+
   @override
   void initRouter(FluroRouter router) {
     // 闪屏页面
@@ -61,5 +69,11 @@ class AppRouter implements IRouterProvider {
             handlerFunc:
                 (BuildContext context, Map<String, List<String>> params) =>
                     DragSortPage()));
+    // DragSortPage页面
+    router.define(_animationListPage,
+        handler: Fluro.Handler(
+            handlerFunc:
+                (BuildContext context, Map<String, List<String>> params) =>
+                    AnimationListPage()));
   }
 }

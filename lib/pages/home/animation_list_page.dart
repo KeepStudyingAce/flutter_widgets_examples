@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets_example/common/common_style.dart';
-import 'package:flutter_widgets_example/pages/home/swiper_page.dart';
-import 'package:flutter_widgets_example/routes/app_router.dart';
-import 'package:flutter_widgets_example/routes/navigation_utils.dart';
+import 'package:flutter_widgets_example/routes/animation_router.dart';
 import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
+class AnimationListPage extends StatefulWidget {
+  AnimationListPage({Key key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _AnimationListPageState createState() => _AnimationListPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _AnimationListPageState extends State<AnimationListPage> {
   @override
   void initState() {
     super.initState();
@@ -22,15 +20,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CommonAppBar(
-        title: "WidgetsList",
-        showLeading: false,
+        title: "AnimationListPage",
       ),
       body: ListView(
         children: [
-          _buildItem("Swiper", () => AppRouter.goSwiper(context)),
-          _buildItem("DragSortPage", () => AppRouter.goDragSortPage(context)),
-          _buildItem(
-              "AnimationListPage", () => AppRouter.goAnimationListPage(context))
+          _buildItem("FlipText", () => AnimationRouter.goFlipTextPage(context)),
         ],
       ),
     );
