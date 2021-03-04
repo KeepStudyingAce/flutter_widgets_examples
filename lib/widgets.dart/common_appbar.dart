@@ -49,9 +49,11 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
               ? Text(
                   title ?? "",
                   style: TextStyle(
-                      color: CommonColors.blackColor,
-                      fontSize: CommonFont.appBarTitleSize,
-                      fontWeight: CommonFont.fontWeightMiddle),
+                    decoration: TextDecoration.none,
+                    color: CommonColors.blackColor,
+                    fontSize: CommonFont.appBarTitleSize,
+                    fontWeight: CommonFont.fontWeightMiddle,
+                  ),
                 )
               : SizedBox(),
       actions: [

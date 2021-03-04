@@ -1,4 +1,5 @@
 import 'package:fluro/fluro.dart';
+import 'package:flutter_widgets_example/pages/home/drag_sort_page.dart';
 import 'package:flutter_widgets_example/pages/home/swiper_page.dart';
 import 'package:flutter_widgets_example/pages/root.dart';
 import 'package:flutter_widgets_example/pages/splash_page.dart';
@@ -20,12 +21,18 @@ class AppRouter implements IRouterProvider {
         clearStack: true, transition: Fluro.TransitionType.fadeIn);
   }
 
-  /// 根Root
   static String _swiper = "/swiper";
 
   /// 跳到Swiper页面
   static goSwiper(BuildContext context) {
     NavigatorUtil.pushTo(context, _swiper);
+  }
+
+  static String _dragSortPage = "/_drag_sort_page";
+
+  /// 跳到DragSortPage页面
+  static goDragSortPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _dragSortPage);
   }
 
   @override
@@ -48,5 +55,11 @@ class AppRouter implements IRouterProvider {
             handlerFunc:
                 (BuildContext context, Map<String, List<String>> params) =>
                     SwiperPage()));
+    // DragSortPage页面
+    router.define(_dragSortPage,
+        handler: Fluro.Handler(
+            handlerFunc:
+                (BuildContext context, Map<String, List<String>> params) =>
+                    DragSortPage()));
   }
 }

@@ -26,7 +26,10 @@ class _HomePageState extends State<HomePage> {
         showLeading: false,
       ),
       body: ListView(
-        children: [_buildItem("Swiper", () => AppRouter.goSwiper(context))],
+        children: [
+          _buildItem("Swiper", () => AppRouter.goSwiper(context)),
+          _buildItem("DragSortPage", () => AppRouter.goDragSortPage(context))
+        ],
       ),
     );
   }

@@ -9,3 +9,5 @@
     会在generated中自动生成get方法供外部调用；
 
 2、flutter_swiper:多种样式的轮播图，支持自定以指示器
+
+3、DragSortView：自己实现拖动图片排序组件
