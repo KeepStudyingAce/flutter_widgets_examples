@@ -43,6 +43,8 @@ dependencies:
   #一个优秀的动画库
   flutter_spinkit: ^2.1.0
 
+  outline_material_icons: ^0.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

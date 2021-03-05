@@ -24,7 +24,15 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: CommonAppBar(
         title: "WidgetsList",
-        showLeading: false,
+        showLeading: true,
+        leading: Builder(builder: (context) {
+          //不包这层Builder调用openDrawer无效，猜测应该是context的原因
+          return IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              });
+        }),
         rightButtons: [
           IconButton(
               icon: Icon(Icons.search),
@@ -53,6 +61,14 @@ class _HomePageState extends State<HomePage> {
           _buildItem("ReorderList", () => AppRouter.goReorderListPage(context)),
           _buildItem("Swiper", () => AppRouter.goSwiper(context)),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            _buildItem("BubbleTabbarPage",
+                () => AppRouter.goBubbleTabbarPage(context)),
+          ],
+        ),
       ),
     );
   }

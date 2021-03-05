@@ -1,5 +1,6 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter_widgets_example/pages/home/animation_list_page.dart';
+import 'package:flutter_widgets_example/pages/home/bubble_tabbar/bubble_tabbar_page.dart';
 import 'package:flutter_widgets_example/pages/home/chip_page.dart';
 import 'package:flutter_widgets_example/pages/home/custom_clipper_page.dart';
 import 'package:flutter_widgets_example/pages/home/custom_route_transition.dart';
@@ -114,6 +115,14 @@ class AppRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _dismissibleListPage);
   }
 
+  ///BubbleTabbarPage
+  static String _bubbleTabbarPage = "/_bubbleTabbarPage";
+
+  /// 跳到BubbleTabbarPage页面
+  static goBubbleTabbarPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _bubbleTabbarPage);
+  }
+
   @override
   void initRouter(FluroRouter router) {
     // 闪屏页面
@@ -212,6 +221,14 @@ class AppRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             DismissibleListPage(),
+      ),
+    );
+    // BubbleTabbarPage
+    router.define(
+      _bubbleTabbarPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            BubbleTabBarPage(),
       ),
     );
   }
