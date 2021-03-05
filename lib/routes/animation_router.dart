@@ -1,8 +1,10 @@
 import 'package:fluro/fluro.dart';
+import 'package:flutter_widgets_example/pages/home/animation/animated_build_page.dart';
 import 'package:flutter_widgets_example/pages/home/animation/animation_container_page.dart';
 import 'package:flutter_widgets_example/pages/home/animation/animation_cross_fade_page.dart';
 import 'package:flutter_widgets_example/pages/home/animation/flip_text_page.dart';
 import 'package:flutter_widgets_example/pages/home/animation/hide_bottom_bar_page.dart';
+import 'package:flutter_widgets_example/pages/home/animation/matrix4_animation_page.dart';
 import 'package:flutter_widgets_example/pages/home/animation/spinkit_page.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
 import 'package:flutter_widgets_example/routes/routes.dart';
@@ -50,6 +52,22 @@ class AnimationRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _spinkitPage);
   }
 
+  ///AnimatedBuildPage
+  static String _animatedBuildPage = "/_animatedBuildPage";
+
+  /// 跳到AnimatedBuildPage页面
+  static goAnimatedBuildPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _animatedBuildPage);
+  }
+
+  ///Matrix4AnimationPage
+  static String _matrix4AnimationPage = "/_matrix4AnimationPage";
+
+  /// 跳到Matrix4AnimationPage页面
+  static goMatrix4AnimationPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _matrix4AnimationPage);
+  }
+
   @override
   void initRouter(FluroRouter router) {
     // FlipTextPage页面
@@ -90,6 +108,22 @@ class AnimationRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             SpinkitPage(),
+      ),
+    );
+    // AnimatedBuildPage
+    router.define(
+      _animatedBuildPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            AnimatedBuildPage(),
+      ),
+    );
+    // Matrix4AnimationPage
+    router.define(
+      _matrix4AnimationPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            Matrix4AnimationPage(),
       ),
     );
   }

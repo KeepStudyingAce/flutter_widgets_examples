@@ -32,6 +32,10 @@ class _AnimationListPageState extends State<AnimationListPage> {
           _buildItem("HideBottomBar",
               () => AnimationRouter.goHideBottomBarPage(context)),
           _buildItem("Spinkit", () => AnimationRouter.goSpinkitPage(context)),
+          _buildItem("AnimatedBuild",
+              () => AnimationRouter.goAnimatedBuildPage(context)),
+          _buildItem("Matrix4Animation",
+              () => AnimationRouter.goMatrix4AnimationPage(context)),
         ],
       ),
     );
