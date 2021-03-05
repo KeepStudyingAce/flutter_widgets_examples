@@ -1,6 +1,11 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter_widgets_example/pages/home/animation_list_page.dart';
+import 'package:flutter_widgets_example/pages/home/chip_page.dart';
+import 'package:flutter_widgets_example/pages/home/custom_clipper_page.dart';
+import 'package:flutter_widgets_example/pages/home/custom_route_transition.dart';
 import 'package:flutter_widgets_example/pages/home/drag_sort_page.dart';
+import 'package:flutter_widgets_example/pages/home/draggable_page.dart';
+import 'package:flutter_widgets_example/pages/home/expansion_list_page.dart';
 import 'package:flutter_widgets_example/pages/home/swiper_page.dart';
 import 'package:flutter_widgets_example/pages/root.dart';
 import 'package:flutter_widgets_example/pages/splash_page.dart';
@@ -43,6 +48,45 @@ class AppRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _animationListPage);
   }
 
+  static String _chipPage = "/_chipPage";
+
+  /// 跳到ChipPage页面
+  static goChipPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _chipPage);
+  }
+
+  ///CustomClipperPage
+  static String _customClipperPage = "/_customClipperPage";
+
+  /// 跳到CustomChipperPage页面
+  static goCustomChipperPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _customClipperPage);
+  }
+
+  ///CustomClipperPage
+  static String _customRoutePage = "/_customRoutePage";
+
+  /// 跳到CustomRoutePage页面
+  static goCustomRoutePage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _customRoutePage);
+  }
+
+  ///DraggablePage
+  static String _draggablePage = "/_draggablePage";
+
+  /// 跳到DraggablePage页面
+  static goDraggablePage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _draggablePage);
+  }
+
+  ///DraggablePage
+  static String _expansionListPage = "/_expansionListPage";
+
+  /// 跳到ExpansionListPage页面
+  static goExpansionListPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _expansionListPage);
+  }
+
   @override
   void initRouter(FluroRouter router) {
     // 闪屏页面
@@ -64,16 +108,60 @@ class AppRouter implements IRouterProvider {
                 (BuildContext context, Map<String, List<String>> params) =>
                     SwiperPage()));
     // DragSortPage页面
-    router.define(_dragSortPage,
-        handler: Fluro.Handler(
-            handlerFunc:
-                (BuildContext context, Map<String, List<String>> params) =>
-                    DragSortPage()));
+    router.define(
+      _dragSortPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            DragSortPage(),
+      ),
+    );
     // DragSortPage页面
-    router.define(_animationListPage,
-        handler: Fluro.Handler(
-            handlerFunc:
-                (BuildContext context, Map<String, List<String>> params) =>
-                    AnimationListPage()));
+    router.define(
+      _animationListPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            AnimationListPage(),
+      ),
+    );
+    // ChipPage页面
+    router.define(
+      _chipPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            ChipPage(),
+      ),
+    );
+    // ChipPage页面
+    router.define(
+      _customClipperPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            CustomClipperPage(),
+      ),
+    );
+    // CustomRouteTransitionPage页面
+    router.define(
+      _customRoutePage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            CustomRouteTransitionPage(),
+      ),
+    );
+    // DraggablePage
+    router.define(
+      _draggablePage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            DraggablePage(),
+      ),
+    );
+    // ExpansionListPage
+    router.define(
+      _expansionListPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            ExpansionListPage(),
+      ),
+    );
   }
 }

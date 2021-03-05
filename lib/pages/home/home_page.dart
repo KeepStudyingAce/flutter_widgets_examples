@@ -34,10 +34,18 @@ class _HomePageState extends State<HomePage> {
       ),
       body: ListView(
         children: [
-          _buildItem("Swiper", () => AppRouter.goSwiper(context)),
-          _buildItem("DragSortPage", () => AppRouter.goDragSortPage(context)),
+          _buildItem("AnimationListPage",
+              () => AppRouter.goAnimationListPage(context)),
+          _buildItem("ChipList", () => AppRouter.goChipPage(context)),
           _buildItem(
-              "AnimationListPage", () => AppRouter.goAnimationListPage(context))
+              "CustomClipper", () => AppRouter.goCustomChipperPage(context)),
+          _buildItem(
+              "CustomRouteClipper", () => AppRouter.goCustomRoutePage(context)),
+          _buildItem("DraggablePage", () => AppRouter.goDraggablePage(context)),
+          _buildItem("DragSortPage", () => AppRouter.goDragSortPage(context)),
+          _buildItem("ExpansionListPage",
+              () => AppRouter.goExpansionListPage(context)),
+          _buildItem("Swiper", () => AppRouter.goSwiper(context)),
         ],
       ),
     );
