@@ -3,9 +3,12 @@ import 'package:flutter_widgets_example/pages/home/animation_list_page.dart';
 import 'package:flutter_widgets_example/pages/home/chip_page.dart';
 import 'package:flutter_widgets_example/pages/home/custom_clipper_page.dart';
 import 'package:flutter_widgets_example/pages/home/custom_route_transition.dart';
+import 'package:flutter_widgets_example/pages/home/dismissible_list_page.dart';
 import 'package:flutter_widgets_example/pages/home/drag_sort_page.dart';
 import 'package:flutter_widgets_example/pages/home/draggable_page.dart';
 import 'package:flutter_widgets_example/pages/home/expansion_list_page.dart';
+import 'package:flutter_widgets_example/pages/home/frosted_glass_page.dart';
+import 'package:flutter_widgets_example/pages/home/reorderable_list_page.dart';
 import 'package:flutter_widgets_example/pages/home/swiper_page.dart';
 import 'package:flutter_widgets_example/pages/root.dart';
 import 'package:flutter_widgets_example/pages/splash_page.dart';
@@ -87,6 +90,30 @@ class AppRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _expansionListPage);
   }
 
+  ///FrostedGlassPage
+  static String _frostedGlassPage = "/_frostedGlassPage";
+
+  /// 跳到FrostedGlassPage页面
+  static goFrostedGlassPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _frostedGlassPage);
+  }
+
+  ///FrostedGlassPage
+  static String _reorderListPage = "/_reorderListPage";
+
+  /// 跳到ReorderListPage页面
+  static goReorderListPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _reorderListPage);
+  }
+
+  ///DismissibleListPage
+  static String _dismissibleListPage = "/_dismissibleListPage";
+
+  /// 跳到DismissibleListPage页面
+  static goDismissibleListPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _dismissibleListPage);
+  }
+
   @override
   void initRouter(FluroRouter router) {
     // 闪屏页面
@@ -161,6 +188,30 @@ class AppRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             ExpansionListPage(),
+      ),
+    );
+    // FrostedGlassPage
+    router.define(
+      _frostedGlassPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            FrostedGlassPage(),
+      ),
+    );
+    // ReorderableListPage
+    router.define(
+      _reorderListPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            ReorderableListPage(),
+      ),
+    );
+    // ReorderableListPage
+    router.define(
+      _dismissibleListPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            DismissibleListPage(),
       ),
     );
   }

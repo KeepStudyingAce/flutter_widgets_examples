@@ -34,17 +34,23 @@ class _HomePageState extends State<HomePage> {
       ),
       body: ListView(
         children: [
-          _buildItem("AnimationListPage",
-              () => AppRouter.goAnimationListPage(context)),
+          _buildItem(
+              "AnimationList", () => AppRouter.goAnimationListPage(context)),
           _buildItem("ChipList", () => AppRouter.goChipPage(context)),
           _buildItem(
               "CustomClipper", () => AppRouter.goCustomChipperPage(context)),
           _buildItem(
               "CustomRouteClipper", () => AppRouter.goCustomRoutePage(context)),
-          _buildItem("DraggablePage", () => AppRouter.goDraggablePage(context)),
-          _buildItem("DragSortPage", () => AppRouter.goDragSortPage(context)),
-          _buildItem("ExpansionListPage",
-              () => AppRouter.goExpansionListPage(context)),
+          _buildItem("DismissibleList",
+              () => AppRouter.goDismissibleListPage(context)),
+          _buildItem(
+              "DraggableWidget", () => AppRouter.goDraggablePage(context)),
+          _buildItem("DragSortView", () => AppRouter.goDragSortPage(context)),
+          _buildItem(
+              "ExpansionList", () => AppRouter.goExpansionListPage(context)),
+          _buildItem(
+              "FrostedGlass", () => AppRouter.goFrostedGlassPage(context)),
+          _buildItem("ReorderList", () => AppRouter.goReorderListPage(context)),
           _buildItem("Swiper", () => AppRouter.goSwiper(context)),
         ],
       ),
