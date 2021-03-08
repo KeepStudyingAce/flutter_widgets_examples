@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets_example/common/common_style.dart';
-import 'package:flutter_widgets_example/pages/home/search_page.dart';
-import 'package:flutter_widgets_example/pages/home/swiper_page.dart';
+import 'package:flutter_widgets_example/pages/home/home/search_page.dart';
+import 'package:flutter_widgets_example/pages/home/home/swiper_page.dart';
 import 'package:flutter_widgets_example/routes/app_router.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
 import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
