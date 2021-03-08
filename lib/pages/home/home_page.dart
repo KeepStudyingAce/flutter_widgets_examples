@@ -65,8 +65,11 @@ class _HomePageState extends State<HomePage> {
       drawer: Drawer(
         child: ListView(
           children: [
-            _buildItem("BubbleTabbarPage",
-                () => AppRouter.goBubbleTabbarPage(context)),
+            _buildItem("BubbleTabbarPage", () {
+              //先关闭抽屉
+              NavigatorUtil.pop(context);
+              AppRouter.goBubbleTabbarPage(context);
+            }),
           ],
         ),
       ),

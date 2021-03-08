@@ -7,10 +7,15 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
+import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
+
 class FrostedGlassPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      appBar: CommonAppBar(
+        title: "FrostedGlass",
+      ),
       body: new Stack(
         children: <Widget>[
           new ConstrainedBox(
