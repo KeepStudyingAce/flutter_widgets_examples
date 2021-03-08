@@ -47,6 +47,7 @@ class _HomePageState extends State<HomePage> {
           _buildItem("ChipList", () => AppRouter.goChipPage(context)),
           _buildItem(
               "CustomClipper", () => AppRouter.goCustomChipperPage(context)),
+          _buildItem("CustomPaint", () => AppRouter.goCustomPaintPage(context)),
           _buildItem(
               "CustomRouteClipper", () => AppRouter.goCustomRoutePage(context)),
           _buildItem("DismissibleList",
@@ -60,6 +61,10 @@ class _HomePageState extends State<HomePage> {
               "FrostedGlass", () => AppRouter.goFrostedGlassPage(context)),
           _buildItem(
               "FutureBuilder", () => AppRouter.goFutureBuildPage(context)),
+          _buildItem("InheritedWidget",
+              () => AppRouter.goInheritedWidgetPage(context)),
+          _buildItem(
+              "LayoutBuilder", () => AppRouter.goLayoutBuilderPage(context)),
           _buildItem("ReorderList", () => AppRouter.goReorderListPage(context)),
           _buildItem(
               "StreamBuilder", () => AppRouter.goStreamBuilderPage(context)),

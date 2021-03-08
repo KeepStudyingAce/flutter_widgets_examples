@@ -3,6 +3,7 @@ import 'package:flutter_widgets_example/pages/home/home/animation_list_page.dart
 import 'package:flutter_widgets_example/pages/home/bubble_tabbar/bubble_tabbar_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/chip_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/custom_clipper_page.dart';
+import 'package:flutter_widgets_example/pages/home/home/custom_paint_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/custom_route_transition.dart';
 import 'package:flutter_widgets_example/pages/home/home/dismissible_list_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/drag_sort_page.dart';
@@ -10,6 +11,8 @@ import 'package:flutter_widgets_example/pages/home/home/draggable_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/expansion_list_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/frosted_glass_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/future_build_page.dart';
+import 'package:flutter_widgets_example/pages/home/home/inherited_widget.dart';
+import 'package:flutter_widgets_example/pages/home/home/layout_builder_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/reorderable_list_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/stream_builder_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/swiper_page.dart';
@@ -150,6 +153,30 @@ class AppRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _tablePage);
   }
 
+  ///InheritedWidgetPage
+  static String _inheritedWidgetPage = "/_inheritedWidgetPage";
+
+  /// 跳到InheritedWidgetPage页面
+  static goInheritedWidgetPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _inheritedWidgetPage);
+  }
+
+  ///CustomPaintPage
+  static String _customPaintPage = "/_customPaintPage";
+
+  /// 跳到CustomPaintPage页面
+  static goCustomPaintPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _customPaintPage);
+  }
+
+  ///LayoutBuilderPage
+  static String _layoutBuilderPage = "/_layoutBuilderPage";
+
+  /// 跳到LayoutBuilderPage页面
+  static goLayoutBuilderPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _layoutBuilderPage);
+  }
+
   @override
   void initRouter(FluroRouter router) {
     // 闪屏页面
@@ -280,6 +307,30 @@ class AppRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             TablePage(),
+      ),
+    );
+    // InheritedWidgetPage
+    router.define(
+      _inheritedWidgetPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            InheritedWidgetPage(),
+      ),
+    );
+    // CustomPaintPage
+    router.define(
+      _customPaintPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            CustomPaintPage(),
+      ),
+    );
+    // LayoutBuilderPage
+    router.define(
+      _layoutBuilderPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            LayoutBuilderPage(),
       ),
     );
   }
