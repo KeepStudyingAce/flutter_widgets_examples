@@ -1,7 +1,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter_widgets_example/pages/home/home/absorb_ignore_pointer_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/animation_list_page.dart';
-import 'package:flutter_widgets_example/pages/home/bubble_tabbar/bubble_tabbar_page.dart';
+import 'package:flutter_widgets_example/pages/home/drawer/bubble_tabbar/bubble_tabbar_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/chip_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/custom_clipper_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/custom_paint_page.dart';
