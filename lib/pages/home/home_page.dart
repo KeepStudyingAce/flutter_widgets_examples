@@ -81,10 +81,19 @@ class _HomePageState extends State<HomePage> {
       drawer: Drawer(
         child: ListView(
           children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              child: Text("多种自定义样式Tabbar:"),
+            ),
             _buildItem("BubbleTabbarPage", () {
               //先关闭抽屉
               NavigatorUtil.pop(context);
               AppRouter.goBubbleTabbarPage(context);
+            }),
+            _buildItem("FluidTabbarPage", () {
+              //先关闭抽屉
+              NavigatorUtil.pop(context);
+              AppRouter.goFluidTabbarPage(context);
             }),
           ],
         ),
