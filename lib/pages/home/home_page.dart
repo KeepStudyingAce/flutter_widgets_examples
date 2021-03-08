@@ -42,6 +42,8 @@ class _HomePageState extends State<HomePage> {
       ),
       body: ListView(
         children: [
+          _buildItem("AbsorbPointer & IgnorePointer",
+              () => AppRouter.goAbsorbIgnorePointPage(context)),
           _buildItem(
               "AnimationList", () => AppRouter.goAnimationListPage(context)),
           _buildItem("ChipList", () => AppRouter.goChipPage(context)),

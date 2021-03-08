@@ -1,4 +1,5 @@
 import 'package:fluro/fluro.dart';
+import 'package:flutter_widgets_example/pages/home/home/absorb_ignore_pointer_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/animation_list_page.dart';
 import 'package:flutter_widgets_example/pages/home/bubble_tabbar/bubble_tabbar_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/chip_page.dart';
@@ -177,6 +178,14 @@ class AppRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _layoutBuilderPage);
   }
 
+  ///AbsorbIgnorePointerPage
+  static String _absorbIgnorePointerPage = "/_absorbIgnorePointerPage";
+
+  /// 跳到AbsorbIgnorePointPage页面
+  static goAbsorbIgnorePointPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _absorbIgnorePointerPage);
+  }
+
   @override
   void initRouter(FluroRouter router) {
     // 闪屏页面
@@ -331,6 +340,14 @@ class AppRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             LayoutBuilderPage(),
+      ),
+    );
+    // AbsorbIgnorePointerPage
+    router.define(
+      _absorbIgnorePointerPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            AbsorbIgnorePointerPage(),
       ),
     );
   }
