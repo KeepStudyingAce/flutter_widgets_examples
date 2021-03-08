@@ -58,8 +58,13 @@ class _HomePageState extends State<HomePage> {
               "ExpansionList", () => AppRouter.goExpansionListPage(context)),
           _buildItem(
               "FrostedGlass", () => AppRouter.goFrostedGlassPage(context)),
+          _buildItem(
+              "FutureBuilder", () => AppRouter.goFutureBuildPage(context)),
           _buildItem("ReorderList", () => AppRouter.goReorderListPage(context)),
+          _buildItem(
+              "StreamBuilder", () => AppRouter.goStreamBuilderPage(context)),
           _buildItem("Swiper", () => AppRouter.goSwiper(context)),
+          _buildItem("Table", () => AppRouter.goTablePage(context)),
         ],
       ),
       drawer: Drawer(

@@ -9,8 +9,11 @@ import 'package:flutter_widgets_example/pages/home/home/drag_sort_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/draggable_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/expansion_list_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/frosted_glass_page.dart';
+import 'package:flutter_widgets_example/pages/home/home/future_build_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/reorderable_list_page.dart';
+import 'package:flutter_widgets_example/pages/home/home/stream_builder_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/swiper_page.dart';
+import 'package:flutter_widgets_example/pages/home/home/table_page.dart';
 import 'package:flutter_widgets_example/pages/root.dart';
 import 'package:flutter_widgets_example/pages/splash_page.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
@@ -123,6 +126,30 @@ class AppRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _bubbleTabbarPage);
   }
 
+  ///FutureBuildPage
+  static String _futureBuildPage = "/_futureBuildPage";
+
+  /// 跳到FutureBuildPage页面
+  static goFutureBuildPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _futureBuildPage);
+  }
+
+  ///StreamBuilderPage
+  static String _streamBuilderPage = "/_streamBuilderPage";
+
+  /// 跳到StreamBuilderPage页面
+  static goStreamBuilderPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _streamBuilderPage);
+  }
+
+  ///Table
+  static String _tablePage = "/_tablePage";
+
+  /// 跳到TablePage页面
+  static goTablePage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _tablePage);
+  }
+
   @override
   void initRouter(FluroRouter router) {
     // 闪屏页面
@@ -229,6 +256,30 @@ class AppRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             BubbleTabBarPage(),
+      ),
+    );
+    // FutureBuildPage
+    router.define(
+      _futureBuildPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            FutureBuildPage(),
+      ),
+    );
+    // StreamBuilderPage
+    router.define(
+      _streamBuilderPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            StreamBuilderPage(),
+      ),
+    );
+    // TablePage
+    router.define(
+      _tablePage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            TablePage(),
       ),
     );
   }
