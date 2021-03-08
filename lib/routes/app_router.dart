@@ -14,10 +14,13 @@ import 'package:flutter_widgets_example/pages/home/home/frosted_glass_page.dart'
 import 'package:flutter_widgets_example/pages/home/home/future_build_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/inherited_widget.dart';
 import 'package:flutter_widgets_example/pages/home/home/layout_builder_page.dart';
+import 'package:flutter_widgets_example/pages/home/home/overlayer_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/reorderable_list_page.dart';
+import 'package:flutter_widgets_example/pages/home/home/sliver_app_bar_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/stream_builder_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/swiper_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/table_page.dart';
+import 'package:flutter_widgets_example/pages/home/home/transform_page.dart';
 import 'package:flutter_widgets_example/pages/root.dart';
 import 'package:flutter_widgets_example/pages/splash_page.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
@@ -186,6 +189,30 @@ class AppRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _absorbIgnorePointerPage);
   }
 
+  ///TransformPage
+  static String _transformPage = "/_transformPage";
+
+  /// 跳到TransformPage页面
+  static goTransformPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _transformPage);
+  }
+
+  ///SliverAppBar
+  static String _sliverAppBarPage = "/_sliverAppBarPage";
+
+  /// 跳到SliverAppBarPage页面
+  static goSliverAppBarPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _sliverAppBarPage);
+  }
+
+  ///OverlayPage
+  static String _overlayPage = "/_overlayPage";
+
+  /// 跳到OverlayPage页面
+  static goOverlayPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _overlayPage);
+  }
+
   @override
   void initRouter(FluroRouter router) {
     // 闪屏页面
@@ -348,6 +375,30 @@ class AppRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             AbsorbIgnorePointerPage(),
+      ),
+    );
+    // TransformPage
+    router.define(
+      _transformPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            TransformPage(),
+      ),
+    );
+    // SliverAppBarPage
+    router.define(
+      _sliverAppBarPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            SliverAppBarPage(),
+      ),
+    );
+    // OverlayPage
+    router.define(
+      _overlayPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            OverlayPage(),
       ),
     );
   }

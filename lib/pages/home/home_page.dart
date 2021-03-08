@@ -67,11 +67,15 @@ class _HomePageState extends State<HomePage> {
               () => AppRouter.goInheritedWidgetPage(context)),
           _buildItem(
               "LayoutBuilder", () => AppRouter.goLayoutBuilderPage(context)),
+          _buildItem("Overlay", () => AppRouter.goOverlayPage(context)),
           _buildItem("ReorderList", () => AppRouter.goReorderListPage(context)),
+          _buildItem(
+              "SliverAppBar", () => AppRouter.goSliverAppBarPage(context)),
           _buildItem(
               "StreamBuilder", () => AppRouter.goStreamBuilderPage(context)),
           _buildItem("Swiper", () => AppRouter.goSwiper(context)),
           _buildItem("Table", () => AppRouter.goTablePage(context)),
+          _buildItem("Transform", () => AppRouter.goTransformPage(context)),
         ],
       ),
       drawer: Drawer(
