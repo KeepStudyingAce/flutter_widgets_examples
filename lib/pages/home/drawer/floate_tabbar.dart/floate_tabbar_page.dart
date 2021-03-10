@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets_example/common/common_style.dart';
 import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
-
 import '../content/home.dart';
 import '../content/account.dart';
 import '../content/grid.dart';
-import 'fluid_nav_bar.dart';
+import 'floate_nav_bar.dart';
 
-class FluidTabbarPage extends StatefulWidget {
+class FloateTabbarPage extends StatefulWidget {
+  FloateTabbarPage({Key key}) : super(key: key);
+
   @override
-  State createState() {
-    return _FluidTabbarPageState();
-  }
+  _FloateTabbarPageState createState() => _FloateTabbarPageState();
 }
 
-class _FluidTabbarPageState extends State {
+class _FloateTabbarPageState extends State<FloateTabbarPage> {
   Widget _child;
 
   @override
@@ -28,7 +26,7 @@ class _FluidTabbarPageState extends State {
     // Build a simple container that switches content based of off the selected navigation item
     return Scaffold(
       appBar: CommonAppBar(
-        title: "FluidTabbar",
+        title: "FloateTabbar",
       ),
       backgroundColor: Color(0xFF75B7E1),
       extendBody: true, //Tabbar遮盖的地方是否透明
