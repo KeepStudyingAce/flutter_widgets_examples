@@ -10,10 +10,6 @@ class CommonUtils {
       //return CachedNetworkImage(imageUrl: url, fit: BoxFit.cover);
       return Image.network(url, fit: BoxFit.cover);
     }
-    if (url.endsWith('.png')) {
-      return Image.asset(url,
-          fit: BoxFit.cover, package: 'flutter_gallery_assets');
-    }
     return Image.asset(getImgPath(url), fit: BoxFit.cover);
   }
 }

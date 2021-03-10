@@ -87,6 +87,7 @@ class _FluidNavBarState extends State<FluidNavBar>
     );
   }
 
+  //带凹槽的白色背景
   Widget _buildBackground() {
     // This widget acts purely as a container that controlls how the `_BackgroundCurvePainter` draws
     final inCurve = ElasticOutCurve(0.38);

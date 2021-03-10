@@ -1,47 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/animation.dart';
+import 'package:flutter_widgets_example/common/common_style.dart';
 
-import './floate_icon.dart';
 import './curves.dart';
 
-typedef void FluidNavBarButtonPressedCallback();
+typedef void FloateNavBarButtonPressedCallback();
 
-class FluidNavBarButton extends StatefulWidget {
+class FloateNavBarButton extends StatefulWidget {
   static const nominalExtent = const Size(64, 64);
 
-  final FluidFillIconData _iconData;
-  final bool _selected;
-  final FluidNavBarButtonPressedCallback _onPressed;
+  final bool selected;
+  final FloateNavBarButtonPressedCallback onPressed;
+  final String label;
+  final Widget normalIcon;
+  final Widget activeIcon;
 
-  FluidNavBarButton(FluidFillIconData iconData, bool selected,
-      FluidNavBarButtonPressedCallback onPressed)
-      : _iconData = iconData,
-        _selected = selected,
-        _onPressed = onPressed;
+  FloateNavBarButton(
+      {this.selected,
+      this.onPressed,
+      this.label,
+      this.normalIcon,
+      this.activeIcon});
 
   @override
   State createState() {
-    return _FluidNavBarButtonState(_iconData, _selected, _onPressed);
+    return _FloateNavBarButtonState(selected, onPressed);
   }
 }
 
-class _FluidNavBarButtonState extends State<FluidNavBarButton>
+class _FloateNavBarButtonState extends State<FloateNavBarButton>
     with SingleTickerProviderStateMixin {
   static const double _activeOffset = 16;
   static const double _defaultOffset = 0;
   static const double _radius = 25;
 
-  FluidFillIconData _iconData;
   bool _selected;
-  FluidNavBarButtonPressedCallback _onPressed;
+  FloateNavBarButtonPressedCallback _onPressed;
 
   AnimationController _animationController;
   Animation<double> _animation;
 
-  _FluidNavBarButtonState(FluidFillIconData iconData, bool selected,
-      FluidNavBarButtonPressedCallback onPressed)
-      : _iconData = iconData,
-        _selected = selected,
+  _FloateNavBarButtonState(
+      bool selected, FloateNavBarButtonPressedCallback onPressed)
+      : _selected = selected,
         _onPressed = onPressed;
 
   @override
@@ -68,19 +69,11 @@ class _FluidNavBarButtonState extends State<FluidNavBarButton>
 
   @override
   Widget build(context) {
-    const ne = FluidNavBarButton.nominalExtent;
+    const ne = FloateNavBarButton.nominalExtent;
     final offsetCurve = _selected ? ElasticOutCurve(0.38) : Curves.easeInQuint;
-    final scaleCurve =
-        _selected ? CenteredElasticOutCurve(0.6) : CenteredElasticInCurve(0.6);
-
     final progress = LinearPointCurve(0.28, 0.0).transform(_animation.value);
-
     final offset = Tween<double>(begin: _defaultOffset, end: _activeOffset)
         .transform(offsetCurve.transform(progress));
-    final scaleCurveScale = 0.50;
-    final scaleY = 0.5 +
-        scaleCurve.transform(progress) * scaleCurveScale +
-        (0.5 - scaleCurveScale / 2);
 
     // Create a parameterizable flat button with a fluid fill icon
     return GestureDetector(
@@ -92,19 +85,26 @@ class _FluidNavBarButtonState extends State<FluidNavBarButton>
         constraints: BoxConstraints.tight(ne),
         alignment: Alignment.center,
         child: Container(
-          // This container just draws a circle with a certain radius and offset
-          margin: EdgeInsets.all(ne.width / 2 - _radius),
-          constraints: BoxConstraints.tight(Size.square(_radius * 2)),
+          margin: EdgeInsets.zero, // EdgeInsets.all(ne.width / 2 - _radius),
+
+          constraints: BoxConstraints.tight(Size.square(_radius * 3)),
           decoration: ShapeDecoration(
             color: Colors.white,
             shape: CircleBorder(),
           ),
           transform: Matrix4.translationValues(0, -offset, 0),
-          // Create a fluid fill icon that get's filled in with a slight delay to the buttons animation
-          child: FluidFillIcon(
-            _iconData,
-            LinearPointCurve(0.25, 1.0).transform(_animation.value),
-            scaleY,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              _selected ? widget.activeIcon : widget.normalIcon,
+              Text(
+                widget.label,
+                style: TextStyle(
+                    color: _selected
+                        ? CommonColors.themeColor
+                        : CommonColors.subTextColor),
+              ),
+            ],
           ),
         ),
       ),
@@ -114,7 +114,7 @@ class _FluidNavBarButtonState extends State<FluidNavBarButton>
   @override
   void didUpdateWidget(oldWidget) {
     setState(() {
-      _selected = widget._selected;
+      _selected = widget.selected;
     });
     _startAnimation();
     super.didUpdateWidget(oldWidget);

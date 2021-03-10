@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import './floate_icon.dart';
-import './floate_nav_button.dart';
+import 'package:flutter_widgets_example/pages/home/drawer/floate_tabbar.dart/floate_nav_button.dart';
+import 'package:flutter_widgets_example/utils/common_util.dart';
 import './curves.dart';
 
 typedef void FluidNavBarChangeCallback(int selectedIndex);
@@ -102,17 +101,30 @@ class _FluidNavBarState extends State<FluidNavBar>
     );
   }
 
-  List<FluidNavBarButton> _buildButtons() {
-    List<FluidFillIconData> icons = [
-      FluidFillIcons.home,
-      FluidFillIcons.user,
-      FluidFillIcons.window,
+  List<Widget> _buildButtons() {
+    var buttons = [
+      FloateNavBarButton(
+        selected: _selectedIndex == 0,
+        onPressed: () => _handlePressed(0),
+        normalIcon: CommonUtils.getWidget("tab_home_nor.png"),
+        activeIcon: CommonUtils.getWidget("tab_home_sel.png"),
+        label: "Home",
+      ),
+      FloateNavBarButton(
+        selected: _selectedIndex == 1,
+        onPressed: () => _handlePressed(1),
+        normalIcon: CommonUtils.getWidget("tab_category_nor.png"),
+        activeIcon: CommonUtils.getWidget("tab_category_sel.png"),
+        label: "Cate",
+      ),
+      FloateNavBarButton(
+        selected: _selectedIndex == 2,
+        onPressed: () => _handlePressed(2),
+        normalIcon: CommonUtils.getWidget("tab_cart_nor.png"),
+        activeIcon: CommonUtils.getWidget("tab_cart_sel.png"),
+        label: "Cart",
+      ),
     ];
-    var buttons = List<FluidNavBarButton>(3);
-    for (var i = 0; i < 3; ++i) {
-      buttons[i] = FluidNavBarButton(
-          icons[i], _selectedIndex == i, () => _handlePressed(i));
-    }
     return buttons;
   }
 
@@ -193,14 +205,14 @@ class _BackgroundCurvePainter extends CustomPainter {
     final radius =
         Tween<double>(begin: _radiusTop, end: _radiusBottom).transform(norm);
     // Point colinear to the top edge of the background pane
-    final anchorControlOffset = Tween<double>(
-            begin: radius * _horizontalControlTop,
-            end: radius * _horizontalControlBottom)
-        .transform(LinearPointCurve(0.5, 0.75).transform(norm));
-    // Point that slides up and down depending on distance for the target x position
-    final dipControlOffset = Tween<double>(
-            begin: radius * _pointControlTop, end: radius * _pointControlBottom)
-        .transform(LinearPointCurve(0.5, 0.8).transform(norm));
+    // final anchorControlOffset = Tween<double>(
+    //         begin: radius * _horizontalControlTop,
+    //         end: radius * _horizontalControlBottom)
+    //     .transform(LinearPointCurve(0.5, 0.75).transform(norm));
+    // // Point that slides up and down depending on distance for the target x position
+    // final dipControlOffset = Tween<double>(
+    //         begin: radius * _pointControlTop, end: radius * _pointControlBottom)
+    //     .transform(LinearPointCurve(0.5, 0.8).transform(norm));
     final y = Tween<double>(begin: _topY, end: _bottomY)
         .transform(LinearPointCurve(0.2, 0.7).transform(norm));
     final dist = Tween<double>(begin: _topDistance, end: _bottomDistance)
@@ -211,11 +223,12 @@ class _BackgroundCurvePainter extends CustomPainter {
     final path = Path()
       ..moveTo(0, 0)
       ..lineTo(x0 - radius, 0)
-      ..cubicTo(
-          x0 - radius + anchorControlOffset, 0, x0 - dipControlOffset, y, x0, y)
-      ..lineTo(x1, y)
-      ..cubicTo(x1 + dipControlOffset, y, x1 + radius - anchorControlOffset, 0,
-          x1 + radius, 0)
+      //删除背景凹槽
+      // ..cubicTo(
+      //     x0 - radius + anchorControlOffset, 0, x0 - dipControlOffset, y, x0, y)
+      // ..lineTo(x1, y)
+      // ..cubicTo(x1 + dipControlOffset, y, x1 + radius - anchorControlOffset, 0,
+      //     x1 + radius, 0)
       ..lineTo(size.width, 0)
       ..lineTo(size.width, size.height)
       ..lineTo(0, size.height);
