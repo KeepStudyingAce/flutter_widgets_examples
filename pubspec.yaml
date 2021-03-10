@@ -45,6 +45,8 @@ dependencies:
 
   outline_material_icons: ^0.1.0
 
+  flutter_staggered_animations: "^0.1.2"
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
