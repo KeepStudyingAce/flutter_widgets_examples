@@ -21,7 +21,7 @@ class _FluidNavBarState extends State<FluidNavBar>
     with TickerProviderStateMixin {
   int _selectedIndex = 0;
 
-  AnimationController _xController;
+  AnimationController _xController; //记录当前选中tabbar的X轴位置
   AnimationController _yController; //波动动画
 
   @override
