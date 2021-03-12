@@ -3,6 +3,7 @@
 
     "app_name": "Flutter组件示例",
     "tab_home": "首页",
+    "tab_map": "地图",
     "tab_mine": "个人",
     "change_language": "修改语言"
 }

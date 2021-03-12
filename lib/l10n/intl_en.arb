@@ -3,6 +3,7 @@
 
     "app_name": "Flutter_Widgets_Example",
     "tab_home": "Home",
+    "tab_map": "Map",
     "tab_mine": "Mine",
     "change_language": "ChangeLanguage"
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets_example/common/common_style.dart';
 import 'package:flutter_widgets_example/generated/l10n.dart';
+import 'package:flutter_widgets_example/pages/amap/amap_page.dart';
 import 'package:flutter_widgets_example/pages/home/home_page.dart';
 import 'package:flutter_widgets_example/pages/mine/mine_page.dart';
 
@@ -16,7 +17,7 @@ class _RootState extends State<Root> {
   int _currentIndex = 0;
   @override
   void initState() {
-    pageList..add(HomePage())..add(MinePage());
+    pageList..add(HomePage())..add(AMapPage())..add(MinePage());
     super.initState();
   }
 
@@ -47,20 +48,37 @@ class _RootState extends State<Root> {
               )),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.email,
+                Icons.map,
                 color: CommonColors.subTextColor,
               ),
               activeIcon: Icon(
-                Icons.email,
+                Icons.map,
                 color: CommonColors.themeColor,
               ),
               title: Text(
-                S.of(context).tab_mine,
+                S.of(context).tab_map,
                 style: TextStyle(
                     color: _currentIndex == 1
                         ? CommonColors.themeColor
                         : CommonColors.subTextColor),
               )),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.email,
+              color: CommonColors.subTextColor,
+            ),
+            activeIcon: Icon(
+              Icons.email,
+              color: CommonColors.themeColor,
+            ),
+            title: Text(
+              S.of(context).tab_mine,
+              style: TextStyle(
+                  color: _currentIndex == 2
+                      ? CommonColors.themeColor
+                      : CommonColors.subTextColor),
+            ),
+          ),
         ],
         currentIndex: _currentIndex,
         onTap: (int index) {

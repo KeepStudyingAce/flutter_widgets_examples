@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "app_name" : MessageLookupByLibrary.simpleMessage("Flutter_Widgets_Example"),
     "change_language" : MessageLookupByLibrary.simpleMessage("ChangeLanguage"),
     "tab_home" : MessageLookupByLibrary.simpleMessage("Home"),
+    "tab_map" : MessageLookupByLibrary.simpleMessage("Map"),
     "tab_mine" : MessageLookupByLibrary.simpleMessage("Mine")
   };
 }

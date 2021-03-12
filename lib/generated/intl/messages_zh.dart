@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "app_name" : MessageLookupByLibrary.simpleMessage("Flutter组件示例"),
     "change_language" : MessageLookupByLibrary.simpleMessage("修改语言"),
     "tab_home" : MessageLookupByLibrary.simpleMessage("首页"),
+    "tab_map" : MessageLookupByLibrary.simpleMessage("地图"),
     "tab_mine" : MessageLookupByLibrary.simpleMessage("个人")
   };
 }

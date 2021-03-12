@@ -55,6 +55,16 @@ class S {
     );
   }
 
+  /// `Map`
+  String get tab_map {
+    return Intl.message(
+      'Map',
+      name: 'tab_map',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Mine`
   String get tab_mine {
     return Intl.message(

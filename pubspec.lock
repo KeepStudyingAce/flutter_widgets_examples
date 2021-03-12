@@ -8,6 +8,20 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "7.0.0"
+  amap_flutter_base:
+    dependency: transitive
+    description:
+      name: amap_flutter_base
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.2"
+  amap_flutter_map:
+    dependency: "direct main"
+    description:
+      name: amap_flutter_map
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.2"
   analyzer:
     dependency: transitive
     description:
@@ -165,6 +179,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.0.3"
+  flutter_plugin_android_lifecycle:
+    dependency: transitive
+    description:
+      name: flutter_plugin_android_lifecycle
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.11"
   flutter_spinkit:
     dependency: "direct main"
     description:
@@ -310,6 +331,20 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.9.2"
+  permission_handler:
+    dependency: "direct main"
+    description:
+      name: permission_handler
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "5.1.0+2"
+  permission_handler_platform_interface:
+    dependency: transitive
+    description:
+      name: permission_handler_platform_interface
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.0.2"
   petitparser:
     dependency: transitive
     description:
@@ -317,6 +352,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.1.0"
+  plugin_platform_interface:
+    dependency: transitive
+    description:
+      name: plugin_platform_interface
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.3"
   provider:
     dependency: "direct main"
     description:
@@ -357,6 +399,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.0-nullsafety.1"
+  stream_transform:
+    dependency: transitive
+    description:
+      name: stream_transform
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.2.0"
   string_scanner:
     dependency: transitive
     description:
@@ -415,4 +464,4 @@ packages:
     version: "2.2.1"
 sdks:
   dart: ">=2.10.0-110 <2.11.0"
-  flutter: ">=1.17.0 <2.0.0"
+  flutter: ">=1.20.0 <2.0.0"
