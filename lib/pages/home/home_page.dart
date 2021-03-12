@@ -93,6 +93,11 @@ class _HomePageState extends State<HomePage> {
               NavigatorUtil.pop(context);
               AppRouter.goFloateTabbarPage(context);
             }),
+            _buildItem("FFTabbarPage", () {
+              //先关闭抽屉
+              NavigatorUtil.pop(context);
+              AppRouter.goFFTabbarPage(context);
+            }),
           ],
         ),
       ),

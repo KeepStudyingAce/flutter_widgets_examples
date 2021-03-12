@@ -1,4 +1,5 @@
 import 'package:fluro/fluro.dart';
+import 'package:flutter_widgets_example/pages/home/drawer/ff_tabbar/ff_tabbar_page.dart';
 import 'package:flutter_widgets_example/pages/home/drawer/floate_tabbar.dart/floate_tabbar_page.dart';
 import 'package:flutter_widgets_example/pages/home/drawer/fluid_tabbar_page.dart/fluid_tabbar_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/absorb_ignore_pointer_page.dart';
@@ -231,6 +232,14 @@ class AppRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _floateTabbarPage);
   }
 
+  ///FFTabbarPage
+  static String _ffTabbarPage = "/_ffTabbarPage";
+
+  /// 跳到FFTabbarPage页面
+  static goFFTabbarPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _ffTabbarPage);
+  }
+
   @override
   void initRouter(FluroRouter router) {
     // 闪屏页面
@@ -433,6 +442,14 @@ class AppRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             FloateTabbarPage(),
+      ),
+    );
+    // FFTabbarPage
+    router.define(
+      _ffTabbarPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            FFTabbarPage(),
       ),
     );
   }
