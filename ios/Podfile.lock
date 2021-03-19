@@ -5,34 +5,80 @@ PODS:
     - AMap3DMap
     - Flutter
   - AMapFoundation (1.6.4)
+  - BaiduMapKit/Base (6.2.0)
+  - BaiduMapKit/Map (6.2.0):
+    - BaiduMapKit/Base
+  - BaiduMapKit/Search (6.2.0):
+    - BaiduMapKit/Base
+  - BaiduMapKit/Utils (6.2.0):
+    - BaiduMapKit/Base
   - Flutter (1.0.0)
+  - flutter_baidu_mapapi_base (2.0.0):
+    - BaiduMapKit/Utils (= 6.2.0)
+    - Flutter
+  - flutter_baidu_mapapi_map (2.0.0):
+    - BaiduMapKit/Map (= 6.2.0)
+    - Flutter
+    - flutter_baidu_mapapi_base
+  - flutter_baidu_mapapi_search (0.0.1):
+    - BaiduMapKit/Search (= 6.2.0)
+    - Flutter
+    - flutter_baidu_mapapi_base
+  - flutter_baidu_mapapi_utils (2.0.0):
+    - BaiduMapKit/Utils (= 6.2.0)
+    - Flutter
+    - flutter_baidu_mapapi_base
   - "permission_handler (5.1.0+2)":
+    - Flutter
+  - share (0.0.1):
     - Flutter
 
 DEPENDENCIES:
   - amap_flutter_map (from `.symlinks/plugins/amap_flutter_map/ios`)
   - Flutter (from `Flutter`)
+  - flutter_baidu_mapapi_base (from `.symlinks/plugins/flutter_baidu_mapapi_base/ios`)
+  - flutter_baidu_mapapi_map (from `.symlinks/plugins/flutter_baidu_mapapi_map/ios`)
+  - flutter_baidu_mapapi_search (from `.symlinks/plugins/flutter_baidu_mapapi_search/ios`)
+  - flutter_baidu_mapapi_utils (from `.symlinks/plugins/flutter_baidu_mapapi_utils/ios`)
   - permission_handler (from `.symlinks/plugins/permission_handler/ios`)
+  - share (from `.symlinks/plugins/share/ios`)
 
 SPEC REPOS:
   trunk:
     - AMap3DMap
     - AMapFoundation
+    - BaiduMapKit
 
 EXTERNAL SOURCES:
   amap_flutter_map:
     :path: ".symlinks/plugins/amap_flutter_map/ios"
   Flutter:
     :path: Flutter
+  flutter_baidu_mapapi_base:
+    :path: ".symlinks/plugins/flutter_baidu_mapapi_base/ios"
+  flutter_baidu_mapapi_map:
+    :path: ".symlinks/plugins/flutter_baidu_mapapi_map/ios"
+  flutter_baidu_mapapi_search:
+    :path: ".symlinks/plugins/flutter_baidu_mapapi_search/ios"
+  flutter_baidu_mapapi_utils:
+    :path: ".symlinks/plugins/flutter_baidu_mapapi_utils/ios"
   permission_handler:
     :path: ".symlinks/plugins/permission_handler/ios"
+  share:
+    :path: ".symlinks/plugins/share/ios"
 
 SPEC CHECKSUMS:
   AMap3DMap: 3e4fac78e3e023cefd47e7d7715ef5ea69bfd0fa
   amap_flutter_map: 979e54d227cedac6c7504a2151bfbf3bcf96760a
   AMapFoundation: 3638198dfa40be54648570c3520edefad288286b
+  BaiduMapKit: 907c6d9b74f66c3ff4741fc4b568ae0b339917f8
   Flutter: 446b87ace8a3747a167979213b4aef59a0b5e5fa
+  flutter_baidu_mapapi_base: 90fddba11ec4435406a7211d6ee905b4311c31db
+  flutter_baidu_mapapi_map: 771bf00671832b1fcddb17733518cd631529df16
+  flutter_baidu_mapapi_search: 4cffaa74e739a4114595c4f82f790e1783bb612d
+  flutter_baidu_mapapi_utils: a5bd582b91ecd35be1bc45558b38f49d5684f70a
   permission_handler: ccb20a9fad0ee9b1314a52b70b76b473c5f8dab0
+  share: 0b2c3e82132f5888bccca3351c504d0003b3b410
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 

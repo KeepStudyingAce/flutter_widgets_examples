@@ -13,3 +13,18 @@
 2、flutter_swiper:多种样式的轮播图，支持自定以指示器
 
 3、DragSortView：自己实现拖动图片排序组件
+
+4、百度地图iOS配置步骤：
+
+官方地址：http://lbsyun.baidu.com/index.php?title=flutter/loc/create-project/configure
+
+iOS工程配置:
+     
+     1）、iOS端的UiKitView目前还只是preview状态, 默认是不支持的, 需要手动打开开关, 需要在iOS工程的info.plist添加如下配置：
+           
+        <key>io.flutter.embedded_views_preview</key>
+        <string>YES</string>
+     
+      2）、地图sdk鉴权需要配置BundleDisplayName, 需要在iOS工程Info.plist中添加如下配置：
+        <key>CFBundleDisplayName</key>
+        <string>app名称</string>

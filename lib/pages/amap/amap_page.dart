@@ -99,7 +99,6 @@ class _AMapPageState extends State<AMapPage> {
     return Scaffold(
       appBar: CommonAppBar(
         title: "高德地图示例",
-        showLeading: false,
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,

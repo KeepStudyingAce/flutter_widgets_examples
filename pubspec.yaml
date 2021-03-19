@@ -48,6 +48,11 @@ dependencies:
   flutter_staggered_animations: "^0.1.2"
   #高德地图
   amap_flutter_map: ^1.0.2
+  #百度地图
+  flutter_baidu_mapapi_map: ^2.0.0
+  flutter_baidu_mapapi_utils: ^2.0.0
+  flutter_baidu_mapapi_search: ^2.0.0
+  share: ^0.6.1+1
   #权限请求
   permission_handler: ^5.0.1+1
 
@@ -71,6 +76,9 @@ flutter:
     - lib/assets/
     - lib/assets/2.0x/
     - lib/assets/3.0x/
+    - lib/pages/baidu_map/files/
+    - lib/pages/baidu_map/resoures/bmflocaltileimage/16/
+    - lib/pages/baidu_map/resoures/bmflocaltileimage/17/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

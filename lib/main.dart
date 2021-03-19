@@ -12,11 +12,23 @@ import 'package:flutter_widgets_example/routes/routes.dart';
 import 'package:flutter_widgets_example/utils/app_navigator_observer.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_baidu_mapapi_base/flutter_baidu_mapapi_base.dart'
+    show BMFMapSDK, BMF_COORD_TYPE;
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  // 百度地图sdk初始化鉴权
+  if (Platform.isIOS) {
+    BMFMapSDK.setApiKeyAndCoordType(
+        'LoOyi174RzaW9PjUkgPo9Hewej4bX9LO', BMF_COORD_TYPE.BD09LL);
+  } else if (Platform.isAndroid) {
+    // Android 目前不支持接口设置Apikey,
+    // 请在主工程的Manifest文件里设置，详细配置方法请参考官网(https://lbsyun.baidu.com/)demo
+    BMFMapSDK.setCoordType(BMF_COORD_TYPE.BD09LL);
+  }
   //布局线是否展示
   debugPaintSizeEnabled = false;
-  WidgetsFlutterBinding.ensureInitialized();
+
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
     runZonedGuarded(() async {
