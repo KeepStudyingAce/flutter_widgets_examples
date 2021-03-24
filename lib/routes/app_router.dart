@@ -1,4 +1,5 @@
 import 'package:fluro/fluro.dart';
+import 'package:flutter_widgets_example/pages/bar_scan_page.dart';
 import 'package:flutter_widgets_example/pages/home/drawer/ff_tabbar/ff_tabbar_page.dart';
 import 'package:flutter_widgets_example/pages/home/drawer/floate_tabbar.dart/floate_tabbar_page.dart';
 import 'package:flutter_widgets_example/pages/home/drawer/fluid_tabbar_page.dart/fluid_tabbar_page.dart';
@@ -241,12 +242,20 @@ class AppRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _ffTabbarPage);
   }
 
-  ///FFTabbarPage
+  ///AZListViewPage
   static String _azlistviewPage = "/_azlistviewPage";
 
   /// 跳到AZListViewPage页面
   static goAZListViewPage(BuildContext context) {
     NavigatorUtil.pushTo(context, _azlistviewPage);
+  }
+
+  ///BarScanPage
+  static String _barScanPage = "/_barScanPage";
+
+  /// 跳到BarScanPage页面
+  static goBarScanPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _barScanPage);
   }
 
   @override
@@ -467,6 +476,14 @@ class AppRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             AZListViewPage(),
+      ),
+    );
+    // BarScanPage
+    router.define(
+      _barScanPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            BarScanPage(),
       ),
     );
   }

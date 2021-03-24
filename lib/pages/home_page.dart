@@ -1,13 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets_example/common/app_config.dart';
 import 'package:flutter_widgets_example/common/common_style.dart';
 import 'package:flutter_widgets_example/pages/home/home/search_page.dart';
-import 'package:flutter_widgets_example/pages/home/home/swiper_page.dart';
 import 'package:flutter_widgets_example/routes/app_router.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
-import 'package:flutter_widgets_example/utils/common_util.dart';
 import 'package:flutter_widgets_example/widgets.dart/ace_flexible_space_bar.dart';
-import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -31,9 +30,17 @@ class _HomePageState extends State<HomePage> {
             SliverAppBar(
               actions: <Widget>[
                 IconButton(
-                    icon: Icon(Icons.search),
-                    onPressed: () => showSearch(
-                        context: context, delegate: SearchBarDelegatePage()))
+                  icon: Icon(Icons.search),
+                  onPressed: () => showSearch(
+                    context: context,
+                    delegate: SearchBarDelegatePage(),
+                  ),
+                ),
+                IconButton(
+                    icon: Icon(Icons.camera_alt),
+                    onPressed: () {
+                      AppRouter.goBarScanPage(context);
+                    })
               ],
               expandedHeight: AppConfig.kAppBarHeight +
                   // AppConfig.iphoneXTopHeight(context) +

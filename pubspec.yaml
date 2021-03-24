@@ -58,6 +58,8 @@ dependencies:
   #城市页面列表
   azlistview: ^1.1.0
   lpinyin: ^1.1.0
+  #扫码
+  qr_code_scanner: ^0.3.5
 
 dev_dependencies:
   flutter_test:
