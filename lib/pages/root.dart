@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets_example/common/common_style.dart';
 import 'package:flutter_widgets_example/generated/l10n.dart';
-import 'package:flutter_widgets_example/pages/home/home_page.dart';
+import 'package:flutter_widgets_example/pages/home_page.dart';
 import 'package:flutter_widgets_example/pages/map_page.dart';
-import 'package:flutter_widgets_example/pages/mine/mine_page.dart';
+import 'package:flutter_widgets_example/pages/mine_page.dart';
 
 class Root extends StatefulWidget {
   Root({Key key}) : super(key: key);

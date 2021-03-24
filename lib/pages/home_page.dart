@@ -138,6 +138,7 @@ class _HomePageState extends State<HomePage> {
       _buildItem("AbsorbPointer & IgnorePointer",
           () => AppRouter.goAbsorbIgnorePointPage(context)),
       _buildItem("AnimationList", () => AppRouter.goAnimationListPage(context)),
+      _buildItem("AZListView", () => AppRouter.goAZListViewPage(context)),
       _buildItem("ChipList", () => AppRouter.goChipPage(context)),
       _buildItem("CustomClipper", () => AppRouter.goCustomChipperPage(context)),
       _buildItem("CustomPaint", () => AppRouter.goCustomPaintPage(context)),

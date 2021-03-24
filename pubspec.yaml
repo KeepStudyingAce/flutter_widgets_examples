@@ -55,6 +55,9 @@ dependencies:
   share: ^0.6.1+1
   #权限请求
   permission_handler: ^5.0.1+1
+  #城市页面列表
+  azlistview: ^1.1.0
+  lpinyin: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +79,7 @@ flutter:
     - lib/assets/
     - lib/assets/2.0x/
     - lib/assets/3.0x/
+    - lib/assets/json/
     - lib/pages/baidu_map/files/
     - lib/pages/baidu_map/resoures/bmflocaltileimage/16/
     - lib/pages/baidu_map/resoures/bmflocaltileimage/17/

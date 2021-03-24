@@ -5,6 +5,7 @@ import 'package:flutter_widgets_example/pages/home/drawer/fluid_tabbar_page.dart
 import 'package:flutter_widgets_example/pages/home/home/absorb_ignore_pointer_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/animation_list_page.dart';
 import 'package:flutter_widgets_example/pages/home/drawer/bubble_tabbar/bubble_tabbar_page.dart';
+import 'package:flutter_widgets_example/pages/home/home/azlistview/azlistview_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/chip_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/custom_clipper_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/custom_paint_page.dart';
@@ -240,6 +241,14 @@ class AppRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _ffTabbarPage);
   }
 
+  ///FFTabbarPage
+  static String _azlistviewPage = "/_azlistviewPage";
+
+  /// 跳到AZListViewPage页面
+  static goAZListViewPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _azlistviewPage);
+  }
+
   @override
   void initRouter(FluroRouter router) {
     // 闪屏页面
@@ -450,6 +459,14 @@ class AppRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             FFTabbarPage(),
+      ),
+    );
+    // AZListView
+    router.define(
+      _azlistviewPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            AZListViewPage(),
       ),
     );
   }
