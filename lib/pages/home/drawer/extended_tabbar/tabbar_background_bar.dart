@@ -27,10 +27,9 @@ class _TabbarBackgroundBarState extends State<TabbarBackgroundBar>
       width: AppConfig.screenWidth(context),
       decoration: BoxDecoration(color: CommonColors.whiteColor, boxShadow: [
         BoxShadow(
-          offset: Offset(0, -1),
-          color: CommonColors.background,
-          blurRadius: 2,
-        )
+            offset: Offset(0, -2),
+            color: CommonColors.shadowColor,
+            blurRadius: 2)
       ]),
       height: AppConfig.kTabBarHeight + AppConfig.iphoneXBottomHeight(context),
       padding: EdgeInsets.only(

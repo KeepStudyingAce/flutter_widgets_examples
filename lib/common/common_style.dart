@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 class CommonColors {
   // 默认页面背景色
   static const Color background = Color(0xFFF7F7F7);
+  // 默认阴影颜色
+  static const Color shadowColor = Color(0x0C000000);
   // 主题颜色
   static const Color themeColor = Color(0xFFBF9264);
   // 分割线颜色

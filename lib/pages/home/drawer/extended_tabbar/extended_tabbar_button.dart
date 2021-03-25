@@ -69,7 +69,7 @@ class _ExtendedTabbarButtonState extends State<ExtendedTabbarButton> {
             painter: AceButtonPainter(
                 overHeight: 15,
                 color: CommonColors.whiteColor,
-                shadowColor: Colors.black12),
+                shadowColor: Colors.black38),
             child: Container(
               width: innerBoxSize,
               height: 42,

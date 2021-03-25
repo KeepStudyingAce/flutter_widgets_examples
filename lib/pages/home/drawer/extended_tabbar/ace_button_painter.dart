@@ -9,6 +9,8 @@ class AceButtonPainter extends CustomPainter {
   final double iconWidth;
   final double overHeight;
   final Color color;
+
+  ///阴影颜色要比背景的阴影颜色深一点
   final Color shadowColor;
   final double rate = 2 / 3; //白边距离是凸起高度的的2/3
 
@@ -20,14 +22,19 @@ class AceButtonPainter extends CustomPainter {
     double x3 = x2 + (iconWidth) / 2;
     double x4 = x3 + overHeight * rate;
 
+    double shadowWidth = 4.5;
+
     final pathShadow = Path()
       ..moveTo(0, overHeight)
-      ..lineTo(x0, overHeight - 1)
-      ..cubicTo(x1, overHeight - 1, x1, -1, x2, -1)
-      ..cubicTo(x3, -1, x3, overHeight - 1, x4, overHeight - 1)
+      ..lineTo(x0, overHeight)
+      ..cubicTo(x1 - shadowWidth, overHeight - shadowWidth, x1 - shadowWidth,
+          0 - shadowWidth, x2, 0 - shadowWidth)
+      ..cubicTo(x3 + shadowWidth, 0 - shadowWidth, x3 + shadowWidth,
+          overHeight - shadowWidth, x4, overHeight - shadowWidth)
       ..lineTo(size.width, overHeight);
+
     //画一个阴影
-    canvas.drawShadow(pathShadow, shadowColor, 0, true);
+    canvas.drawShadow(pathShadow, shadowColor, 2.5, false);
 
     //父组件的左上角为（0，0）,往下、往右为正值 cubicTo 有两个控制点，分别是做两条弧的外切线距离切点等于半径距离的点
     final path = Path()
