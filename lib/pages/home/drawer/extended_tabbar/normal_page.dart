@@ -7,7 +7,7 @@ class NormalPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         body: Container(
           margin: EdgeInsets.only(top: 100),
           width: MediaQuery.of(context).size.width,

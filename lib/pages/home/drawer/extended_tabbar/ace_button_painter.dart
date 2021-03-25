@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
 class AceButtonPainter extends CustomPainter {
-  AceButtonPainter({this.iconWidth = 36, this.color, this.overHeight = 15});
+  AceButtonPainter(
+      {this.iconWidth = 36,
+      this.color,
+      this.overHeight = 15,
+      this.shadowColor = Colors.black12});
   final double iconWidth;
   final double overHeight;
   final Color color;
+  final Color shadowColor;
   final double rate = 2 / 3; //白边距离是凸起高度的的2/3
 
   @override
@@ -14,6 +19,15 @@ class AceButtonPainter extends CustomPainter {
     double x2 = x0 + (iconWidth + overHeight * 2 * rate) / 2;
     double x3 = x2 + (iconWidth) / 2;
     double x4 = x3 + overHeight * rate;
+
+    final pathShadow = Path()
+      ..moveTo(0, overHeight)
+      ..lineTo(x0, overHeight - 1)
+      ..cubicTo(x1, overHeight - 1, x1, -1, x2, -1)
+      ..cubicTo(x3, -1, x3, overHeight - 1, x4, overHeight - 1)
+      ..lineTo(size.width, overHeight);
+    //画一个阴影
+    canvas.drawShadow(pathShadow, shadowColor, 0, true);
 
     //父组件的左上角为（0，0）,往下、往右为正值 cubicTo 有两个控制点，分别是做两条弧的外切线距离切点等于半径距离的点
     final path = Path()
@@ -26,7 +40,8 @@ class AceButtonPainter extends CustomPainter {
       ..lineTo(0, size.height)
       ..lineTo(0, overHeight);
     final paint = Paint()..color = this.color;
-    paint.maskFilter = MaskFilter.blur(BlurStyle.solid, 1);
+    //路径阴影
+    // paint.maskFilter = MaskFilter.blur(BlurStyle.solid, 10);
     canvas.drawPath(path, paint);
   }
 

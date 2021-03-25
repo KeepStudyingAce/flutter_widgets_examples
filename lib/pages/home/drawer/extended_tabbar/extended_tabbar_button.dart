@@ -64,18 +64,31 @@ class _ExtendedTabbarButtonState extends State<ExtendedTabbarButton> {
     double innerBoxSize = itemWidth - 8;
     double innerRadius = isSelected ? 18 : 12;
 
-    return CustomPaint(
-      painter: AceButtonPainter(overHeight: 15, color: CommonColors.whiteColor),
-      child: Container(
-        width: innerBoxSize,
-        height: isSelected ? 42 : 24,
-        padding: EdgeInsets.only(top: isSelected ? 8 : 0),
-        child: CircleAvatar(
-          radius: innerRadius,
-          backgroundColor: Colors.blue,
-          child: isSelected ? widget.item.activeIcon : widget.item.icon,
-        ),
-      ),
-    );
+    return isSelected
+        ? CustomPaint(
+            painter: AceButtonPainter(
+                overHeight: 15,
+                color: CommonColors.whiteColor,
+                shadowColor: Colors.black12),
+            child: Container(
+              width: innerBoxSize,
+              height: 42,
+              padding: EdgeInsets.only(top: 8),
+              child: CircleAvatar(
+                radius: innerRadius,
+                backgroundColor: Colors.blue,
+                child: widget.item.activeIcon,
+              ),
+            ),
+          )
+        : Container(
+            width: innerBoxSize,
+            height: 24,
+            child: CircleAvatar(
+              radius: innerRadius,
+              backgroundColor: Colors.blue,
+              child: widget.item.icon,
+            ),
+          );
   }
 }
