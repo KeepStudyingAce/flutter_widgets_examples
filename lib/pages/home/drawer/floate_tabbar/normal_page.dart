@@ -12,7 +12,7 @@ class NormalPage extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           height: 200,
           alignment: Alignment.center,
-          child: Text("参考fluid_tabbar书写"),
+          child: Text("参考fluid_tabbar书写,自定义painter绘制tabbar背景"),
         ));
   }
 }

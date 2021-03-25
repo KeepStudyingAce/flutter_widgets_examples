@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets_example/pages/home/drawer/floate_tabbar.dart/ace_tabbar_item.dart';
-import 'package:flutter_widgets_example/pages/home/drawer/floate_tabbar.dart/normal_page.dart';
-import 'package:flutter_widgets_example/pages/home/drawer/floate_tabbar.dart/tabbar_background_bar.dart';
+import 'package:flutter_widgets_example/pages/home/drawer/floate_tabbar/ace_tabbar_item.dart';
+import 'package:flutter_widgets_example/pages/home/drawer/floate_tabbar/normal_page.dart';
+import 'package:flutter_widgets_example/pages/home/drawer/floate_tabbar/tabbar_background_bar.dart';
 import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
 
 class FloateTabbarPage extends StatefulWidget {

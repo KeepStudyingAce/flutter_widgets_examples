@@ -1,7 +1,8 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter_widgets_example/pages/bar_scan_page.dart';
 import 'package:flutter_widgets_example/pages/home/drawer/ff_tabbar/ff_tabbar_page.dart';
-import 'package:flutter_widgets_example/pages/home/drawer/floate_tabbar.dart/floate_tabbar_page.dart';
+import 'package:flutter_widgets_example/pages/home/drawer/floate_tabbar/floate_tabbar_page.dart';
+import 'package:flutter_widgets_example/pages/home/drawer/extended_tabbar/extended_tabbar_page.dart';
 import 'package:flutter_widgets_example/pages/home/drawer/fluid_tabbar_page.dart/fluid_tabbar_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/absorb_ignore_pointer_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/animation_list_page.dart';
@@ -240,6 +241,14 @@ class AppRouter implements IRouterProvider {
   /// 跳到FFTabbarPage页面
   static goFFTabbarPage(BuildContext context) {
     NavigatorUtil.pushTo(context, _ffTabbarPage);
+  }
+
+  ///ExtendedTabbarPage
+  static String _extendedTabbarPage = "/_extendedTabbarPage";
+
+  /// 跳到ExtendedTabbarPage页面
+  static goExtendedTabbarPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _extendedTabbarPage);
   }
 
   ///AZListViewPage
@@ -484,6 +493,14 @@ class AppRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             BarScanPage(),
+      ),
+    );
+    // ExtendedTabbarPage
+    router.define(
+      _extendedTabbarPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            ExtendedTabbarPage(),
       ),
     );
   }
