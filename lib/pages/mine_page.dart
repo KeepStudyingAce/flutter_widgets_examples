@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widgets_example/common/common_style.dart';
 import 'package:flutter_widgets_example/generated/l10n.dart';
 import 'package:flutter_widgets_example/providers/app_provider.dart';
+import 'package:flutter_widgets_example/routes/mine_router.dart';
+import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
 import 'package:provider/provider.dart';
 
 class MinePage extends StatefulWidget {
@@ -15,8 +17,9 @@ class _MinePageState extends State<MinePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
+      appBar: CommonAppBar(
+        title: "MinePage",
+        rightButtons: [
           GestureDetector(
             onTap: () {
               AppProvider app =
@@ -34,15 +37,32 @@ class _MinePageState extends State<MinePage> {
               message: S.of(context).change_language,
               child: Icon(
                 Icons.settings,
-                color: CommonColors.themeColor,
+                color: CommonColors.blackColor,
               ),
             ),
           )
         ],
       ),
-      body: Center(
-        child: Text("MinePage"),
+      body: ListView(
+        padding: EdgeInsets.zero,
+        children: this._buildList(),
       ),
+    );
+  }
+
+  List<Widget> _buildList() {
+    return [
+      _buildItem("自定义键盘(未完成)", () => MineRouter.goCustomKeyboardPage(context)),
+    ];
+  }
+
+  Widget _buildItem(String title, Function onClick) {
+    return ListTile(
+      key: ValueKey(title),
+      tileColor: CommonColors.whiteColor,
+      title: Text(title),
+      trailing: Icon(Icons.arrow_forward_ios),
+      onTap: onClick,
     );
   }
 }

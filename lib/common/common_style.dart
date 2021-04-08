@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 class CommonColors {
+  // 透明
+  static const Color transparent = Colors.transparent;
   // 默认页面背景色
   static const Color background = Color(0xFFF7F7F7);
   // 默认阴影颜色
@@ -17,6 +19,7 @@ class CommonColors {
   static const Color whiteColor = Color(0xFFFFFFFF);
   // 黑色
   static const Color blackColor = Color(0xFF000000);
+  static const Color black50Color = Color(0x80000000);
   // 轮播图未选中颜色
   static const Color inactiveColor = Color(0x99FFFFFF);
 
