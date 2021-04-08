@@ -10,6 +10,10 @@
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		2F138D88DEF9C29C45428F70 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846D1E28048FDB02E620D315 /* Pods_Runner.framework */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
+		501E8214261EFDC10076BD47 /* FlutterIosTextLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E8213261EFDC10076BD47 /* FlutterIosTextLabel.m */; };
+		501E8217261EFE400076BD47 /* FlutterIosTextLabelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E8216261EFE400076BD47 /* FlutterIosTextLabelFactory.m */; };
+		501E821A261EFE8F0076BD47 /* FlutterIosTextLabelPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E8219261EFE8F0076BD47 /* FlutterIosTextLabelPlugin.m */; };
+		501E821E261EFF3A0076BD47 /* FlutterIosTextLabelRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E821D261EFF3A0076BD47 /* FlutterIosTextLabelRegister.m */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
@@ -33,6 +37,14 @@
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
+		501E8212261EFD6C0076BD47 /* FlutterIosTextLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlutterIosTextLabel.h; sourceTree = "<group>"; };
+		501E8213261EFDC10076BD47 /* FlutterIosTextLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlutterIosTextLabel.m; sourceTree = "<group>"; };
+		501E8215261EFE1E0076BD47 /* FlutterIosTextLabelFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlutterIosTextLabelFactory.h; sourceTree = "<group>"; };
+		501E8216261EFE400076BD47 /* FlutterIosTextLabelFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlutterIosTextLabelFactory.m; sourceTree = "<group>"; };
+		501E8218261EFE740076BD47 /* FlutterIosTextLabelPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlutterIosTextLabelPlugin.h; sourceTree = "<group>"; };
+		501E8219261EFE8F0076BD47 /* FlutterIosTextLabelPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlutterIosTextLabelPlugin.m; sourceTree = "<group>"; };
+		501E821C261EFF0B0076BD47 /* FlutterIosTextLabelRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlutterIosTextLabelRegister.h; sourceTree = "<group>"; };
+		501E821D261EFF3A0076BD47 /* FlutterIosTextLabelRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlutterIosTextLabelRegister.m; sourceTree = "<group>"; };
 		73FBFDC46F8507C15653AA31 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +73,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		501E821B261EFECA0076BD47 /* iOSToFlutterWidget */ = {
+			isa = PBXGroup;
+			children = (
+				501E8212261EFD6C0076BD47 /* FlutterIosTextLabel.h */,
+				501E8213261EFDC10076BD47 /* FlutterIosTextLabel.m */,
+				501E8215261EFE1E0076BD47 /* FlutterIosTextLabelFactory.h */,
+				501E8216261EFE400076BD47 /* FlutterIosTextLabelFactory.m */,
+				501E8218261EFE740076BD47 /* FlutterIosTextLabelPlugin.h */,
+				501E8219261EFE8F0076BD47 /* FlutterIosTextLabelPlugin.m */,
+				501E821C261EFF0B0076BD47 /* FlutterIosTextLabelRegister.h */,
+				501E821D261EFF3A0076BD47 /* FlutterIosTextLabelRegister.m */,
+			);
+			path = iOSToFlutterWidget;
+			sourceTree = "<group>";
+		};
 		9740EEB11CF90186004384FC /* Flutter */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +129,7 @@
 				1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */,
 				74858FAE1ED2DC5600515810 /* AppDelegate.swift */,
 				74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */,
+				501E821B261EFECA0076BD47 /* iOSToFlutterWidget */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -290,7 +318,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
+				501E8217261EFE400076BD47 /* FlutterIosTextLabelFactory.m in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
+				501E8214261EFDC10076BD47 /* FlutterIosTextLabel.m in Sources */,
+				501E821A261EFE8F0076BD47 /* FlutterIosTextLabelPlugin.m in Sources */,
+				501E821E261EFF3A0076BD47 /* FlutterIosTextLabelRegister.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
