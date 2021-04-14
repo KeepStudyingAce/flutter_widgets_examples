@@ -28,3 +28,10 @@ iOS工程配置:
       2）、地图sdk鉴权需要配置BundleDisplayName, 需要在iOS工程Info.plist中添加如下配置：
         <key>CFBundleDisplayName</key>
         <string>app名称</string>
+        
+5、腾讯直播SDK Flutter桥接：
+
+    5.1、由于framework文件太大，所以不加入到版本控制，实际运行的时候去官网下载(下载链接：https://cloud.tencent.com/document/product/454/7873)
+
+    本次使用的是TXLiteAVSDK_Smart.framework 8.5.10022版本
+

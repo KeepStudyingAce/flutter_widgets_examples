@@ -14,6 +14,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_baidu_mapapi_base/flutter_baidu_mapapi_base.dart'
     show BMFMapSDK, BMF_COORD_TYPE;
+// import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,12 +35,11 @@ void main() {
     runZonedGuarded(() async {
       runApp(
         AlertProvider(
-          child: MultiProvider(
-            providers: [
-              ChangeNotifierProvider(create: (_) => AppProvider()),
-            ],
-            child: MyApp(),
-          ),
+          child: MultiProvider(providers: [
+            ChangeNotifierProvider(create: (_) => AppProvider()),
+          ], child: MyApp()
+              //FlutterEasyLoading(child: MyApp()),
+              ),
           config: AlertConfig(),
         ),
       );

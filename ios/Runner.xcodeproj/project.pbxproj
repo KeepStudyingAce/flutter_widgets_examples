@@ -14,6 +14,16 @@
 		501E8217261EFE400076BD47 /* FlutterIosTextLabelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E8216261EFE400076BD47 /* FlutterIosTextLabelFactory.m */; };
 		501E821A261EFE8F0076BD47 /* FlutterIosTextLabelPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E8219261EFE8F0076BD47 /* FlutterIosTextLabelPlugin.m */; };
 		501E821E261EFF3A0076BD47 /* FlutterIosTextLabelRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E821D261EFF3A0076BD47 /* FlutterIosTextLabelRegister.m */; };
+		501E82CC26242EB00076BD47 /* GenerateTestUserSig.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E82CB26242EB00076BD47 /* GenerateTestUserSig.m */; };
+		501E82CF26243CC30076BD47 /* AppFlutterMethodHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E82CE26243CC30076BD47 /* AppFlutterMethodHandle.m */; };
+		501E82E02624645D0076BD47 /* TencentLivePlayerRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E82DF2624645D0076BD47 /* TencentLivePlayerRegister.m */; };
+		501E82E4262464C50076BD47 /* TencentLivePlayerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E82E3262464C50076BD47 /* TencentLivePlayerPlugin.m */; };
+		501E82E7262464FA0076BD47 /* TencentLivePlayerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E82E6262464FA0076BD47 /* TencentLivePlayerFactory.m */; };
+		501E82EA262465950076BD47 /* TencentLivePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E82E9262465950076BD47 /* TencentLivePlayer.m */; };
+		501E82EC262467540076BD47 /* TXLiteAVSDK_Smart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82EB262467540076BD47 /* TXLiteAVSDK_Smart.framework */; };
+		501E82EE262468EF0076BD47 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82ED262468EF0076BD47 /* libc++.tbd */; };
+		501E82F02624691B0076BD47 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82EF2624691B0076BD47 /* libz.tbd */; };
+		501E82F2262469630076BD47 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82F1262469630076BD47 /* libresolv.9.tbd */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
@@ -45,6 +55,22 @@
 		501E8219261EFE8F0076BD47 /* FlutterIosTextLabelPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlutterIosTextLabelPlugin.m; sourceTree = "<group>"; };
 		501E821C261EFF0B0076BD47 /* FlutterIosTextLabelRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlutterIosTextLabelRegister.h; sourceTree = "<group>"; };
 		501E821D261EFF3A0076BD47 /* FlutterIosTextLabelRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlutterIosTextLabelRegister.m; sourceTree = "<group>"; };
+		501E82CA26242EB00076BD47 /* GenerateTestUserSig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenerateTestUserSig.h; sourceTree = "<group>"; };
+		501E82CB26242EB00076BD47 /* GenerateTestUserSig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenerateTestUserSig.m; sourceTree = "<group>"; };
+		501E82CD26243CB10076BD47 /* AppFlutterMethodHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppFlutterMethodHandle.h; sourceTree = "<group>"; };
+		501E82CE26243CC30076BD47 /* AppFlutterMethodHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppFlutterMethodHandle.m; sourceTree = "<group>"; };
+		501E82DE2624641A0076BD47 /* TencentLivePlayerRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentLivePlayerRegister.h; sourceTree = "<group>"; };
+		501E82DF2624645D0076BD47 /* TencentLivePlayerRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentLivePlayerRegister.m; sourceTree = "<group>"; };
+		501E82E2262464B40076BD47 /* TencentLivePlayerPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentLivePlayerPlugin.h; sourceTree = "<group>"; };
+		501E82E3262464C50076BD47 /* TencentLivePlayerPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentLivePlayerPlugin.m; sourceTree = "<group>"; };
+		501E82E5262464EA0076BD47 /* TencentLivePlayerFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentLivePlayerFactory.h; sourceTree = "<group>"; };
+		501E82E6262464FA0076BD47 /* TencentLivePlayerFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentLivePlayerFactory.m; sourceTree = "<group>"; };
+		501E82E82624658A0076BD47 /* TencentLivePlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentLivePlayer.h; sourceTree = "<group>"; };
+		501E82E9262465950076BD47 /* TencentLivePlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentLivePlayer.m; sourceTree = "<group>"; };
+		501E82EB262467540076BD47 /* TXLiteAVSDK_Smart.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TXLiteAVSDK_Smart.framework; sourceTree = "<group>"; };
+		501E82ED262468EF0076BD47 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		501E82EF2624691B0076BD47 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		501E82F1262469630076BD47 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 		73FBFDC46F8507C15653AA31 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +92,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501E82F2262469630076BD47 /* libresolv.9.tbd in Frameworks */,
+				501E82F02624691B0076BD47 /* libz.tbd in Frameworks */,
+				501E82EE262468EF0076BD47 /* libc++.tbd in Frameworks */,
+				501E82EC262467540076BD47 /* TXLiteAVSDK_Smart.framework in Frameworks */,
 				2F138D88DEF9C29C45428F70 /* Pods_Runner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +118,31 @@
 			path = iOSToFlutterWidget;
 			sourceTree = "<group>";
 		};
+		501E82C926242E850076BD47 /* TencentLive */ = {
+			isa = PBXGroup;
+			children = (
+				501E82CA26242EB00076BD47 /* GenerateTestUserSig.h */,
+				501E82CB26242EB00076BD47 /* GenerateTestUserSig.m */,
+				501E82E12624646F0076BD47 /* TencentPlayerWidget */,
+			);
+			path = TencentLive;
+			sourceTree = "<group>";
+		};
+		501E82E12624646F0076BD47 /* TencentPlayerWidget */ = {
+			isa = PBXGroup;
+			children = (
+				501E82E82624658A0076BD47 /* TencentLivePlayer.h */,
+				501E82E9262465950076BD47 /* TencentLivePlayer.m */,
+				501E82E5262464EA0076BD47 /* TencentLivePlayerFactory.h */,
+				501E82E6262464FA0076BD47 /* TencentLivePlayerFactory.m */,
+				501E82E2262464B40076BD47 /* TencentLivePlayerPlugin.h */,
+				501E82E3262464C50076BD47 /* TencentLivePlayerPlugin.m */,
+				501E82DE2624641A0076BD47 /* TencentLivePlayerRegister.h */,
+				501E82DF2624645D0076BD47 /* TencentLivePlayerRegister.m */,
+			);
+			path = TencentPlayerWidget;
+			sourceTree = "<group>";
+		};
 		9740EEB11CF90186004384FC /* Flutter */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +157,7 @@
 		97C146E51CF9000F007C117D = {
 			isa = PBXGroup;
 			children = (
+				501E82EB262467540076BD47 /* TXLiteAVSDK_Smart.framework */,
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
 				97C146EF1CF9000F007C117D /* Products */,
@@ -129,6 +185,9 @@
 				1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */,
 				74858FAE1ED2DC5600515810 /* AppDelegate.swift */,
 				74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */,
+				501E82CD26243CB10076BD47 /* AppFlutterMethodHandle.h */,
+				501E82CE26243CC30076BD47 /* AppFlutterMethodHandle.m */,
+				501E82C926242E850076BD47 /* TencentLive */,
 				501E821B261EFECA0076BD47 /* iOSToFlutterWidget */,
 			);
 			path = Runner;
@@ -147,6 +206,9 @@
 		F361C99F83BA791F8D7E8AFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				501E82F1262469630076BD47 /* libresolv.9.tbd */,
+				501E82EF2624691B0076BD47 /* libz.tbd */,
+				501E82ED262468EF0076BD47 /* libc++.tbd */,
 				846D1E28048FDB02E620D315 /* Pods_Runner.framework */,
 			);
 			name = Frameworks;
@@ -318,11 +380,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
+				501E82E02624645D0076BD47 /* TencentLivePlayerRegister.m in Sources */,
 				501E8217261EFE400076BD47 /* FlutterIosTextLabelFactory.m in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
+				501E82CC26242EB00076BD47 /* GenerateTestUserSig.m in Sources */,
 				501E8214261EFDC10076BD47 /* FlutterIosTextLabel.m in Sources */,
 				501E821A261EFE8F0076BD47 /* FlutterIosTextLabelPlugin.m in Sources */,
 				501E821E261EFF3A0076BD47 /* FlutterIosTextLabelRegister.m in Sources */,
+				501E82EA262465950076BD47 /* TencentLivePlayer.m in Sources */,
+				501E82CF26243CC30076BD47 /* AppFlutterMethodHandle.m in Sources */,
+				501E82E7262464FA0076BD47 /* TencentLivePlayerFactory.m in Sources */,
+				501E82E4262464C50076BD47 /* TencentLivePlayerPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +478,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MTBBarcodeScanner/MTBBarcodeScanner.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/amap_flutter_map/amap_flutter_map.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_baidu_mapapi_base/flutter_baidu_mapapi_base.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_baidu_mapapi_map/flutter_baidu_mapapi_map.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_baidu_mapapi_search/flutter_baidu_mapapi_search.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_baidu_mapapi_utils/flutter_baidu_mapapi_utils.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/permission_handler/permission_handler.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/qr_code_scanner/qr_code_scanner.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/share/share.framework/Headers\"",
+					"$(PROJECT_DIR)/TXLiteAVSDK_Smart.framework/Headers",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -547,6 +629,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MTBBarcodeScanner/MTBBarcodeScanner.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/amap_flutter_map/amap_flutter_map.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_baidu_mapapi_base/flutter_baidu_mapapi_base.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_baidu_mapapi_map/flutter_baidu_mapapi_map.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_baidu_mapapi_search/flutter_baidu_mapapi_search.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_baidu_mapapi_utils/flutter_baidu_mapapi_utils.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/permission_handler/permission_handler.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/qr_code_scanner/qr_code_scanner.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/share/share.framework/Headers\"",
+					"$(PROJECT_DIR)/TXLiteAVSDK_Smart.framework/Headers",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -578,6 +674,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MTBBarcodeScanner/MTBBarcodeScanner.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/amap_flutter_map/amap_flutter_map.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_baidu_mapapi_base/flutter_baidu_mapapi_base.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_baidu_mapapi_map/flutter_baidu_mapapi_map.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_baidu_mapapi_search/flutter_baidu_mapapi_search.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_baidu_mapapi_utils/flutter_baidu_mapapi_utils.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/permission_handler/permission_handler.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/qr_code_scanner/qr_code_scanner.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/share/share.framework/Headers\"",
+					"$(PROJECT_DIR)/TXLiteAVSDK_Smart.framework/Headers",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

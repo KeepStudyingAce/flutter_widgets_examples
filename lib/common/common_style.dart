@@ -20,9 +20,14 @@ class CommonColors {
   // 红色
   static const Color redColor = Color(0xFFFF0000);
   static const Color red50Color = Color(0xFF800000);
+  // 绿色
+  static const Color greenColor = Color(0xFF00FF00);
+  static const Color tencentGreenColor = Color(0xFF00A66B);
+
   // 黑色
   static const Color blackColor = Color(0xFF000000);
   static const Color black50Color = Color(0x80000000);
+  static const Color black30Color = Color(0x4C000000);
   // 轮播图未选中颜色
   static const Color inactiveColor = Color(0x99FFFFFF);
 

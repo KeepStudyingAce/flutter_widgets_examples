@@ -2,6 +2,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets_example/routes/animation_router.dart';
 import 'package:flutter_widgets_example/routes/app_router.dart';
+import 'package:flutter_widgets_example/routes/live_router.dart';
 import 'package:flutter_widgets_example/routes/map_router.dart';
 import 'package:flutter_widgets_example/routes/mine_router.dart';
 
@@ -24,6 +25,7 @@ class Routers {
     _listRouter.add(MapRouter());
     _listRouter.add(AnimationRouter());
     _listRouter.add(MineRouter());
+    _listRouter.add(LiveRouter());
 
     _listRouter.forEach((routerProvider) {
       routerProvider.initRouter(router);

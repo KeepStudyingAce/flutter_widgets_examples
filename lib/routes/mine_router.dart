@@ -1,6 +1,7 @@
 import 'package:fluro/fluro.dart' as Fluro;
 import 'package:flutter_widgets_example/pages/mine/custom_keyboard_page.dart';
 import 'package:flutter_widgets_example/pages/mine/ios_component_page.dart';
+import 'package:flutter_widgets_example/pages/mine/live_page.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
 import 'package:flutter_widgets_example/routes/routes.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,13 @@ class MineRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _iosComponentPage);
   }
 
+  static String _livePage = "/_livePage";
+
+  /// 直播页面
+  static goLivePage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _livePage);
+  }
+
   @override
   void initRouter(Fluro.FluroRouter router) {
     // 自定义键盘
@@ -37,6 +45,15 @@ class MineRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             IOSComponentPage(),
+      ),
+    );
+
+    // 直播页面
+    router.define(
+      _livePage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            LivePage(),
       ),
     );
   }
