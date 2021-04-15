@@ -14,6 +14,15 @@ class TencentCameraPushLivePage extends StatefulWidget {
 }
 
 class _TencentCameraPushLivePageState extends State<TencentCameraPushLivePage> {
+  /*
+  rtmp播放地址:rtmp://3891.liveplay.myqcloud.com/live/3891_user_6a76b59c_ca90
+
+  flv播放地址:http://3891.liveplay.myqcloud.com/live/3891_user_6a76b59c_ca90.flv
+
+  hls播放地址:http://3891.liveplay.myqcloud.com/live/3891_user_6a76b59c_ca90.m3u8
+
+  低延时播放地址:rtmp://3891.liveplay.myqcloud.com/live/3891_user_6a76b59c_ca90?bizid=3891&txSecret=49d703b921ecbe103935eb5e33abea75&txTime=607834E1
+  */
   TextEditingController _control = TextEditingController(text: "请输入推流地址");
   MethodChannel _channel;
   @override
@@ -49,7 +58,15 @@ class _TencentCameraPushLivePageState extends State<TencentCameraPushLivePage> {
           FloatingActionButton(
             heroTag: "??",
             onPressed: () {
-              ToastUtil.showToast("生成推流地址");
+              /**：[获取推流地址](https://cloud.tencent.com/document/product/267/32720 )。
+                *@note -5 返回码代表 license 校验失败，TXLivePusher 需要 
+                [license](https://cloud.tencent.com/document/product/454/34750) 校验通过才能工作
+              */
+              String url =
+                  "rtmp://3891.livepush.myqcloud.com/live/3891_user_7360cebc_4bc9?bizid=3891&txSecret=5ae056ca061959ae0483aa5727935915&txTime=607834E1";
+              setState(() {
+                _control.text = url;
+              });
             },
             child: Text(
               "New",
@@ -79,7 +96,7 @@ class _TencentCameraPushLivePageState extends State<TencentCameraPushLivePage> {
         children: [
           Container(
             width: AppConfig.screenWidth(context),
-            height: 400,
+            height: AppConfig.screenHeight(context),
             color: CommonColors.red50Color,
             child: UiKitView(
               //设置标识 这里设置的viewType值与 ios 中插件注册的标识一致 需要云心原生工程

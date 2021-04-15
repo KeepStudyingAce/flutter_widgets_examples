@@ -78,7 +78,7 @@
     // 开始推流
     int ret = [_pusher startPush:rtmpUrl];
     if (ret != 0) {
-        NSLog(@"推流器启动失败");
+        NSLog(@"推流器启动失败,失败原因：%d",ret);
         return NO;
     }
     // 保存推流地址，其他地方需要
@@ -200,14 +200,14 @@
             NSLog(@"关闭推流");
             
         } else if (evtID == PUSH_ERR_OPEN_CAMERA_FAIL) {
-            NSLog(@"推流器启动失败");
+            NSLog(@"摄像头启动失败");
             NSLog(@"获取摄像头权限失败，请前往隐私-相机设置里面打开应用权限");
             
         } else if (evtID == PUSH_EVT_OPEN_CAMERA_SUCC) {
             NSLog(@"保存摄像头设置");
 
         } else if (evtID == PUSH_ERR_OPEN_MIC_FAIL) {
-            NSLog(@"推流器启动失败");
+            NSLog(@"麦克风启动失败");
             NSLog(@"获取麦克风权限失败，请前往隐私-麦克风设置里面打开应用权限");
             
         } else if (evtID == PUSH_EVT_CONNECT_SUCC) {
