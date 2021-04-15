@@ -17,6 +17,8 @@ import Flutter
     FlutterIosTextLabelRegister.register(with: self)
     //自定义腾讯直播拉流播放器
     TencentLivePlayerRegister.register(with: self)
+    //自定义腾讯直播摄像头推流
+    TencentCameraPusherRegister.register(with: self)
     
     #warning("处理flutter通信")
     methodChannel = FlutterMethodChannel.init(name: "com.ace.flutter/native", binaryMessenger: flVC as! FlutterBinaryMessenger);

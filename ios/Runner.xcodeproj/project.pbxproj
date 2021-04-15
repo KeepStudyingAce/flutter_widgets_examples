@@ -24,6 +24,10 @@
 		501E82EE262468EF0076BD47 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82ED262468EF0076BD47 /* libc++.tbd */; };
 		501E82F02624691B0076BD47 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82EF2624691B0076BD47 /* libz.tbd */; };
 		501E82F2262469630076BD47 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82F1262469630076BD47 /* libresolv.9.tbd */; };
+		505D46B4262854800053C3A8 /* TencentCameraPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = 505D46B3262854800053C3A8 /* TencentCameraPusher.m */; };
+		505D46B726285B910053C3A8 /* TencentCameraPushFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 505D46B626285B910053C3A8 /* TencentCameraPushFactory.m */; };
+		505D46BA26285C560053C3A8 /* TencentCameraPusherPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 505D46B926285C560053C3A8 /* TencentCameraPusherPlugin.m */; };
+		505D46BD26285D360053C3A8 /* TencentCameraPusherRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 505D46BC26285D360053C3A8 /* TencentCameraPusherRegister.m */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
@@ -71,6 +75,14 @@
 		501E82ED262468EF0076BD47 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		501E82EF2624691B0076BD47 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		501E82F1262469630076BD47 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		505D46B2262854410053C3A8 /* TencentCameraPusher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentCameraPusher.h; sourceTree = "<group>"; };
+		505D46B3262854800053C3A8 /* TencentCameraPusher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentCameraPusher.m; sourceTree = "<group>"; };
+		505D46B526285B730053C3A8 /* TencentCameraPusherFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentCameraPusherFactory.h; sourceTree = "<group>"; };
+		505D46B626285B910053C3A8 /* TencentCameraPushFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentCameraPushFactory.m; sourceTree = "<group>"; };
+		505D46B826285C470053C3A8 /* TencentCameraPusherPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentCameraPusherPlugin.h; sourceTree = "<group>"; };
+		505D46B926285C560053C3A8 /* TencentCameraPusherPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentCameraPusherPlugin.m; sourceTree = "<group>"; };
+		505D46BB26285CF20053C3A8 /* TencentCameraPusherRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentCameraPusherRegister.h; sourceTree = "<group>"; };
+		505D46BC26285D360053C3A8 /* TencentCameraPusherRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentCameraPusherRegister.m; sourceTree = "<group>"; };
 		73FBFDC46F8507C15653AA31 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +135,7 @@
 			children = (
 				501E82CA26242EB00076BD47 /* GenerateTestUserSig.h */,
 				501E82CB26242EB00076BD47 /* GenerateTestUserSig.m */,
+				505D46B1262853EF0053C3A8 /* TencentCameraPushWidget */,
 				501E82E12624646F0076BD47 /* TencentPlayerWidget */,
 			);
 			path = TencentLive;
@@ -141,6 +154,21 @@
 				501E82DF2624645D0076BD47 /* TencentLivePlayerRegister.m */,
 			);
 			path = TencentPlayerWidget;
+			sourceTree = "<group>";
+		};
+		505D46B1262853EF0053C3A8 /* TencentCameraPushWidget */ = {
+			isa = PBXGroup;
+			children = (
+				505D46B2262854410053C3A8 /* TencentCameraPusher.h */,
+				505D46B3262854800053C3A8 /* TencentCameraPusher.m */,
+				505D46B526285B730053C3A8 /* TencentCameraPusherFactory.h */,
+				505D46B626285B910053C3A8 /* TencentCameraPushFactory.m */,
+				505D46B826285C470053C3A8 /* TencentCameraPusherPlugin.h */,
+				505D46B926285C560053C3A8 /* TencentCameraPusherPlugin.m */,
+				505D46BB26285CF20053C3A8 /* TencentCameraPusherRegister.h */,
+				505D46BC26285D360053C3A8 /* TencentCameraPusherRegister.m */,
+			);
+			path = TencentCameraPushWidget;
 			sourceTree = "<group>";
 		};
 		9740EEB11CF90186004384FC /* Flutter */ = {
@@ -380,16 +408,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
+				505D46BA26285C560053C3A8 /* TencentCameraPusherPlugin.m in Sources */,
 				501E82E02624645D0076BD47 /* TencentLivePlayerRegister.m in Sources */,
 				501E8217261EFE400076BD47 /* FlutterIosTextLabelFactory.m in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 				501E82CC26242EB00076BD47 /* GenerateTestUserSig.m in Sources */,
 				501E8214261EFDC10076BD47 /* FlutterIosTextLabel.m in Sources */,
+				505D46B4262854800053C3A8 /* TencentCameraPusher.m in Sources */,
 				501E821A261EFE8F0076BD47 /* FlutterIosTextLabelPlugin.m in Sources */,
 				501E821E261EFF3A0076BD47 /* FlutterIosTextLabelRegister.m in Sources */,
 				501E82EA262465950076BD47 /* TencentLivePlayer.m in Sources */,
 				501E82CF26243CC30076BD47 /* AppFlutterMethodHandle.m in Sources */,
+				505D46B726285B910053C3A8 /* TencentCameraPushFactory.m in Sources */,
 				501E82E7262464FA0076BD47 /* TencentLivePlayerFactory.m in Sources */,
+				505D46BD26285D360053C3A8 /* TencentCameraPusherRegister.m in Sources */,
 				501E82E4262464C50076BD47 /* TencentLivePlayerPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

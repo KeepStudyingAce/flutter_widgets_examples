@@ -1,4 +1,5 @@
 #import "GeneratedPluginRegistrant.h"
 #import "FlutterIosTextLabelRegister.h"
 #import "TencentLivePlayerRegister.h"
+#import "TencentCameraPusherRegister.h"
 #import "AppFlutterMethodHandle.h"
