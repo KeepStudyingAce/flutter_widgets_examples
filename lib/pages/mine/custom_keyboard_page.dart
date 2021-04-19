@@ -1,9 +1,11 @@
+import 'package:cool_ui/cool_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_widgets_example/common/app_config.dart';
 import 'package:flutter_widgets_example/common/common_style.dart';
 import 'package:flutter_widgets_example/utils/toast_util.dart';
 import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
+import 'package:flutter_widgets_example/widgets.dart/self_keyboard.dart';
 
 class CustomKeyboardPage extends StatefulWidget {
   CustomKeyboardPage({Key key}) : super(key: key);
@@ -37,20 +39,26 @@ class _CustomKeyboardPageState extends State<CustomKeyboardPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: CommonAppBar(
-          title: "CustomKeyBoard",
+    return
+        // KeyboardMediaQuery(
+        //   //用于键盘弹出的时候页面可以滚动到输入框的位置
+        //   child:
+        Scaffold(
+      appBar: CommonAppBar(
+        title: "CustomKeyBoard",
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 12),
+            _buildTel(),
+            SizedBox(height: 12),
+            _buildPwd(),
+          ],
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(height: 12),
-              _buildTel(),
-              SizedBox(height: 12),
-              _buildPwd(),
-            ],
-          ),
-        ));
+      ),
+      // ),
+    );
   }
 
   Widget _buildTel() {
@@ -89,7 +97,7 @@ class _CustomKeyboardPageState extends State<CustomKeyboardPage> {
           },
           focusNode: _telNode,
           controller: _telCl,
-          keyboardType: TextInputType.number,
+          keyboardType: SelfKeyBoard.inputType,
           maxLength: 11,
         ),
       ),

@@ -60,6 +60,8 @@ dependencies:
   lpinyin: ^1.1.0
   #扫码
   qr_code_scanner: ^0.3.5
+  #自定义键盘
+  cool_ui: "^0.6.1"
 
 dev_dependencies:
   flutter_test:

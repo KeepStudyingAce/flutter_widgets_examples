@@ -34,4 +34,12 @@ iOS工程配置:
     5.1、由于framework文件太大，所以不加入到版本控制，实际运行的时候去官网下载(下载链接：https://cloud.tencent.com/document/product/454/7873)
 
     本次使用的是TXLiteAVSDK_Smart.framework 8.5.10022版本
+    
+    5.2直播推流失败:
+    [获取推流地址](https://cloud.tencent.com/document/product/267/32720 )。
+    @note -5 返回码代表 license 校验失败，TXLivePusher 需要 
+    [license](https://cloud.tencent.com/document/product/454/34750) 校验通过才能工作
 
+6、TextField弹出自定义键盘：
+
+    cool_ui:https://github.com/Im-Kevin/cool_ui

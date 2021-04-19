@@ -52,7 +52,7 @@ class _MinePageState extends State<MinePage> {
 
   List<Widget> _buildList() {
     return [
-      _buildItem("自定义键盘(未完成)", () => MineRouter.goCustomKeyboardPage(context)),
+      _buildItem("自定义键盘", () => MineRouter.goCustomKeyboardPage(context)),
       _buildItem("嵌套原生组件", () => MineRouter.goIOSComponentPage(context)),
       _buildItem("直播SDK(运行原生工程)", () => MineRouter.goLivePage(context)),
     ];

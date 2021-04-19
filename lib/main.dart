@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:cool_ui/cool_ui.dart';
 import 'package:easy_alert/easy_alert.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
@@ -10,6 +11,7 @@ import 'package:flutter_widgets_example/generated/l10n.dart';
 import 'package:flutter_widgets_example/providers/app_provider.dart';
 import 'package:flutter_widgets_example/routes/routes.dart';
 import 'package:flutter_widgets_example/utils/app_navigator_observer.dart';
+import 'package:flutter_widgets_example/widgets.dart/self_keyboard.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_baidu_mapapi_base/flutter_baidu_mapapi_base.dart'
@@ -27,20 +29,25 @@ void main() {
     // 请在主工程的Manifest文件里设置，详细配置方法请参考官网(https://lbsyun.baidu.com/)demo
     BMFMapSDK.setCoordType(BMF_COORD_TYPE.BD09LL);
   }
+  //自定义键盘注册
+  SelfKeyBoard.register();
   //布局线是否展示
   debugPaintSizeEnabled = false;
-
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
     runZonedGuarded(() async {
       runApp(
-        AlertProvider(
-          child: MultiProvider(providers: [
-            ChangeNotifierProvider(create: (_) => AppProvider()),
-          ], child: MyApp()
+        KeyboardRootWidget(
+          child: AlertProvider(
+            child: MultiProvider(
+              providers: [
+                ChangeNotifierProvider(create: (_) => AppProvider()),
+              ],
+              child: MyApp(),
               //FlutterEasyLoading(child: MyApp()),
-              ),
-          config: AlertConfig(),
+            ),
+            config: AlertConfig(),
+          ),
         ),
       );
     }, (Object error, StackTrace stackTrace) {
