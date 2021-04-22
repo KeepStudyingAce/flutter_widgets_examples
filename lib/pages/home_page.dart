@@ -147,33 +147,41 @@ class _HomePageState extends State<HomePage> {
 
   List<Widget> _buildList() {
     return [
-      _buildItem("AbsorbPointer & IgnorePointer",
+      _buildItem("AbsorbPointer & IgnorePointer组件",
           () => AppRouter.goAbsorbIgnorePointPage(context)),
-      _buildItem("AnimationList", () => AppRouter.goAnimationListPage(context)),
-      _buildItem("AZListView", () => AppRouter.goAZListViewPage(context)),
-      _buildItem("ChipList", () => AppRouter.goChipPage(context)),
-      _buildItem("CustomClipper", () => AppRouter.goCustomChipperPage(context)),
-      _buildItem("CustomPaint", () => AppRouter.goCustomPaintPage(context)),
+      _buildItem("动画列表", () => AppRouter.goAnimationListPage(context)),
+      _buildItem("AZListView 地址组件", () => AppRouter.goAZListViewPage(context)),
+      _buildItem("Chip组件", () => AppRouter.goChipPage(context)),
+      _buildItem("自定义CustomClipper(切割方式)",
+          () => AppRouter.goCustomChipperPage(context)),
       _buildItem(
-          "CustomPopRouter", () => AppRouter.goCustomPopRouterPage(context)),
-      _buildItem("CustomRoute", () => AppRouter.goCustomRoutePage(context)),
+          "自定义CustomPaint(绘制路线)", () => AppRouter.goCustomPaintPage(context)),
+      _buildItem("自定义PopRouter(组件弹出方式)",
+          () => AppRouter.goCustomPopRouterPage(context)),
       _buildItem(
-          "DismissibleList", () => AppRouter.goDismissibleListPage(context)),
-      _buildItem("DraggableWidget", () => AppRouter.goDraggablePage(context)),
-      _buildItem("DragSortView", () => AppRouter.goDragSortPage(context)),
-      _buildItem("ExpansionList", () => AppRouter.goExpansionListPage(context)),
-      _buildItem("FrostedGlass", () => AppRouter.goFrostedGlassPage(context)),
-      _buildItem("FutureBuilder", () => AppRouter.goFutureBuildPage(context)),
+          "自定义CustomRoute页面转场动画", () => AppRouter.goCustomRoutePage(context)),
+      _buildItem(
+          "Dismissible组件", () => AppRouter.goDismissibleListPage(context)),
+      _buildItem("Draggable组件", () => AppRouter.goDraggablePage(context)),
+      _buildItem("拖拽排序功能", () => AppRouter.goDragSortPage(context)),
+      _buildItem(
+          "ExpansionList展开列表", () => AppRouter.goExpansionListPage(context)),
+      _buildItem(
+          "FrostedGlass毛玻璃", () => AppRouter.goFrostedGlassPage(context)),
+      _buildItem("FutureBuilder组件", () => AppRouter.goFutureBuildPage(context)),
       _buildItem(
           "InheritedWidget", () => AppRouter.goInheritedWidgetPage(context)),
-      _buildItem("LayoutBuilder", () => AppRouter.goLayoutBuilderPage(context)),
-      _buildItem("Overlay", () => AppRouter.goOverlayPage(context)),
-      _buildItem("ReorderList", () => AppRouter.goReorderListPage(context)),
-      _buildItem("SliverAppBar", () => AppRouter.goSliverAppBarPage(context)),
+      _buildItem(
+          "LayoutBuilder组件", () => AppRouter.goLayoutBuilderPage(context)),
+      _buildItem("Overlay组件", () => AppRouter.goOverlayPage(context)),
+      _buildItem(
+          "ReorderList拖动排序列表", () => AppRouter.goReorderListPage(context)),
+      _buildItem("SliverAppBar(可以缩放的AppBar)",
+          () => AppRouter.goSliverAppBarPage(context)),
       _buildItem("StreamBuilder", () => AppRouter.goStreamBuilderPage(context)),
-      _buildItem("Swiper", () => AppRouter.goSwiper(context)),
-      _buildItem("Table", () => AppRouter.goTablePage(context)),
-      _buildItem("Transform", () => AppRouter.goTransformPage(context)),
+      _buildItem("FlutterSwiper组件", () => AppRouter.goSwiper(context)),
+      _buildItem("Table组件", () => AppRouter.goTablePage(context)),
+      _buildItem("Transform组件", () => AppRouter.goTransformPage(context)),
     ];
   }
 
