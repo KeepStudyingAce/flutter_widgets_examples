@@ -11,6 +11,7 @@ import 'package:flutter_widgets_example/pages/home/home/azlistview/azlistview_pa
 import 'package:flutter_widgets_example/pages/home/home/chip_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/custom_clipper_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/custom_paint_page.dart';
+import 'package:flutter_widgets_example/pages/home/home/custom_pop_router_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/custom_route_transition.dart';
 import 'package:flutter_widgets_example/pages/home/home/dismissible_list_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/drag_sort_page.dart';
@@ -267,6 +268,14 @@ class AppRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _barScanPage);
   }
 
+  ///CustomPopRouterPage
+  static String _customPopRouterPage = "/_customPopRouterPage";
+
+  /// 跳到CustomPopRouterPage页面
+  static goCustomPopRouterPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _customPopRouterPage);
+  }
+
   @override
   void initRouter(FluroRouter router) {
     // 闪屏页面
@@ -501,6 +510,14 @@ class AppRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             ExtendedTabbarPage(),
+      ),
+    );
+    // ExtendedTabbarPage
+    router.define(
+      _customPopRouterPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            CustomPopRouterPage(),
       ),
     );
   }

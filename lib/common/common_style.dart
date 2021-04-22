@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 
@@ -50,6 +51,15 @@ class CommonColors {
       );
     });
     return MaterialColor(color.value, swatch);
+  }
+
+  // 随机颜色
+  static getRandomColor() {
+    Random t = Random();
+    int r = t.nextInt(255);
+    int g = t.nextInt(255);
+    int b = t.nextInt(255);
+    return Color.fromARGB(255, r, g, b);
   }
 }
 

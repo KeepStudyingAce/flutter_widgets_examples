@@ -155,7 +155,8 @@ class _HomePageState extends State<HomePage> {
       _buildItem("CustomClipper", () => AppRouter.goCustomChipperPage(context)),
       _buildItem("CustomPaint", () => AppRouter.goCustomPaintPage(context)),
       _buildItem(
-          "CustomRouteClipper", () => AppRouter.goCustomRoutePage(context)),
+          "CustomPopRouter", () => AppRouter.goCustomPopRouterPage(context)),
+      _buildItem("CustomRoute", () => AppRouter.goCustomRoutePage(context)),
       _buildItem(
           "DismissibleList", () => AppRouter.goDismissibleListPage(context)),
       _buildItem("DraggableWidget", () => AppRouter.goDraggablePage(context)),
