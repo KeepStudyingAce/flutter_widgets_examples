@@ -18,6 +18,7 @@ class _MinePageState extends State<MinePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CommonAppBar(
+        showLeading: false,
         title: "MinePage",
         rightButtons: [
           GestureDetector(

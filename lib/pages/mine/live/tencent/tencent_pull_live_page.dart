@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_widgets_example/common/app_config.dart';
 import 'package:flutter_widgets_example/common/common_style.dart';
 import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
+import 'package:flutter_widgets_example/widgets.dart/tencent_live_player.dart';
 
 //腾讯拉流页面
 class TencentPullLivePage extends StatefulWidget {
@@ -15,11 +16,16 @@ class TencentPullLivePage extends StatefulWidget {
 class _TencentPullLivePageState extends State<TencentPullLivePage> {
   TextEditingController _control = TextEditingController(
       text: "http://liteavapp.qcloud.com/live/liteavdemoplayerstreamid.flv");
-  MethodChannel _channel;
+  Widget _screen;
+
+  @override
+  void initState() {
+    _screen = TencentLivePlayer(playUrl: _control.text);
+    super.initState();
+  }
 
   @override
   void dispose() {
-    _channel.invokeMethod("Stop");
     super.dispose();
   }
 
@@ -34,9 +40,35 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           FloatingActionButton(
+            heroTag: "scale",
+            onPressed: () {
+              OverlayState overlayState = Overlay.of(context);
+              OverlayEntry _overlayEntry = OverlayEntry(
+                builder: (BuildContext context) => Center(
+                    child: Container(
+                  width: 100,
+                  height: 100,
+                  color: CommonColors.whiteColor,
+                  alignment: Alignment.center,
+                  child: _screen,
+                )),
+              );
+              //插入到整个布局的最上层
+              overlayState.insert(_overlayEntry);
+            },
+            child: Text(
+              "scale",
+              style: TextStyle(
+                fontSize: 15,
+                color: CommonColors.blackColor,
+              ),
+            ),
+          ),
+          SizedBox(width: 20),
+          FloatingActionButton(
             heroTag: "!",
             onPressed: () {
-              _channel.invokeMethod("Play");
+              TencentLivePlayer.startPlayer();
             },
             child: Text(
               "play",
@@ -50,7 +82,7 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
           FloatingActionButton(
             heroTag: "?",
             onPressed: () {
-              _channel.invokeMethod("Stop");
+              TencentLivePlayer.stopPlayer();
             },
             child: Text(
               "Stop",
@@ -65,23 +97,10 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
       body: Stack(
         children: [
           Container(
-            width: AppConfig.screenWidth(context),
-            height: 400,
-            color: CommonColors.red50Color,
-            child: UiKitView(
-              //设置标识 这里设置的viewType值与 ios 中插件注册的标识一致 需要云心原生工程
-              viewType: "com.tencent.live.player",
-              creationParams: {
-                "playUrl": _control.text,
-              },
-              //参数的编码方式 设置creationParams后必传参数
-              creationParamsCodec: StandardMessageCodec(),
-              //view创建完成时的回调
-              onPlatformViewCreated: (id) {
-                _channel = new MethodChannel('com.tencent.live.player_$id');
-              },
-            ),
-          ),
+              width: AppConfig.screenWidth(context),
+              height: 400,
+              color: CommonColors.red50Color,
+              child: _screen),
           Positioned(
             top: 30,
             child: _buildUrlTextField(),
