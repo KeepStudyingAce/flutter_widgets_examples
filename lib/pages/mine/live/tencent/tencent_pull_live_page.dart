@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_widgets_example/common/app_config.dart';
 import 'package:flutter_widgets_example/common/common_style.dart';
+import 'package:flutter_widgets_example/routes/navigation_utils.dart';
+import 'package:flutter_widgets_example/widgets.dart/app_pop_view.dart';
 import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
 import 'package:flutter_widgets_example/widgets.dart/tencent_live_player.dart';
+
+const List<String> cacheStretegyMode = ["极速", "流畅", "自动"];
 
 //腾讯拉流页面
 class TencentPullLivePage extends StatefulWidget {
@@ -17,7 +21,11 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
   TextEditingController _control = TextEditingController(
       text: "http://liteavapp.qcloud.com/live/liteavdemoplayerstreamid.flv");
   Widget _screen;
-
+  final String logIcon = "lib/assets/log.png";
+  final String quickIcon = "lib/assets/quick.png";
+  final String portraitIcon = "lib/assets/portrait.png";
+  final String fillIcon = "lib/assets/fill.png";
+  final String cacheModeIcon = "lib/assets/cache_time.png";
   @override
   void initState() {
     _screen = TencentLivePlayer(playUrl: _control.text);
@@ -96,11 +104,16 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
       ),
       body: Stack(
         children: [
-          Container(
-              width: AppConfig.screenWidth(context),
-              height: 400,
-              color: CommonColors.red50Color,
-              child: _screen),
+          Column(
+            children: [
+              Container(
+                  width: AppConfig.screenWidth(context),
+                  height: 400,
+                  color: CommonColors.black30Color,
+                  child: _screen),
+              _buildSetting()
+            ],
+          ),
           Positioned(
             top: 30,
             child: _buildUrlTextField(),
@@ -140,5 +153,81 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
         maxLength: 11,
       ),
     );
+  }
+
+  Widget _buildSetting() {
+    return SizedBox(
+      width: AppConfig.screenWidth(context),
+      height: 60,
+      child: ListView(
+        padding: EdgeInsets.zero,
+        scrollDirection: Axis.horizontal,
+        children: [
+          GestureDetector(
+            onTap: () {
+              TencentLivePlayer.switchLog();
+            },
+            child: Image.asset(logIcon),
+          ),
+          GestureDetector(
+            onTap: () {
+              TencentLivePlayer.switchHW();
+            },
+            child: Image.asset(quickIcon),
+          ),
+          GestureDetector(
+            onTap: () {
+              TencentLivePlayer.switchPortrait();
+            },
+            child: Image.asset(portraitIcon),
+          ),
+          GestureDetector(
+            onTap: () {
+              TencentLivePlayer.switchRenderMode();
+            },
+            child: Image.asset(fillIcon),
+          ),
+          GestureDetector(
+            onTap: () {
+              showCacheStrategy();
+            },
+            child: Image.asset(cacheModeIcon),
+          )
+        ],
+      ),
+    );
+  }
+
+  void showCacheStrategy() {
+    AppPopView.showAppModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            height: 44 * 3 + AppConfig.iphoneXBottomHeight(context),
+            width: AppConfig.screenWidth(context),
+            color: CommonColors.whiteColor,
+            padding:
+                EdgeInsets.only(bottom: AppConfig.iphoneXBottomHeight(context)),
+            child: Column(
+              children: List.generate(cacheStretegyMode.length, (index) {
+                return GestureDetector(
+                  onTap: () {
+                    NavigatorUtil.pop(context);
+                    TencentLivePlayer.switchCacheStrategy(index + 1);
+                  },
+                  child: Container(
+                    height: 44,
+                    alignment: Alignment.center,
+                    child: Text(
+                      cacheStretegyMode[index],
+                      style: TextStyle(
+                          fontSize: 16, color: CommonColors.blackColor),
+                    ),
+                  ),
+                );
+              }),
+            ),
+          );
+        });
   }
 }
