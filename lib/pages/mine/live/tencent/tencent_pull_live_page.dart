@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_widgets_example/common/app_config.dart';
 import 'package:flutter_widgets_example/common/common_style.dart';
-import 'package:flutter_widgets_example/pages/mine/live/tencent/modules/tencent_player.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player_controller.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
 import 'package:flutter_widgets_example/widgets.dart/app_pop_view.dart';
 import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
-import 'package:flutter_widgets_example/pages/mine/live/tencent/modules/tencent_live_player.dart';
 
 const List<String> cacheStretegyMode = ["极速", "流畅", "自动"];
 
@@ -28,9 +28,11 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
   final String portraitIcon = "lib/assets/portrait.png";
   final String fillIcon = "lib/assets/fill.png";
   final String cacheModeIcon = "lib/assets/cache_time.png";
+  TencentPlayerController _playerControll;
   @override
   void initState() {
-    _screen = TencentPlayer(playUrl: _control.text).player;
+    _playerControll =
+        TencentPlayerController(config: TencentPlayerConfig(_control.text));
     super.initState();
   }
 
@@ -114,7 +116,7 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
                   width: AppConfig.screenWidth(context),
                   height: 400,
                   color: CommonColors.black30Color,
-                  child: _screen),
+                  child: TencentPlayer(controller: _playerControll)),
               _buildSetting()
             ],
           ),
@@ -169,38 +171,38 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
         children: [
           GestureDetector(
             onTap: () {
-              if (TencentPlayer.instance.player.isPlaying) {
-                TencentPlayer.instance.stopPlayer();
+              if (_playerControll.isPlaying) {
+                _playerControll.stopPlayer();
               } else {
-                TencentPlayer.instance.startPlayer();
+                _playerControll.startPlayer();
               }
             },
             child: Image.asset(playIcon),
           ),
           GestureDetector(
             onTap: () {
-              TencentPlayer.instance.switchLog();
+              _playerControll.switchLog();
               // TencentLivePlayer.switchLog();
             },
             child: Image.asset(logIcon),
           ),
           GestureDetector(
             onTap: () {
-              TencentPlayer.instance.switchHW();
+              _playerControll.switchHW();
               // TencentLivePlayer.switchHW();
             },
             child: Image.asset(quickIcon),
           ),
           GestureDetector(
             onTap: () {
-              TencentPlayer.instance..switchPortrait();
+              _playerControll.switchPortrait();
               // TencentLivePlayer.switchPortrait();
             },
             child: Image.asset(portraitIcon),
           ),
           GestureDetector(
             onTap: () {
-              TencentPlayer.instance..switchRenderMode();
+              _playerControll.switchRenderMode();
               // TencentLivePlayer.switchRenderMode();
             },
             child: Image.asset(fillIcon),
@@ -231,7 +233,7 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
                 return GestureDetector(
                   onTap: () {
                     NavigatorUtil.pop(context);
-                    TencentPlayer.instance.switchCacheStrategy(index + 1);
+                    _playerControll.switchCacheStrategy(index + 1);
                     // TencentLivePlayer.switchCacheStrategy(index + 1);
                   },
                   child: Container(
