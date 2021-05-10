@@ -94,6 +94,10 @@ typedef NS_ENUM(NSInteger, ENUM_TYPE_CACHE_STRATEGY) {
         if (_player) {
             [self setCacheStrategy:[call.arguments integerValue]];
         }
+    }else  if ([[call method] isEqualToString:@"getStatus"]) {
+        if (_player) {
+//            [self getCurrentStatus:result withParams:[NSString stringWithFormat:@"%@",call.arguments] ];
+        }
     }else{
         //其他方法的回调
     }
@@ -199,6 +203,12 @@ typedef NS_ENUM(NSInteger, ENUM_TYPE_CACHE_STRATEGY) {
             break;
     }
 }
+
+//-(void) getCurrentStatus:(FlutterResult)result withParams:(NSString*)param{
+//    if ([param isEqualToString:@"isPlaying"]){
+//        result(_player.isPlaying ? @"1":@"0");
+//    }
+//}
 
 
 -(BOOL)checkPlayUrl:(NSString*)playUrl {

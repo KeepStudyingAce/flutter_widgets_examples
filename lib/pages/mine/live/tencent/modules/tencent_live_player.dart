@@ -6,7 +6,9 @@ class TencentLivePlayer extends StatelessWidget {
   TencentLivePlayer({Key key, @required this.playUrl}) : super(key: key);
   final String playUrl;
 
-  static MethodChannel _channel;
+  MethodChannel _channel;
+  bool _isPlaying = false;
+  bool get isPlaying => _isPlaying;
 
   Widget build(BuildContext context) {
     return UiKitView(
@@ -25,8 +27,18 @@ class TencentLivePlayer extends StatelessWidget {
     );
   }
 
-  static void startPlayer() async {
+  // Future<String> getCurrentPalyerStatus({String params}) async {
+  //   if (_channel != null) {
+  //     String message = await _channel.invokeMethod("getStatus", params);
+  //     print("message:$message");
+  //     return message;
+  //   }
+  //   return null;
+  // }
+
+  void startPlayer() async {
     if (_channel != null) {
+      _isPlaying = true;
       String message = await _channel.invokeMethod("Play");
       if (message != null) {
         ToastUtil.showToast(message);
@@ -34,17 +46,20 @@ class TencentLivePlayer extends StatelessWidget {
     }
   }
 
-  static void stopPlayer() {
-    if (_channel != null) _channel.invokeMethod("Stop");
+  void stopPlayer() {
+    if (_channel != null) {
+      _isPlaying = false;
+      _channel.invokeMethod("Stop");
+    }
   }
 
   //屏幕显示后台打印
-  static void switchLog() {
+  void switchLog() {
     if (_channel != null) _channel.invokeMethod("showLog");
   }
 
   //解码方式
-  static void switchHW() async {
+  void switchHW() async {
     if (_channel != null) {
       String message = await _channel.invokeMethod("switchHW");
       if (message != null) {
@@ -54,7 +69,7 @@ class TencentLivePlayer extends StatelessWidget {
   }
 
   //横竖屏
-  static void switchPortrait() async {
+  void switchPortrait() async {
     if (_channel != null) {
       String message = await _channel.invokeMethod("switchPortrait");
       if (message != null) {
@@ -64,7 +79,7 @@ class TencentLivePlayer extends StatelessWidget {
   }
 
   //放大/缩小
-  static void switchRenderMode() async {
+  void switchRenderMode() async {
     if (_channel != null) {
       String message = await _channel.invokeMethod("switchRenderMode");
       if (message != null) {
@@ -79,7 +94,7 @@ class TencentLivePlayer extends StatelessWidget {
     CACHE_STRATEGY_SMOOTH         = 2,  // 流畅
     CACHE_STRATEGY_AUTO           = 3,  // 自动
   */
-  static void switchCacheStrategy(int cacheStrategy) async {
+  void switchCacheStrategy(int cacheStrategy) async {
     if (_channel != null) {
       String message =
           await _channel.invokeMethod("switchCacheStrategy", cacheStrategy);

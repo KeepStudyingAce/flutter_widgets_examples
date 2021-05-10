@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_widgets_example/common/app_config.dart';
 import 'package:flutter_widgets_example/common/common_style.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/modules/tencent_player.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
 import 'package:flutter_widgets_example/widgets.dart/app_pop_view.dart';
 import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
-import 'package:flutter_widgets_example/widgets.dart/tencent_live_player.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/modules/tencent_live_player.dart';
 
 const List<String> cacheStretegyMode = ["极速", "流畅", "自动"];
 
@@ -21,6 +22,7 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
   TextEditingController _control = TextEditingController(
       text: "http://liteavapp.qcloud.com/live/liteavdemoplayerstreamid.flv");
   Widget _screen;
+  final String playIcon = "lib/assets/start.png";
   final String logIcon = "lib/assets/log.png";
   final String quickIcon = "lib/assets/quick.png";
   final String portraitIcon = "lib/assets/portrait.png";
@@ -28,7 +30,7 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
   final String cacheModeIcon = "lib/assets/cache_time.png";
   @override
   void initState() {
-    _screen = TencentLivePlayer(playUrl: _control.text);
+    _screen = TencentPlayer(playUrl: _control.text).player;
     super.initState();
   }
 
@@ -72,34 +74,36 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
               ),
             ),
           ),
-          SizedBox(width: 20),
-          FloatingActionButton(
-            heroTag: "!",
-            onPressed: () {
-              TencentLivePlayer.startPlayer();
-            },
-            child: Text(
-              "play",
-              style: TextStyle(
-                fontSize: 15,
-                color: CommonColors.blackColor,
-              ),
-            ),
-          ),
-          SizedBox(width: 20),
-          FloatingActionButton(
-            heroTag: "?",
-            onPressed: () {
-              TencentLivePlayer.stopPlayer();
-            },
-            child: Text(
-              "Stop",
-              style: TextStyle(
-                fontSize: 15,
-                color: CommonColors.blackColor,
-              ),
-            ),
-          ),
+          // SizedBox(width: 20),
+          // FloatingActionButton(
+          //   heroTag: "!",
+          //   onPressed: () {
+          //     TencentPlayer.instance.startPlayer();
+          //     // TencentLivePlayer.startPlayer();
+          //   },
+          //   child: Text(
+          //     "play",
+          //     style: TextStyle(
+          //       fontSize: 15,
+          //       color: CommonColors.blackColor,
+          //     ),
+          //   ),
+          // ),
+          // SizedBox(width: 20),
+          // FloatingActionButton(
+          //   heroTag: "?",
+          //   onPressed: () {
+          //     TencentPlayer.instance.stopPlayer();
+          //     // TencentLivePlayer.stopPlayer();
+          //   },
+          //   child: Text(
+          //     "Stop",
+          //     style: TextStyle(
+          //       fontSize: 15,
+          //       color: CommonColors.blackColor,
+          //     ),
+          //   ),
+          // ),
         ],
       ),
       body: Stack(
@@ -165,25 +169,39 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
         children: [
           GestureDetector(
             onTap: () {
-              TencentLivePlayer.switchLog();
+              if (TencentPlayer.instance.player.isPlaying) {
+                TencentPlayer.instance.stopPlayer();
+              } else {
+                TencentPlayer.instance.startPlayer();
+              }
+            },
+            child: Image.asset(playIcon),
+          ),
+          GestureDetector(
+            onTap: () {
+              TencentPlayer.instance.switchLog();
+              // TencentLivePlayer.switchLog();
             },
             child: Image.asset(logIcon),
           ),
           GestureDetector(
             onTap: () {
-              TencentLivePlayer.switchHW();
+              TencentPlayer.instance.switchHW();
+              // TencentLivePlayer.switchHW();
             },
             child: Image.asset(quickIcon),
           ),
           GestureDetector(
             onTap: () {
-              TencentLivePlayer.switchPortrait();
+              TencentPlayer.instance..switchPortrait();
+              // TencentLivePlayer.switchPortrait();
             },
             child: Image.asset(portraitIcon),
           ),
           GestureDetector(
             onTap: () {
-              TencentLivePlayer.switchRenderMode();
+              TencentPlayer.instance..switchRenderMode();
+              // TencentLivePlayer.switchRenderMode();
             },
             child: Image.asset(fillIcon),
           ),
@@ -213,7 +231,8 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
                 return GestureDetector(
                   onTap: () {
                     NavigatorUtil.pop(context);
-                    TencentLivePlayer.switchCacheStrategy(index + 1);
+                    TencentPlayer.instance.switchCacheStrategy(index + 1);
+                    // TencentLivePlayer.switchCacheStrategy(index + 1);
                   },
                   child: Container(
                     height: 44,
