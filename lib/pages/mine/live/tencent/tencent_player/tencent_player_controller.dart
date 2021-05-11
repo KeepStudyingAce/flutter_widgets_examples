@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player_event.dart';
 import 'package:flutter_widgets_example/utils/toast_util.dart';
 
+// 参考better_player
 class TencentPlayerController extends ChangeNotifier {
   TencentPlayerConfig config;
   //通信通道
@@ -10,7 +11,7 @@ class TencentPlayerController extends ChangeNotifier {
   TencentPlayerController({
     @required this.config,
   }) : assert(config != null, "TencentPlayerConfig can't be null") {
-    // _eventListeners.add(eventListener);
+    _eventListeners.add(eventListener);
   }
   //保存channel
   void saveChannel(MethodChannel channel) {
@@ -39,18 +40,25 @@ class TencentPlayerController extends ChangeNotifier {
   void startPlayer() async {
     if (_channel != null) {
       _isPlaying = true;
+      _postEvent(TencentPlayerEvent(TencentPlayerEventType.play));
       String message = await _channel.invokeMethod("Play");
       if (message != null) {
         ToastUtil.showToast(message);
-      }
+      } else {}
+
       // notifyListeners();
     }
   }
 
-  void stopPlayer() {
+  void stopPlayer() async {
     if (_channel != null) {
       _isPlaying = false;
-      _channel.invokeMethod("Stop");
+      _postEvent(TencentPlayerEvent(TencentPlayerEventType.stop));
+      String message = await _channel.invokeMethod("Stop");
+      if (message != null) {
+        ToastUtil.showToast(message);
+      }
+
       // notifyListeners();
     }
   }
@@ -123,32 +131,32 @@ class TencentPlayerController extends ChangeNotifier {
     }
   }
 
-//参考better_player 添加播放器的监听事件，暂不添加;
-  // final List<Function> _eventListeners = [];
+//事件通知========= 添加播放器的监听事件，暂不添加;
+  final List<Function> _eventListeners = [];
 
-  // Function(TencentPlayerEvent) eventListener;
+  Function(TencentPlayerEvent) eventListener;
 
-  // void _postEvent(TencentPlayerEvent betterPlayerEvent) {
-  //   for (final Function eventListener in _eventListeners) {
-  //     if (eventListener != null) {
-  //       eventListener(betterPlayerEvent);
-  //     }
-  //   }
-  // }
+  void _postEvent(TencentPlayerEvent event) {
+    for (final Function eventListener in _eventListeners) {
+      if (eventListener != null) {
+        eventListener(event);
+      }
+    }
+  }
 
-  // void addEventsListener(Function(TencentPlayerEvent) eventListener) {
-  //   _eventListeners.add(eventListener);
-  // }
+  void addEventsListener(Function(TencentPlayerEvent) eventListener) {
+    _eventListeners.add(eventListener);
+  }
 
-  // void removeEventsListener(Function(TencentPlayerEvent) eventListener) {
-  //   _eventListeners.remove(eventListener);
-  // }
+  void removeEventsListener(Function(TencentPlayerEvent) eventListener) {
+    _eventListeners.remove(eventListener);
+  }
 
-  // @override
-  // void dispose() {
-  //   _eventListeners.clear();
-  //   super.dispose();
-  // }
+  @override
+  void dispose() {
+    _eventListeners.clear();
+    super.dispose();
+  }
 }
 
 class TencentPlayerConfig {

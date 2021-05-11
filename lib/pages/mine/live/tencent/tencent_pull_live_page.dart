@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_widgets_example/common/app_config.dart';
 import 'package:flutter_widgets_example/common/common_style.dart';
+import 'package:flutter_widgets_example/pages/amap/widgets/toast.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player_controller.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player_event.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
+import 'package:flutter_widgets_example/utils/toast_util.dart';
 import 'package:flutter_widgets_example/widgets.dart/app_pop_view.dart';
 import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
 
@@ -33,6 +36,16 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
   void initState() {
     _playerControll =
         TencentPlayerController(config: TencentPlayerConfig(_control.text));
+    //添加监听事件
+    _playerControll.addEventsListener((event) {
+      print(event);
+      if (event.eventType == TencentPlayerEventType.play) {
+        print("视频播放开始...");
+      } else if (event.eventType == TencentPlayerEventType.stop) {
+        print("视频播放停止。。。");
+      }
+    });
+    _screen = TencentPlayer(controller: _playerControll);
     super.initState();
   }
 
@@ -54,19 +67,8 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
           FloatingActionButton(
             heroTag: "scale",
             onPressed: () {
-              OverlayState overlayState = Overlay.of(context);
-              OverlayEntry _overlayEntry = OverlayEntry(
-                builder: (BuildContext context) => Center(
-                    child: Container(
-                  width: 100,
-                  height: 100,
-                  color: CommonColors.whiteColor,
-                  alignment: Alignment.center,
-                  child: _screen,
-                )),
-              );
-              //插入到整个布局的最上层
-              overlayState.insert(_overlayEntry);
+              // NavigatorUtil.pop(context);
+              ToastUtil.showGlobalSmallWindow(context, _screen);
             },
             child: Text(
               "scale",
@@ -76,36 +78,6 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
               ),
             ),
           ),
-          // SizedBox(width: 20),
-          // FloatingActionButton(
-          //   heroTag: "!",
-          //   onPressed: () {
-          //     TencentPlayer.instance.startPlayer();
-          //     // TencentLivePlayer.startPlayer();
-          //   },
-          //   child: Text(
-          //     "play",
-          //     style: TextStyle(
-          //       fontSize: 15,
-          //       color: CommonColors.blackColor,
-          //     ),
-          //   ),
-          // ),
-          // SizedBox(width: 20),
-          // FloatingActionButton(
-          //   heroTag: "?",
-          //   onPressed: () {
-          //     TencentPlayer.instance.stopPlayer();
-          //     // TencentLivePlayer.stopPlayer();
-          //   },
-          //   child: Text(
-          //     "Stop",
-          //     style: TextStyle(
-          //       fontSize: 15,
-          //       color: CommonColors.blackColor,
-          //     ),
-          //   ),
-          // ),
         ],
       ),
       body: Stack(
@@ -116,7 +88,7 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
                   width: AppConfig.screenWidth(context),
                   height: 400,
                   color: CommonColors.black30Color,
-                  child: TencentPlayer(controller: _playerControll)),
+                  child: _screen),
               _buildSetting()
             ],
           ),
