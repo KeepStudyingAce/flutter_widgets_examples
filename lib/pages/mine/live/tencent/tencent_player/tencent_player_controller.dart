@@ -50,6 +50,30 @@ class TencentPlayerController extends ChangeNotifier {
     }
   }
 
+  void pausePlayer() async {
+    if (_channel != null) {
+      _isPlaying = false;
+      _postEvent(TencentPlayerEvent(TencentPlayerEventType.pause));
+      String message = await _channel.invokeMethod("Pause");
+      if (message != null) {
+        ToastUtil.showToast(message);
+      }
+      // notifyListeners();
+    }
+  }
+
+  void resumePlayer() async {
+    if (_channel != null) {
+      _isPlaying = true;
+      _postEvent(TencentPlayerEvent(TencentPlayerEventType.resume));
+      String message = await _channel.invokeMethod("Resume");
+      if (message != null) {
+        ToastUtil.showToast(message);
+      }
+      // notifyListeners();
+    }
+  }
+
   void stopPlayer() async {
     if (_channel != null) {
       _isPlaying = false;

@@ -12,7 +12,8 @@ class DraggableSmallWindow extends StatefulWidget {
 }
 
 class _DraggableWidgetState extends State<DraggableSmallWindow> {
-  Offset offset = Offset.zero;
+  //缩小窗口后的初始位置
+  Offset offset = Offset(0, 100);
   final mykey = GlobalKey();
   @override
   void initState() {

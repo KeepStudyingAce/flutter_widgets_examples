@@ -68,6 +68,10 @@ typedef NS_ENUM(NSInteger, ENUM_TYPE_CACHE_STRATEGY) {
 -(void)onMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result{
     if ([[call method] isEqualToString:@"Play"]) {
         [self startPlay:result];
+    }else if ([[call method] isEqualToString:@"Pause"]) {
+        [self pausePlay];
+    }else if ([[call method] isEqualToString:@"Resume"]) {
+        [self resumePlay];
     }else if ([[call method] isEqualToString:@"Stop"]) {
         if (_player) {
             [self stopPlay];
@@ -120,6 +124,19 @@ typedef NS_ENUM(NSInteger, ENUM_TYPE_CACHE_STRATEGY) {
         result(@"播放器启动失败");
     }
 }
+//暂停播放
+-(void) pausePlay{
+    if (_player != nil && _player.isPlaying){
+        [_player pause];
+    }
+}
+//继续播放
+-(void) resumePlay{
+    if (_player != nil){
+        [_player resume];
+    }
+}
+
 //停止播放
 -(void) stopPlay{
     [_player setDelegate:nil];

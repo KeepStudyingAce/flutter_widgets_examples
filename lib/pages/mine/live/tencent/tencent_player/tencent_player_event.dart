@@ -9,5 +9,7 @@ class TencentPlayerEvent {
 
 enum TencentPlayerEventType {
   play,
+  pause,
+  resume,
   stop,
 }

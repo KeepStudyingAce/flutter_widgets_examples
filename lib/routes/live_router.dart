@@ -7,6 +7,7 @@ import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pull_liv
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
 import 'package:flutter_widgets_example/routes/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets_example/utils/toast_util.dart';
 
 class LiveRouter implements IRouterProvider {
   static String _tencentLoginLivePage = "/_tencentLoginLivePage";
@@ -27,6 +28,9 @@ class LiveRouter implements IRouterProvider {
 
   // 腾讯直播拉流页面
   static goTXPullLivePage(BuildContext context) {
+    if (ToastUtil.windowIsShow) {
+      ToastUtil.hideSmallWindow();
+    }
     NavigatorUtil.pushTo(context, _tencentPullLivePage);
   }
 
