@@ -16,12 +16,13 @@ class TencentLiveLoginPage extends StatefulWidget {
 }
 
 class _TencentLiveLoginPageState extends State<TencentLiveLoginPage> {
-  TextEditingController _control = TextEditingController();
+  TextEditingController _control = TextEditingController(text: "1");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CommonAppBar(
         title: "腾讯直播",
+        rightButtons: [],
       ),
       body: Column(
         children: [

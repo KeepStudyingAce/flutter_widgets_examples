@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets_example/common/app_config.dart';
+import 'package:flutter_widgets_example/routes/navigation_utils.dart';
 import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
@@ -160,23 +161,23 @@ class _BarScanPageState extends State<BarScanPage>
                   borderRadius: 10,
                   borderLength: 30,
                   borderWidth: 10,
-                  cutOutSize: 150,
+                  cutOutSize: 300,
                 ),
               ),
               Positioned(
-                left: (AppConfig.screenWidth(context) - 150) / 2,
+                left: (AppConfig.screenWidth(context) - 300) / 2,
                 top: ((AppConfig.screenHeight(context) -
                                     AppConfig.kAppBarHeight -
                                     AppConfig.kTabBarHeight) *
                                 4 /
                                 5 -
-                            150) /
+                            300) /
                         2 +
                     _animation.value * 150,
                 child: Container(
                   color: Colors.blue,
                   height: 3,
-                  width: 150,
+                  width: 300,
                 ),
               ),
             ],
@@ -189,6 +190,8 @@ class _BarScanPageState extends State<BarScanPage>
       this.controller = controller;
     });
     controller.scannedDataStream.listen((scanData) {
+      controller.pauseCamera();
+      NavigatorUtil.popWithParams(context, scanData.code);
       setState(() {
         result = scanData;
       });

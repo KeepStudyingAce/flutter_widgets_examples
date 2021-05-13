@@ -264,8 +264,10 @@ class AppRouter implements IRouterProvider {
   static String _barScanPage = "/_barScanPage";
 
   /// 跳到BarScanPage页面
-  static goBarScanPage(BuildContext context) {
-    NavigatorUtil.pushTo(context, _barScanPage);
+  static goBarScanPage(BuildContext context, {Function(String) callBack}) {
+    NavigatorUtil.pushTo(context, _barScanPage, function: (text) {
+      callBack?.call(text);
+    });
   }
 
   ///CustomPopRouterPage

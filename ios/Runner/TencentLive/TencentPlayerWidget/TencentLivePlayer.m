@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, ENUM_TYPE_CACHE_STRATEGY) {
     CACHE_STRATEGY_SMOOTH         = 2,  // 流畅
     CACHE_STRATEGY_AUTO           = 3,  // 自动
 };
-@interface TencentLivePlayer() <TXLivePlayListener>
+@interface TencentLivePlayer() <TXLivePlayListener,FlutterStreamHandler>
 {
     TX_Enum_PlayType     _playType;        // 播放类型
 }
@@ -23,14 +23,18 @@ typedef NS_ENUM(NSInteger, ENUM_TYPE_CACHE_STRATEGY) {
 @property (nonatomic, assign) BOOL showLog;
 @property (nonatomic, assign) BOOL orientationDown;
 @property (nonatomic, assign) BOOL fillScreen;
+//Native->Flutter端主动消息通道
+@property(nonatomic,strong)FlutterEventSink eventSink;
 @end
 
 @implementation TencentLivePlayer{
     //TencentLivePlayer 创建后的标识
     int64_t _viewId;
     UIView  *_videoView;
-    //消息回调
-    FlutterMethodChannel* _channel;
+    // Flutter->Native端主动消息通道
+    FlutterMethodChannel* _methodChannel;
+    // Native->Flutter端主动消息通道
+    FlutterEventChannel* _eventChannel;
 }
 
 //在这里只是创建了一个UILabel
@@ -40,13 +44,18 @@ typedef NS_ENUM(NSInteger, ENUM_TYPE_CACHE_STRATEGY) {
             frame=CGRectMake(frame.origin.x, frame.origin.y, [UIScreen mainScreen].bounds.size.width, frame.size.height);
         }
         // 注册flutter 与 ios 通信通道
+        //Flutter->Native端消息通道
         NSString* channelName = [NSString stringWithFormat:@"com.tencent.live.player_%lld", viewId];
-        _channel = [FlutterMethodChannel methodChannelWithName:channelName binaryMessenger:messenger];
+        _methodChannel = [FlutterMethodChannel methodChannelWithName:channelName binaryMessenger:messenger];
         __weak __typeof__(self) weakSelf = self;
-        [_channel setMethodCallHandler:^(FlutterMethodCall *  call, FlutterResult  result) {
+        [_methodChannel setMethodCallHandler:^(FlutterMethodCall *  call, FlutterResult  result) {
             [weakSelf onMethodCall:call result:result];
         }];
         
+        //Native->Flutter端消息通道
+        NSString* eventChannelName = [NSString stringWithFormat:@"com.tencent.live.player.event_%lld", viewId];
+        _eventChannel =[FlutterEventChannel eventChannelWithName:eventChannelName binaryMessenger:messenger];
+        [_eventChannel setStreamHandler:self];
         // 初始化页面
         _player = [[TXLivePlayer alloc] init];
         
@@ -250,13 +259,28 @@ typedef NS_ENUM(NSInteger, ENUM_TYPE_CACHE_STRATEGY) {
 }
 
 - (void)onNetStatus:(NSDictionary *)param {
-    NSLog(@"onNetStatus%@",param);
+//    NSLog(@"onNetStatus%@",param);
 }
 
 - (void)onPlayEvent:(int)EvtID withParam:(NSDictionary *)param {
-    NSLog(@"onPlayEvent%@",param);
+    dispatch_async(dispatch_get_main_queue(), ^{
+         if (self.eventSink != nil){
+            self.eventSink(@{@"eventId": [NSString stringWithFormat:@"%d", EvtID] ,@"params":param});
+         }
+    });
 }
 
+
+#pragma mark - FlutterStreamHandler Native->Flutter 传递事件
+- (FlutterError* _Nullable)onListenWithArguments:(id _Nullable)arguments
+                                       eventSink:(FlutterEventSink)eventSink{
+    self.eventSink = eventSink;
+    return nil;
+}
+ 
+- (FlutterError* _Nullable)onCancelWithArguments:(id _Nullable)arguments {
+    return nil;
+}
 @end
 
 

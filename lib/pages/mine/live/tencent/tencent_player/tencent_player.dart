@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player_controller.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player_provider.dart';
-import 'package:flutter_widgets_example/routes/live_router.dart';
-import 'package:flutter_widgets_example/utils/toast_util.dart';
 
 //拉流播放器
 class TencentPlayer extends StatefulWidget {
@@ -36,6 +34,7 @@ class _TencentPlayerState extends State<TencentPlayer> {
         onPlatformViewCreated: (id) {
           widget.controller.saveChannel(
             new MethodChannel('com.tencent.live.player_$id'),
+            new EventChannel('com.tencent.live.player.event_$id'),
           );
           widget.finishInited?.call();
         },

@@ -7,6 +7,8 @@ import 'package:flutter_widgets_example/pages/amap/widgets/toast.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player_controller.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player_event.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player_tool.dart';
+import 'package:flutter_widgets_example/routes/app_router.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
 import 'package:flutter_widgets_example/utils/toast_util.dart';
 import 'package:flutter_widgets_example/widgets.dart/app_pop_view.dart';
@@ -24,7 +26,9 @@ class TencentPullLivePage extends StatefulWidget {
 
 class _TencentPullLivePageState extends State<TencentPullLivePage> {
   TextEditingController _control = TextEditingController(
-      text: "http://liteavapp.qcloud.com/live/liteavdemoplayerstreamid.flv");
+      text:
+          "http://liteavapp.qcloud.com/live/liteavdemoplayerstreamid.flv"); //官方例子
+
   final String playIcon = "lib/assets/start.png";
   final String logIcon = "lib/assets/log.png";
   final String quickIcon = "lib/assets/quick.png";
@@ -34,17 +38,12 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
   @override
   void initState() {
     TencentPullTool.init(
-        TencentPlayerController(config: TencentPlayerConfig(_control.text)));
-    // //添加监听事件
-    // _playerControll.addEventsListener((event) {
-    //   print(event);
-    //   if (event.eventType == TencentPlayerEventType.play) {
-    //     print("视频播放开始...");
-    //   } else if (event.eventType == TencentPlayerEventType.stop) {
-    //     print("视频播放停止。。。");
-    //   }
-    // });
-
+      TencentPlayerController(
+        config: TencentPlayerConfig(_control.text),
+        onReceiveMessage: _onMessageEvent,
+        onListenError: _onError,
+      ),
+    );
     super.initState();
   }
 
@@ -53,11 +52,42 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
     super.dispose();
   }
 
+  // 数据接收
+  void _onMessageEvent(String message) {
+    print("Flutter接受到Native的通知:");
+    ToastUtil.showToast("收到一条消息\n $message");
+  }
+
+  // 错误处理
+  void _onError(dynamic value) {
+    print("Flutter接受到Native的通知出错:");
+    print(value);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CommonAppBar(
         title: "腾讯拉流直播",
+        rightButtons: [
+          IconButton(
+            icon: Icon(Icons.camera_alt),
+            onPressed: () {
+              AppRouter.goBarScanPage(context, callBack: (text) {
+                setState(() {
+                  _control.text = text;
+                  TencentPullTool.init(
+                    TencentPlayerController(
+                      config: TencentPlayerConfig(_control.text),
+                      onReceiveMessage: _onMessageEvent,
+                      onListenError: _onError,
+                    ),
+                  );
+                });
+              });
+            },
+          )
+        ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: Row(
@@ -67,7 +97,9 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
             heroTag: "floate",
             onPressed: () {
               NavigatorUtil.pop(context);
-              TencentPullTool.stopPlayer();
+              if (TencentPullTool.isPlaying) {
+                TencentPullTool.stopPlayer();
+              }
 
               ToastUtil.showGlobalSmallWindow(
                   context, TencentPullTool.currentPlayer);
@@ -87,22 +119,17 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
       ),
       body: Stack(
         children: [
-          Column(
-            children: [
-              Hero(
-                  tag: TencentPullTool.heroTag,
-                  child: Container(
-                      width: AppConfig.screenWidth(context),
-                      height: 400,
-                      color: CommonColors.black30Color,
-                      child: TencentPullTool.currentPlayer)),
-              _buildSetting()
-            ],
-          ),
+          Container(
+              width: AppConfig.screenWidth(context),
+              height: AppConfig.screenHeight(context) -
+                  AppConfig.screenTopY(context),
+              color: CommonColors.black30Color,
+              child: TencentPullTool.currentPlayer),
           Positioned(
             top: 30,
             child: _buildUrlTextField(),
           ),
+          Positioned(bottom: 30, child: _buildSetting()),
         ],
       ),
     );
