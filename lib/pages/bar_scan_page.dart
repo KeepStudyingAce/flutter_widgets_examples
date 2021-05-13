@@ -173,7 +173,7 @@ class _BarScanPageState extends State<BarScanPage>
                                 5 -
                             300) /
                         2 +
-                    _animation.value * 150,
+                    _animation.value * 300,
                 child: Container(
                   color: Colors.blue,
                   height: 3,

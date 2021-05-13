@@ -1,9 +1,14 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_widgets_example/common/app_config.dart';
 import 'package:flutter_widgets_example/common/common_style.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/tencent_pusher_controller.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/tencent_pusher_tool.dart';
 import 'package:flutter_widgets_example/utils/toast_util.dart';
+import 'package:flutter_widgets_example/widgets.dart/app_pop_view.dart';
 import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 class TencentCameraPushLivePage extends StatefulWidget {
   TencentCameraPushLivePage({Key key}) : super(key: key);
@@ -14,20 +19,74 @@ class TencentCameraPushLivePage extends StatefulWidget {
 }
 
 class _TencentCameraPushLivePageState extends State<TencentCameraPushLivePage> {
-  /*
-  rtmp播放地址:rtmp://3891.liveplay.myqcloud.com/live/3891_user_6a76b59c_ca90
-
-  flv播放地址:http://3891.liveplay.myqcloud.com/live/3891_user_6a76b59c_ca90.flv
-
-  hls播放地址:http://3891.liveplay.myqcloud.com/live/3891_user_6a76b59c_ca90.m3u8
-
-  低延时播放地址:rtmp://3891.liveplay.myqcloud.com/live/3891_user_6a76b59c_ca90?bizid=3891&txSecret=49d703b921ecbe103935eb5e33abea75&txTime=607834E1
-  */
   TextEditingController _control = TextEditingController(text: "请输入推流地址");
-  MethodChannel _channel;
+
+  final String playIcon = "lib/assets/start.png";
+  final String logIcon = "lib/assets/log.png";
+  final String quickIcon = "lib/assets/quick.png";
+  final String portraitIcon = "lib/assets/portrait.png";
+  final String fillIcon = "lib/assets/fill.png";
+  final String cacheModeIcon = "lib/assets/cache_time.png";
+  TencentPusherController _pusherController;
+  List<List<String>> urlList = [];
+  @override
+  void initState() {
+    _pusherController = TencentPusherController(
+      config: TencentPusherConfig(_control.text),
+      onReceiveMessage: _onMessageEvent,
+      onListenError: _onError,
+    );
+    request();
+    super.initState();
+  }
+
+  //获取推流地址
+  void request() async {
+    Dio _dio = new Dio();
+
+    Response response =
+        await _dio.get('https://lvb.qcloud.com/weapp/utils/get_test_pushurl');
+
+    setState(() {
+      _control.text = response.data['url_push'];
+      _pusherController.changeUrl(_control.text);
+      TencentPusherTool.init(
+        _pusherController,
+      );
+      urlList = [
+        [
+          "rtmp",
+          response.data['url_play_rtmp'],
+        ],
+        [
+          "flv",
+          response.data['url_play_flv'],
+        ],
+        [
+          "hls",
+          response.data['url_play_hls'],
+        ],
+        [
+          "acc",
+          response.data['url_play_acc'],
+        ],
+      ];
+    });
+  }
+
+  // 数据接收
+  void _onMessageEvent(String message) {
+    ToastUtil.showToast("收到一条消息\n $message");
+  }
+
+  // 错误处理
+  void _onError(dynamic value) {
+    print("Flutter接受到Native的通知出错:");
+  }
+
   @override
   void dispose() {
-    _channel.invokeMethod("Stop");
+    _pusherController.dispose();
     super.dispose();
   }
 
@@ -36,87 +95,78 @@ class _TencentCameraPushLivePageState extends State<TencentCameraPushLivePage> {
     return Scaffold(
       appBar: CommonAppBar(
         title: "相机推流直播",
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          FloatingActionButton(
-            heroTag: "!",
-            onPressed: () {
-              _channel.invokeMethod("Play");
+        rightButtons: [
+          GestureDetector(
+            onTap: () {
+              AppPopView.showAZModalTopSheet(
+                  context: context,
+                  child: Container(
+                    width: AppConfig.screenWidth(context),
+                    height: AppConfig.screenWidth(context) +
+                        AppConfig.iphoneXTopHeight(context),
+                    child: GridView.count(
+                      padding: EdgeInsets.only(
+                          top: AppConfig.iphoneXTopHeight(context)),
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 10,
+                      children: List.generate(urlList.length, (index) {
+                        String title = urlList[index].first;
+                        String url = urlList[index].last;
+                        return Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Container(
+                              color: CommonColors.whiteColor,
+                              width:
+                                  (AppConfig.screenWidth(context) - 30) / 2.0,
+                              height:
+                                  (AppConfig.screenWidth(context) - 30) / 2.0,
+                              child: QrImage(
+                                size:
+                                    (AppConfig.screenWidth(context) - 30) / 2.0,
+                                errorCorrectionLevel: QrErrorCorrectLevel.Q,
+                                data: url,
+                              ),
+                            ),
+                            Positioned(
+                              child: Text(
+                                title,
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  color: CommonColors.red50Color,
+                                ),
+                              ),
+                            )
+                          ],
+                        );
+                      }),
+                    ),
+                  ));
             },
             child: Text(
-              "play",
+              "观看",
               style: TextStyle(
-                fontSize: 15,
+                fontSize: 14,
                 color: CommonColors.blackColor,
               ),
             ),
-          ),
-          SizedBox(width: 20),
-          FloatingActionButton(
-            heroTag: "??",
-            onPressed: () {
-              /**：[获取推流地址](https://cloud.tencent.com/document/product/267/32720 )。
-                *@note -5 返回码代表 license 校验失败，TXLivePusher 需要 
-                [license](https://cloud.tencent.com/document/product/454/34750) 校验通过才能工作
-              */
-              String url =
-                  "rtmp://3891.livepush.myqcloud.com/live/3891_user_7360cebc_4bc9?bizid=3891&txSecret=5ae056ca061959ae0483aa5727935915&txTime=607834E1";
-              setState(() {
-                _control.text = url;
-              });
-            },
-            child: Text(
-              "New",
-              style: TextStyle(
-                fontSize: 15,
-                color: CommonColors.blackColor,
-              ),
-            ),
-          ),
-          SizedBox(width: 20),
-          FloatingActionButton(
-            heroTag: "?",
-            onPressed: () {
-              _channel.invokeMethod("Stop");
-            },
-            child: Text(
-              "Stop",
-              style: TextStyle(
-                fontSize: 15,
-                color: CommonColors.blackColor,
-              ),
-            ),
-          ),
+          )
         ],
       ),
       body: Stack(
         children: [
           Container(
-            width: AppConfig.screenWidth(context),
-            height: AppConfig.screenHeight(context),
-            color: CommonColors.red50Color,
-            child: UiKitView(
-              //设置标识 这里设置的viewType值与 ios 中插件注册的标识一致 需要云心原生工程
-              viewType: "com.tencent.live.camera_push",
-              creationParams: {
-                "pushUrl": _control.text,
-              },
-              //参数的编码方式 设置creationParams后必传参数
-              creationParamsCodec: StandardMessageCodec(),
-              //view创建完成时的回调
-              onPlatformViewCreated: (id) {
-                _channel =
-                    new MethodChannel('com.tencent.live.camera_push_$id');
-              },
-            ),
-          ),
+              width: AppConfig.screenWidth(context),
+              height: AppConfig.screenHeight(context) -
+                  AppConfig.screenTopY(context),
+              color: CommonColors.black30Color,
+              child: TencentPusherTool.currentPlayer),
           Positioned(
             top: 30,
             child: _buildUrlTextField(),
           ),
+          Positioned(bottom: 30, child: _buildSetting()),
         ],
       ),
     );
@@ -124,31 +174,94 @@ class _TencentCameraPushLivePageState extends State<TencentCameraPushLivePage> {
 
   Widget _buildUrlTextField() {
     return Container(
-      width: AppConfig.screenWidth(context) - 50,
-      margin: EdgeInsets.symmetric(horizontal: 25),
-      height: 40,
-      decoration: BoxDecoration(
-        color: CommonColors.black30Color,
-        border: Border(
-          bottom: BorderSide(color: CommonColors.black50Color),
+        width: AppConfig.screenWidth(context) - 50,
+        margin: EdgeInsets.symmetric(horizontal: 25),
+        height: 40,
+        decoration: BoxDecoration(
+          color: CommonColors.black30Color,
+          border: Border(
+            bottom: BorderSide(color: CommonColors.black50Color),
+          ),
         ),
-      ),
-      child: TextField(
-        cursorColor: CommonColors.tencentGreenColor,
-        style: TextStyle(color: CommonColors.whiteColor),
-        decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(vertical: 5),
-          filled: true,
-          hintText: "请输入推流地址",
-          hintStyle: TextStyle(fontSize: 14, color: CommonColors.black50Color),
-          fillColor: CommonColors.transparent,
-          border: InputBorder.none,
-          counterText: "",
-        ),
-        onChanged: (text) {},
-        controller: _control,
-        keyboardType: TextInputType.number,
-        maxLength: 11,
+        child: Row(
+          children: [
+            Expanded(
+              child: TextField(
+                cursorColor: CommonColors.tencentGreenColor,
+                style: TextStyle(color: CommonColors.whiteColor),
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(vertical: 5),
+                  filled: true,
+                  hintText: "请输入推流地址",
+                  hintStyle:
+                      TextStyle(fontSize: 14, color: CommonColors.black50Color),
+                  fillColor: CommonColors.transparent,
+                  border: InputBorder.none,
+                  counterText: "",
+                ),
+                onChanged: (text) {},
+                controller: _control,
+                keyboardType: TextInputType.number,
+                maxLength: 11,
+              ),
+            ),
+          ],
+        ));
+  }
+
+  Widget _buildSetting() {
+    return SizedBox(
+      width: AppConfig.screenWidth(context),
+      height: 60,
+      child: ListView(
+        padding: EdgeInsets.zero,
+        scrollDirection: Axis.horizontal,
+        children: [
+          GestureDetector(
+            onTap: () {
+              if (TencentPusherTool.isPlaying) {
+                TencentPusherTool.stopPlayer();
+              } else {
+                TencentPusherTool.startPlayer();
+              }
+            },
+            child: Image.asset(playIcon),
+          ),
+          GestureDetector(
+            onTap: () {
+              TencentPusherTool.switchLog();
+              // TencentLivePlayer.switchLog();
+            },
+            child: Image.asset(logIcon),
+          ),
+          GestureDetector(
+            onTap: () {
+              TencentPusherTool.switchHW();
+              // TencentLivePlayer.switchHW();
+            },
+            child: Image.asset(quickIcon),
+          ),
+          GestureDetector(
+            onTap: () {
+              TencentPusherTool.switchPortrait();
+              // TencentLivePlayer.switchPortrait();
+            },
+            child: Image.asset(portraitIcon),
+          ),
+          GestureDetector(
+            onTap: () {
+              TencentPusherTool.switchRenderMode();
+              // TencentLivePlayer.switchRenderMode();
+            },
+            child: Image.asset(fillIcon),
+          ),
+          GestureDetector(
+            onTap: () {
+              // showCacheStrategy();
+            },
+            child: Image.asset(cacheModeIcon),
+          )
+        ],
       ),
     );
   }

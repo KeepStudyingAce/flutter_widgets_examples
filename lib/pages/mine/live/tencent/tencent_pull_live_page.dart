@@ -35,20 +35,24 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
   final String portraitIcon = "lib/assets/portrait.png";
   final String fillIcon = "lib/assets/fill.png";
   final String cacheModeIcon = "lib/assets/cache_time.png";
+
+  TencentPlayerController _playerController;
   @override
   void initState() {
+    _playerController = TencentPlayerController(
+      config: TencentPlayerConfig(_control.text),
+      onReceiveMessage: _onMessageEvent,
+      onListenError: _onError,
+    );
     TencentPullTool.init(
-      TencentPlayerController(
-        config: TencentPlayerConfig(_control.text),
-        onReceiveMessage: _onMessageEvent,
-        onListenError: _onError,
-      ),
+      _playerController,
     );
     super.initState();
   }
 
   @override
   void dispose() {
+    _playerController.dispose();
     super.dispose();
   }
 
@@ -76,13 +80,8 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
               AppRouter.goBarScanPage(context, callBack: (text) {
                 setState(() {
                   _control.text = text;
-                  TencentPullTool.init(
-                    TencentPlayerController(
-                      config: TencentPlayerConfig(_control.text),
-                      onReceiveMessage: _onMessageEvent,
-                      onListenError: _onError,
-                    ),
-                  );
+                  _playerController.changeUrl(text);
+                  TencentPullTool.init(_playerController);
                 });
               });
             },

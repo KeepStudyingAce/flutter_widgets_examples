@@ -8,9 +8,11 @@
 
 #import "TXLivePush.h"
 #import "TencentCameraPusher.h"
-@interface TencentCameraPusher() <TXLivePushListener>
+@interface TencentCameraPusher() <TXLivePushListener,FlutterStreamHandler>
 @property (nonatomic, strong) TXLivePush *pusher;
 @property (nonatomic, strong) NSString *pushUrl;
+//Native->Flutter端主动消息通道
+@property(nonatomic,strong)FlutterEventSink eventSink;
 @end
 
 @implementation TencentCameraPusher{
@@ -18,6 +20,8 @@
     int64_t _viewId;
     //消息回调
     FlutterMethodChannel* _channel;
+    // Native->Flutter端主动消息通道
+    FlutterEventChannel* _eventChannel;
     UIView              *_localView;    // 本地预览
 }
 
@@ -34,6 +38,11 @@
         [_channel setMethodCallHandler:^(FlutterMethodCall *  call, FlutterResult  result) {
             [weakSelf onMethodCall:call result:result];
         }];
+        
+        //Native->Flutter端消息通道
+        NSString* eventChannelName = [NSString stringWithFormat:@"com.tencent.live.camera_push.event_%lld", viewId];
+        _eventChannel =[FlutterEventChannel eventChannelWithName:eventChannelName binaryMessenger:messenger];
+        [_eventChannel setStreamHandler:self];
        
         // 本地视频预览view
         _localView = [[UIView alloc] initWithFrame:self.view.bounds];
@@ -190,7 +199,6 @@
 }
 
 - (void)onNetStatus:(NSDictionary *)param {
-    NSLog(@"onNetStatus");
 }
 
 - (void)onPushEvent:(int)evtID withParam:(NSDictionary *)param {
@@ -233,6 +241,18 @@
 
 - (void)onScreenCaptureStoped:(int)reason {
     NSLog(@"onScreenCaptureStoped");
+}
+
+
+#pragma mark - FlutterStreamHandler Native->Flutter 传递事件
+- (FlutterError* _Nullable)onListenWithArguments:(id _Nullable)arguments
+                                       eventSink:(FlutterEventSink)eventSink{
+    self.eventSink = eventSink;
+    return nil;
+}
+ 
+- (FlutterError* _Nullable)onCancelWithArguments:(id _Nullable)arguments {
+    return nil;
 }
 
 @end

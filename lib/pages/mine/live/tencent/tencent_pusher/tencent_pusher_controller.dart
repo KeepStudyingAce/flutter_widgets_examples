@@ -1,11 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/model/tencent_live_event_model.dart';
-import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player_event.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/tencent_pusher_event.dart';
 import 'package:flutter_widgets_example/utils/toast_util.dart';
 
 /*
@@ -57,8 +56,8 @@ import 'package:flutter_widgets_example/utils/toast_util.dart';
     EVT_ROOM_REQUEST_AVSEAT_SUCC                    = 8003,     ///<  请求视频位成功
 */
 // 参考better_player
-class TencentPlayerController extends ChangeNotifier {
-  TencentPlayerConfig config;
+class TencentPusherController extends ChangeNotifier {
+  TencentPusherConfig config;
   //Flutter->Native
   MethodChannel _channel;
   //Native->Flutter
@@ -75,13 +74,13 @@ class TencentPlayerController extends ChangeNotifier {
   //出错了
   Function onListenError;
 
-  TencentPlayerController({
+  TencentPusherController({
     @required this.config,
     this.onReceiveMessage,
     this.onListenError,
     this.onSuccessJoinRoom,
     this.onProgress,
-  }) : assert(config != null, "TencentPlayerConfig can't be null") {
+  }) : assert(config != null, "TencentPusherConfig can't be null") {
     _eventListeners.add(eventListener);
   }
   //保存channel
@@ -168,7 +167,7 @@ class TencentPlayerController extends ChangeNotifier {
   void startPlayer() async {
     if (_channel != null) {
       _isPlaying = true;
-      _postEvent(TencentPlayerEvent(TencentPlayerEventType.play));
+      _postEvent(TencentPusherEvent(TencentPusherEventType.play));
       String message = await _channel.invokeMethod("Play");
       if (message != null) {
         ToastUtil.showToast(message);
@@ -181,7 +180,7 @@ class TencentPlayerController extends ChangeNotifier {
   void pausePlayer() async {
     if (_channel != null) {
       _isPlaying = false;
-      _postEvent(TencentPlayerEvent(TencentPlayerEventType.pause));
+      _postEvent(TencentPusherEvent(TencentPusherEventType.pause));
       String message = await _channel.invokeMethod("Pause");
       if (message != null) {
         ToastUtil.showToast(message);
@@ -193,7 +192,7 @@ class TencentPlayerController extends ChangeNotifier {
   void resumePlayer() async {
     if (_channel != null) {
       _isPlaying = true;
-      _postEvent(TencentPlayerEvent(TencentPlayerEventType.resume));
+      _postEvent(TencentPusherEvent(TencentPusherEventType.resume));
       String message = await _channel.invokeMethod("Resume");
       if (message != null) {
         ToastUtil.showToast(message);
@@ -205,7 +204,7 @@ class TencentPlayerController extends ChangeNotifier {
   void stopPlayer() async {
     if (_channel != null) {
       _isPlaying = false;
-      _postEvent(TencentPlayerEvent(TencentPlayerEventType.stop));
+      _postEvent(TencentPusherEvent(TencentPusherEventType.stop));
       String message = await _channel.invokeMethod("Stop");
       if (message != null) {
         ToastUtil.showToast(message);
@@ -286,9 +285,9 @@ class TencentPlayerController extends ChangeNotifier {
 //事件通知========= 添加播放器的监听事件，暂不添加;
   final List<Function> _eventListeners = [];
 
-  Function(TencentPlayerEvent) eventListener;
+  Function(TencentPusherEvent) eventListener;
 
-  void _postEvent(TencentPlayerEvent event) {
+  void _postEvent(TencentPusherEvent event) {
     for (final Function eventListener in _eventListeners) {
       if (eventListener != null) {
         eventListener(event);
@@ -296,11 +295,11 @@ class TencentPlayerController extends ChangeNotifier {
     }
   }
 
-  void addEventsListener(Function(TencentPlayerEvent) eventListener) {
+  void addEventsListener(Function(TencentPusherEvent) eventListener) {
     _eventListeners.add(eventListener);
   }
 
-  void removeEventsListener(Function(TencentPlayerEvent) eventListener) {
+  void removeEventsListener(Function(TencentPusherEvent) eventListener) {
     _eventListeners.remove(eventListener);
   }
 
@@ -314,7 +313,7 @@ class TencentPlayerController extends ChangeNotifier {
   }
 }
 
-class TencentPlayerConfig {
+class TencentPusherConfig {
   final String url; //拉流地址
   final bool showLog; //日志打印
   final bool enableHWAcceleration; //软/硬解码
@@ -338,7 +337,7 @@ class TencentPlayerConfig {
     HOME_ORIENTATION_UP        = 3,   
   */
   final int orientation;
-  const TencentPlayerConfig(
+  const TencentPusherConfig(
     this.url, {
     this.showLog = false,
     this.enableHWAcceleration = true,
@@ -347,7 +346,7 @@ class TencentPlayerConfig {
     this.orientation = 1,
   });
 
-  TencentPlayerConfig copyWith({
+  TencentPusherConfig copyWith({
     String url,
     bool showLog,
     bool enableHWAcceleration,
@@ -355,7 +354,7 @@ class TencentPlayerConfig {
     int renderMode,
     int orientation,
   }) {
-    return TencentPlayerConfig(
+    return TencentPusherConfig(
       url ?? this.url,
       showLog: showLog ?? this.showLog,
       enableHWAcceleration: enableHWAcceleration ?? this.enableHWAcceleration,

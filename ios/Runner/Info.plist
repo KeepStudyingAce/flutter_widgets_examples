@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Flutter Widgets</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -12,8 +14,6 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>Flutter Widgets</string>
-    <key>CFBundleDisplayName</key>
-    <string>Flutter Widgets</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -24,6 +24,23 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>需要使用您的摄像头来扫码/拍照</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>FlutterWidget购需要您的同意才能获取您的位置</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>FlutterWidget购需要您的同意才能获取您的位置</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>FlutterWidget购需要您的同意才能获取您的位置</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>FlutterWidget购需要访问您的相册才能保存图片</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>FlutterWidget购需要访问您的相册才能使用图片</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -43,24 +60,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
-    <key>NSCameraUsageDescription</key>
-    <string>需要使用您的摄像头来扫码/拍照</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>FlutterWidget购需要您的同意才能获取您的位置</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>FlutterWidget购需要您的同意才能获取您的位置</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>FlutterWidget购需要您的同意才能获取您的位置</string>
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>FlutterWidget购需要访问您的相册才能保存图片</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>FlutterWidget购需要访问您的相册才能使用图片</string>
-    <key>io.flutter.embedded_views_preview</key>
-    <string>YES</string>
+	<key>io.flutter.embedded_views_preview</key>
+	<string>YES</string>
 </dict>
 </plist>
