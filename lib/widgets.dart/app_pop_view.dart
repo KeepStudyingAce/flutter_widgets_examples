@@ -41,7 +41,7 @@ class AppPopView {
   static Future<T> showAppModalBottomSheet<T>({
     @required BuildContext context,
     @required WidgetBuilder builder,
-    Color backgroundColor,
+    Color backgroundColor = Colors.white,
     double elevation,
     ShapeBorder shape,
     Clip clipBehavior,

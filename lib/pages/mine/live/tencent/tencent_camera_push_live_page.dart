@@ -5,6 +5,8 @@ import 'package:flutter_widgets_example/common/app_config.dart';
 import 'package:flutter_widgets_example/common/common_style.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/tencent_pusher_controller.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/tencent_pusher_tool.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/view/beauty_setting_view.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/view/music_setting_view.dart';
 import 'package:flutter_widgets_example/utils/toast_util.dart';
 import 'package:flutter_widgets_example/widgets.dart/app_pop_view.dart';
 import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
@@ -22,11 +24,11 @@ class _TencentCameraPushLivePageState extends State<TencentCameraPushLivePage> {
   TextEditingController _control = TextEditingController(text: "请输入推流地址");
 
   final String playIcon = "lib/assets/start.png";
-  final String logIcon = "lib/assets/log.png";
-  final String quickIcon = "lib/assets/quick.png";
-  final String portraitIcon = "lib/assets/portrait.png";
-  final String fillIcon = "lib/assets/fill.png";
-  final String cacheModeIcon = "lib/assets/cache_time.png";
+  final String musicIcon = "lib/assets/music.png";
+  final String cameraIcon = "lib/assets/mlvb_camera_front.png";
+  final String beautyIcon = "lib/assets/mlvb_beauty.png";
+  final String settingIcon = "lib/assets/set.png";
+  final String moreSettingIcon = "lib/assets/more_b.png";
   TencentPusherController _pusherController;
   List<List<String>> urlList = [];
   @override
@@ -229,40 +231,68 @@ class _TencentCameraPushLivePageState extends State<TencentCameraPushLivePage> {
           ),
           GestureDetector(
             onTap: () {
-              TencentPusherTool.switchLog();
-              // TencentLivePlayer.switchLog();
+              TencentPusherTool.switchCamera();
             },
-            child: Image.asset(logIcon),
+            child: Image.asset(cameraIcon),
           ),
           GestureDetector(
-            onTap: () {
-              TencentPusherTool.switchHW();
-              // TencentLivePlayer.switchHW();
-            },
-            child: Image.asset(quickIcon),
+            onTap: showMusicSetting,
+            child: Image.asset(musicIcon),
           ),
           GestureDetector(
-            onTap: () {
-              TencentPusherTool.switchPortrait();
-              // TencentLivePlayer.switchPortrait();
-            },
-            child: Image.asset(portraitIcon),
+            onTap: showBeautifySetting,
+            child: Image.asset(beautyIcon),
           ),
           GestureDetector(
-            onTap: () {
-              TencentPusherTool.switchRenderMode();
-              // TencentLivePlayer.switchRenderMode();
-            },
-            child: Image.asset(fillIcon),
+            onTap: showSetting,
+            child: Image.asset(settingIcon),
           ),
           GestureDetector(
-            onTap: () {
-              // showCacheStrategy();
-            },
-            child: Image.asset(cacheModeIcon),
+            onTap: showMoreSetting,
+            child: Image.asset(moreSettingIcon),
           )
         ],
       ),
+    );
+  }
+
+  void showMusicSetting() {
+    AppPopView.showAppModalBottomSheet(
+      context: context,
+      backgroundColor: CommonColors.black30Color,
+      builder: (context) {
+        return MusicSettingView();
+      },
+    );
+  }
+
+  void showBeautifySetting() {
+    AppPopView.showAppModalBottomSheet(
+      context: context,
+      backgroundColor: CommonColors.black30Color,
+      builder: (context) {
+        return BeautySettingView();
+      },
+    );
+  }
+
+  void showSetting() {
+    AppPopView.showAppModalBottomSheet(
+      context: context,
+      backgroundColor: CommonColors.black30Color,
+      builder: (context) {
+        return Container(child: Text("设置弹窗"));
+      },
+    );
+  }
+
+  void showMoreSetting() {
+    AppPopView.showAppModalBottomSheet(
+      context: context,
+      backgroundColor: CommonColors.black30Color,
+      builder: (context) {
+        return Container(child: Text("更多设置弹窗"));
+      },
     );
   }
 }

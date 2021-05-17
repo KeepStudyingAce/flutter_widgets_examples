@@ -52,7 +52,17 @@
     return self;
     
 }
-
+-(void)onMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result{
+    if ([[call method] isEqualToString:@"Play"]) {
+        [self startPush];
+    }else if ([[call method] isEqualToString:@"Stop"]) {
+        [self stopPush];
+    }else if ([[call method] isEqualToString:@"switchCamera"]) {
+        [self switchCamera];
+    } else {
+        //其他方法的回调
+    }
+}
 
 #pragma mark - 推流逻辑
 
@@ -107,15 +117,11 @@
 #endif
 }
 
--(void)onMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result{
-    if ([[call method] isEqualToString:@"Play"]) {
-        [self startPush];
-    }else if ([[call method] isEqualToString:@"Stop"]) {
-        [self stopPush];
-    }{
-        //其他方法的回调
-    }
+-(void) switchCamera{
+    [_pusher switchCamera];
 }
+
+
 
 // 创建推流器，并使用本地配置初始化它
 - (TXLivePush *)createPusher {

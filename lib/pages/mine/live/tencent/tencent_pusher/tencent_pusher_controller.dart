@@ -163,6 +163,8 @@ class TencentPusherController extends ChangeNotifier {
 
   //铺满模式
   int get renderMode => config.renderMode;
+  //是否是前置摄像头
+  bool get frontCamera => config.frontCamera;
 
   void startPlayer() async {
     if (_channel != null) {
@@ -214,26 +216,20 @@ class TencentPusherController extends ChangeNotifier {
     }
   }
 
-  //屏幕显示后台打印
-  void switchLog() {
-    if (_channel != null) {
-      config = config.copyWith(showLog: !config.showLog);
-      _channel.invokeMethod("showLog");
-      // notifyListeners();
-    }
-  }
+  // //屏幕显示后台打印
+  // void switchLog() {
+  //   if (_channel != null) {
+  //     config = config.copyWith(showLog: !config.showLog);
+  //     _channel.invokeMethod("showLog");
+  //     // notifyListeners();
+  //   }
+  // }
 
   //解码方式
-  void switchHW() async {
+  void switchCamera() async {
     if (_channel != null) {
-      String message = await _channel.invokeMethod("switchHW");
-      if (message != null) {
-        ToastUtil.showToast(message);
-      } else {
-        config =
-            config.copyWith(enableHWAcceleration: !config.enableHWAcceleration);
-      }
-      // notifyListeners();
+      await _channel.invokeMethod("switchCamera");
+      config = config.copyWith(frontCamera: !config.frontCamera);
     }
   }
 
@@ -337,6 +333,9 @@ class TencentPusherConfig {
     HOME_ORIENTATION_UP        = 3,   
   */
   final int orientation;
+  //是否前置摄像头
+  final bool frontCamera;
+
   const TencentPusherConfig(
     this.url, {
     this.showLog = false,
@@ -344,6 +343,7 @@ class TencentPusherConfig {
     this.cacheStrategy = 3,
     this.renderMode = 1,
     this.orientation = 1,
+    this.frontCamera = true,
   });
 
   TencentPusherConfig copyWith({
@@ -353,6 +353,7 @@ class TencentPusherConfig {
     int cacheStrategy,
     int renderMode,
     int orientation,
+    bool frontCamera,
   }) {
     return TencentPusherConfig(
       url ?? this.url,
@@ -361,6 +362,7 @@ class TencentPusherConfig {
       cacheStrategy: cacheStrategy ?? this.cacheStrategy,
       renderMode: renderMode ?? this.renderMode,
       orientation: orientation ?? this.orientation,
+      frontCamera: frontCamera ?? this.frontCamera,
     );
   }
 }

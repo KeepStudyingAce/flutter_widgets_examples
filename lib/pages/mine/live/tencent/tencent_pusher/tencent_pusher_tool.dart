@@ -62,17 +62,10 @@ class TencentPusherTool {
     }
   }
 
-  //屏幕显示后台打印
-  static void switchLog() {
-    if (playerControll != null) {
-      playerControll.switchLog();
-    }
-  }
-
   //解码方式
-  static void switchHW() async {
+  static void switchCamera() async {
     if (playerControll != null) {
-      playerControll.switchHW();
+      playerControll.switchCamera();
     }
   }
 
