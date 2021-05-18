@@ -6,6 +6,7 @@ import 'package:flutter_widgets_example/common/common_style.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/tencent_pusher_controller.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/tencent_pusher_tool.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/view/beauty_setting_view.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/view/more_setting_view.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/view/music_setting_view.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/view/setting_view.dart';
 import 'package:flutter_widgets_example/utils/toast_util.dart';
@@ -292,7 +293,7 @@ class _TencentCameraPushLivePageState extends State<TencentCameraPushLivePage> {
       context: context,
       backgroundColor: CommonColors.black30Color,
       builder: (context) {
-        return Container(child: Text("更多设置弹窗"));
+        return MoreSettingView();
       },
     );
   }
