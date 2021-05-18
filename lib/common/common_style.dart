@@ -18,6 +18,7 @@ class CommonColors {
   static const Color subTextColor = Color(0xFF666666);
   // 白色
   static const Color whiteColor = Color(0xFFFFFFFF);
+  static const Color white50Color = Color(0x80FFFFFF);
   // 红色
   static const Color redColor = Color(0xFFFF0000);
   static const Color red50Color = Color(0xFF800000);
