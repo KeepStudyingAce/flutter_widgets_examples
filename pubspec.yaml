@@ -67,6 +67,10 @@ dependencies:
   #自定义键盘
   cool_ui: "^0.6.1"
 
+  #滚动到制定位置播放
+  inview_notifier_list: ^1.0.0
+  video_player: ^0.10.1+3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

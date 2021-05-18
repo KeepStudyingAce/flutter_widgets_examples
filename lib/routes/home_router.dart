@@ -14,12 +14,12 @@ import 'package:flutter_widgets_example/pages/home/home/custom_paint_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/custom_pop_router_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/custom_route_transition.dart';
 import 'package:flutter_widgets_example/pages/home/home/dismissible_list_page.dart';
-import 'package:flutter_widgets_example/pages/home/home/drag_sort_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/draggable_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/expansion_list_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/frosted_glass_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/future_build_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/inherited_widget.dart';
+import 'package:flutter_widgets_example/pages/home/home/inview_notifier/inview_notifier_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/layout_builder_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/overlayer_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/reorderable_list_page.dart';
@@ -35,7 +35,7 @@ import 'package:flutter_widgets_example/routes/routes.dart';
 import 'package:fluro/fluro.dart' as Fluro;
 import 'package:flutter/material.dart';
 
-class AppRouter implements IRouterProvider {
+class HomeRouter implements IRouterProvider {
   /// 欢迎页
   static String _welcome = "/";
 
@@ -53,13 +53,6 @@ class AppRouter implements IRouterProvider {
   /// 跳到Swiper页面
   static goSwiper(BuildContext context) {
     NavigatorUtil.pushTo(context, _swiper);
-  }
-
-  static String _dragSortPage = "/_drag_sort_page";
-
-  /// 跳到DragSortPage页面
-  static goDragSortPage(BuildContext context) {
-    NavigatorUtil.pushTo(context, _dragSortPage);
   }
 
   static String _animationListPage = "/_animation_list_page";
@@ -278,6 +271,14 @@ class AppRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _customPopRouterPage);
   }
 
+  ///inview_notifier_listPage
+  static String _inviewNotifierPage = "/_inviewNotifierPage";
+
+  /// 跳到InviewNotifierPage页面
+  static goInviewNotifierPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _inviewNotifierPage);
+  }
+
   @override
   void initRouter(FluroRouter router) {
     // 闪屏页面
@@ -298,14 +299,7 @@ class AppRouter implements IRouterProvider {
             handlerFunc:
                 (BuildContext context, Map<String, List<String>> params) =>
                     SwiperPage()));
-    // DragSortPage页面
-    router.define(
-      _dragSortPage,
-      handler: Fluro.Handler(
-        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
-            DragSortPage(),
-      ),
-    );
+
     // DragSortPage页面
     router.define(
       _animationListPage,
@@ -520,6 +514,15 @@ class AppRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             CustomPopRouterPage(),
+      ),
+    );
+
+    // InviewNotifierPage
+    router.define(
+      _inviewNotifierPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            InviewNotifierPage(),
       ),
     );
   }

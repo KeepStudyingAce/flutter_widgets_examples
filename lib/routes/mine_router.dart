@@ -1,5 +1,6 @@
 import 'package:fluro/fluro.dart' as Fluro;
 import 'package:flutter_widgets_example/pages/mine/custom_keyboard_page.dart';
+import 'package:flutter_widgets_example/pages/mine/drag_sort_page.dart';
 import 'package:flutter_widgets_example/pages/mine/ios_component_page.dart';
 import 'package:flutter_widgets_example/pages/mine/live_page.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
@@ -28,6 +29,13 @@ class MineRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _livePage);
   }
 
+  static String _dragSortPage = "/_drag_sort_page";
+
+  /// 跳到DragSortPage页面
+  static goDragSortPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _dragSortPage);
+  }
+
   @override
   void initRouter(Fluro.FluroRouter router) {
     // 自定义键盘
@@ -36,6 +44,15 @@ class MineRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             CustomKeyboardPage(),
+      ),
+    );
+
+    // DragSortPage页面
+    router.define(
+      _dragSortPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            DragSortPage(),
       ),
     );
 

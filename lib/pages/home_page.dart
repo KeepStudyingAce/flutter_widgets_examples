@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widgets_example/common/app_config.dart';
 import 'package:flutter_widgets_example/common/common_style.dart';
 import 'package:flutter_widgets_example/pages/home/home/search_page.dart';
-import 'package:flutter_widgets_example/routes/app_router.dart';
+import 'package:flutter_widgets_example/routes/home_router.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
 import 'package:flutter_widgets_example/widgets.dart/ace_flexible_space_bar.dart';
 
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                 IconButton(
                     icon: Icon(Icons.camera_alt),
                     onPressed: () {
-                      AppRouter.goBarScanPage(context);
+                      HomeRouter.goBarScanPage(context);
                     })
               ],
               expandedHeight: AppConfig.kAppBarHeight +
@@ -88,27 +88,27 @@ class _HomePageState extends State<HomePage> {
             _buildItem("BubbleTabbarPage", () {
               //先关闭抽屉
               NavigatorUtil.pop(context);
-              AppRouter.goBubbleTabbarPage(context);
+              HomeRouter.goBubbleTabbarPage(context);
             }),
             _buildItem("FluidTabbarPage", () {
               //先关闭抽屉
               NavigatorUtil.pop(context);
-              AppRouter.goFluidTabbarPage(context);
+              HomeRouter.goFluidTabbarPage(context);
             }),
             _buildItem("FloateTabbarPage", () {
               //先关闭抽屉
               NavigatorUtil.pop(context);
-              AppRouter.goFloateTabbarPage(context);
+              HomeRouter.goFloateTabbarPage(context);
             }),
             _buildItem("FFTabbarPage", () {
               //先关闭抽屉
               NavigatorUtil.pop(context);
-              AppRouter.goFFTabbarPage(context);
+              HomeRouter.goFFTabbarPage(context);
             }),
             _buildItem("ExtendedTabbarPage", () {
               //先关闭抽屉
               NavigatorUtil.pop(context);
-              AppRouter.goExtendedTabbarPage(context);
+              HomeRouter.goExtendedTabbarPage(context);
             }),
           ],
         ),
@@ -148,40 +148,43 @@ class _HomePageState extends State<HomePage> {
   List<Widget> _buildList() {
     return [
       _buildItem("AbsorbPointer & IgnorePointer组件",
-          () => AppRouter.goAbsorbIgnorePointPage(context)),
-      _buildItem("动画列表", () => AppRouter.goAnimationListPage(context)),
-      _buildItem("AZListView 地址组件", () => AppRouter.goAZListViewPage(context)),
-      _buildItem("Chip组件", () => AppRouter.goChipPage(context)),
+          () => HomeRouter.goAbsorbIgnorePointPage(context)),
+      _buildItem("动画列表", () => HomeRouter.goAnimationListPage(context)),
+      _buildItem("AZListView 地址组件", () => HomeRouter.goAZListViewPage(context)),
+      _buildItem("Chip组件", () => HomeRouter.goChipPage(context)),
       _buildItem("自定义CustomClipper(切割方式)",
-          () => AppRouter.goCustomChipperPage(context)),
+          () => HomeRouter.goCustomChipperPage(context)),
       _buildItem(
-          "自定义CustomPaint(绘制路线)", () => AppRouter.goCustomPaintPage(context)),
+          "自定义CustomPaint(绘制路线)", () => HomeRouter.goCustomPaintPage(context)),
       _buildItem("自定义PopRouter(组件弹出方式)",
-          () => AppRouter.goCustomPopRouterPage(context)),
+          () => HomeRouter.goCustomPopRouterPage(context)),
       _buildItem(
-          "自定义CustomRoute页面转场动画", () => AppRouter.goCustomRoutePage(context)),
+          "自定义CustomRoute页面转场动画", () => HomeRouter.goCustomRoutePage(context)),
       _buildItem(
-          "Dismissible组件", () => AppRouter.goDismissibleListPage(context)),
-      _buildItem("Draggable组件", () => AppRouter.goDraggablePage(context)),
-      _buildItem("拖拽排序功能", () => AppRouter.goDragSortPage(context)),
+          "Dismissible组件", () => HomeRouter.goDismissibleListPage(context)),
+      _buildItem("Draggable组件", () => HomeRouter.goDraggablePage(context)),
       _buildItem(
-          "ExpansionList展开列表", () => AppRouter.goExpansionListPage(context)),
+          "ExpansionList展开列表", () => HomeRouter.goExpansionListPage(context)),
       _buildItem(
-          "FrostedGlass毛玻璃", () => AppRouter.goFrostedGlassPage(context)),
-      _buildItem("FutureBuilder组件", () => AppRouter.goFutureBuildPage(context)),
+          "FrostedGlass毛玻璃", () => HomeRouter.goFrostedGlassPage(context)),
       _buildItem(
-          "InheritedWidget", () => AppRouter.goInheritedWidgetPage(context)),
+          "FutureBuilder组件", () => HomeRouter.goFutureBuildPage(context)),
       _buildItem(
-          "LayoutBuilder组件", () => AppRouter.goLayoutBuilderPage(context)),
-      _buildItem("Overlay组件", () => AppRouter.goOverlayPage(context)),
+          "InheritedWidget", () => HomeRouter.goInheritedWidgetPage(context)),
+      _buildItem("滚动播放组件 inview_notifier",
+          () => HomeRouter.goInviewNotifierPage(context)),
       _buildItem(
-          "ReorderList拖动排序列表", () => AppRouter.goReorderListPage(context)),
+          "LayoutBuilder组件", () => HomeRouter.goLayoutBuilderPage(context)),
+      _buildItem("Overlay组件", () => HomeRouter.goOverlayPage(context)),
+      _buildItem(
+          "ReorderList拖动排序列表", () => HomeRouter.goReorderListPage(context)),
       _buildItem("SliverAppBar(可以缩放的AppBar)",
-          () => AppRouter.goSliverAppBarPage(context)),
-      _buildItem("StreamBuilder", () => AppRouter.goStreamBuilderPage(context)),
-      _buildItem("FlutterSwiper组件", () => AppRouter.goSwiper(context)),
-      _buildItem("Table组件", () => AppRouter.goTablePage(context)),
-      _buildItem("Transform组件", () => AppRouter.goTransformPage(context)),
+          () => HomeRouter.goSliverAppBarPage(context)),
+      _buildItem(
+          "StreamBuilder", () => HomeRouter.goStreamBuilderPage(context)),
+      _buildItem("FlutterSwiper组件", () => HomeRouter.goSwiper(context)),
+      _buildItem("Table组件", () => HomeRouter.goTablePage(context)),
+      _buildItem("Transform组件", () => HomeRouter.goTransformPage(context)),
     ];
   }
 

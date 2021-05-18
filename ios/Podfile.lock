@@ -36,6 +36,8 @@ PODS:
     - MTBBarcodeScanner
   - share (0.0.1):
     - Flutter
+  - video_player (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - amap_flutter_map (from `.symlinks/plugins/amap_flutter_map/ios`)
@@ -47,6 +49,7 @@ DEPENDENCIES:
   - permission_handler (from `.symlinks/plugins/permission_handler/ios`)
   - qr_code_scanner (from `.symlinks/plugins/qr_code_scanner/ios`)
   - share (from `.symlinks/plugins/share/ios`)
+  - video_player (from `.symlinks/plugins/video_player/ios`)
 
 SPEC REPOS:
   trunk:
@@ -74,6 +77,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/qr_code_scanner/ios"
   share:
     :path: ".symlinks/plugins/share/ios"
+  video_player:
+    :path: ".symlinks/plugins/video_player/ios"
 
 SPEC CHECKSUMS:
   AMap3DMap: 3e4fac78e3e023cefd47e7d7715ef5ea69bfd0fa
@@ -89,6 +94,7 @@ SPEC CHECKSUMS:
   permission_handler: ccb20a9fad0ee9b1314a52b70b76b473c5f8dab0
   qr_code_scanner: bb67d64904c3b9658ada8c402e8b4d406d5d796e
   share: 0b2c3e82132f5888bccca3351c504d0003b3b410
+  video_player: 9cc823b1d9da7e8427ee591e8438bfbcde500e6e
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 

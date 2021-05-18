@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets_example/routes/app_router.dart';
+import 'package:flutter_widgets_example/routes/home_router.dart';
 import 'package:flutter_widgets_example/utils/common_util.dart';
 
 class SplashPage extends StatefulWidget {
@@ -23,7 +23,7 @@ class _SplashPageState extends State<SplashPage>
 
     _animation.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        AppRouter.goRootTabPage(context);
+        HomeRouter.goRootTabPage(context);
       }
     });
     _controller.forward();

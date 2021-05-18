@@ -8,7 +8,7 @@ import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/t
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player_controller.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player_event.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player_tool.dart';
-import 'package:flutter_widgets_example/routes/app_router.dart';
+import 'package:flutter_widgets_example/routes/home_router.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
 import 'package:flutter_widgets_example/utils/toast_util.dart';
 import 'package:flutter_widgets_example/widgets.dart/app_pop_view.dart';
@@ -77,7 +77,7 @@ class _TencentPullLivePageState extends State<TencentPullLivePage> {
           IconButton(
             icon: Icon(Icons.camera_alt),
             onPressed: () {
-              AppRouter.goBarScanPage(context, callBack: (text) {
+              HomeRouter.goBarScanPage(context, callBack: (text) {
                 setState(() {
                   _control.text = text;
                   _playerController.changeUrl(text);
