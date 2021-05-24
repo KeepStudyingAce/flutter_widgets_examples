@@ -25,16 +25,56 @@
 		501E82F02624691B0076BD47 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82EF2624691B0076BD47 /* libz.tbd */; };
 		501E82F2262469630076BD47 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82F1262469630076BD47 /* libresolv.9.tbd */; };
 		505D46B4262854800053C3A8 /* TencentCameraPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = 505D46B3262854800053C3A8 /* TencentCameraPusher.m */; };
-		505D46B726285B910053C3A8 /* TencentCameraPushFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 505D46B626285B910053C3A8 /* TencentCameraPushFactory.m */; };
+		505D46B726285B910053C3A8 /* TencentCameraPusherFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 505D46B626285B910053C3A8 /* TencentCameraPusherFactory.m */; };
 		505D46BA26285C560053C3A8 /* TencentCameraPusherPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 505D46B926285C560053C3A8 /* TencentCameraPusherPlugin.m */; };
 		505D46BD26285D360053C3A8 /* TencentCameraPusherRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 505D46BC26285D360053C3A8 /* TencentCameraPusherRegister.m */; };
+		509C06E72654F73000E33818 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509C06E62654F73000E33818 /* ReplayKit.framework */; };
+		509C06FD2654F73100E33818 /* AceReplaykitUpload.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 509C06E52654F73000E33818 /* AceReplaykitUpload.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		509C070C2654F82500E33818 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82ED262468EF0076BD47 /* libc++.tbd */; };
+		509C070F2654F89B00E33818 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82F1262469630076BD47 /* libresolv.9.tbd */; };
+		509C07192654FAA700E33818 /* TXLiteAVSDK_Smart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82EB262467540076BD47 /* TXLiteAVSDK_Smart.framework */; };
+		509C07202654FB2900E33818 /* SampleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 509C071D2654FB2900E33818 /* SampleHandler.m */; };
+		509C07212654FB2900E33818 /* SimpleIPC.m in Sources */ = {isa = PBXBuildFile; fileRef = 509C071F2654FB2900E33818 /* SimpleIPC.m */; };
+		509C07272654FEDA00E33818 /* TencentScreenPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = 509C07262654FEDA00E33818 /* TencentScreenPusher.m */; };
+		509C07302654FF5E00E33818 /* TencentScreenPusherFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 509C072C2654FF4500E33818 /* TencentScreenPusherFactory.m */; };
+		509C07342654FFA400E33818 /* TencentScreenPusherPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 509C07332654FFA400E33818 /* TencentScreenPusherPlugin.m */; };
+		509C073A2654FFE600E33818 /* TencentScreenPusherRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 509C07392654FFE600E33818 /* TencentScreenPusherRegister.m */; };
+		509C073D2655059F00E33818 /* SimpleIPC.m in Sources */ = {isa = PBXBuildFile; fileRef = 509C071F2654FB2900E33818 /* SimpleIPC.m */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		509C06FB2654F73100E33818 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 509C06E42654F73000E33818;
+			remoteInfo = AceReplaykitUpload;
+		};
+		509C07112654F8C200E33818 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 509C06E42654F73000E33818;
+			remoteInfo = AceReplaykitUpload;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		509C06FE2654F73100E33818 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				509C06FD2654F73100E33818 /* AceReplaykitUpload.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9705A1C41CF9048500538489 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,11 +118,30 @@
 		505D46B2262854410053C3A8 /* TencentCameraPusher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentCameraPusher.h; sourceTree = "<group>"; };
 		505D46B3262854800053C3A8 /* TencentCameraPusher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentCameraPusher.m; sourceTree = "<group>"; };
 		505D46B526285B730053C3A8 /* TencentCameraPusherFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentCameraPusherFactory.h; sourceTree = "<group>"; };
-		505D46B626285B910053C3A8 /* TencentCameraPushFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentCameraPushFactory.m; sourceTree = "<group>"; };
+		505D46B626285B910053C3A8 /* TencentCameraPusherFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentCameraPusherFactory.m; sourceTree = "<group>"; };
 		505D46B826285C470053C3A8 /* TencentCameraPusherPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentCameraPusherPlugin.h; sourceTree = "<group>"; };
 		505D46B926285C560053C3A8 /* TencentCameraPusherPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentCameraPusherPlugin.m; sourceTree = "<group>"; };
 		505D46BB26285CF20053C3A8 /* TencentCameraPusherRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentCameraPusherRegister.h; sourceTree = "<group>"; };
 		505D46BC26285D360053C3A8 /* TencentCameraPusherRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentCameraPusherRegister.m; sourceTree = "<group>"; };
+		509C06E52654F73000E33818 /* AceReplaykitUpload.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AceReplaykitUpload.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		509C06E62654F73000E33818 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
+		509C06EB2654F73000E33818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		509C06F22654F73100E33818 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		509C070E2654F87400E33818 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		509C07152654F9D300E33818 /* TXLiteAVSDK_Smart */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = TXLiteAVSDK_Smart; path = TXLiteAVSDK_Smart.framework/TXLiteAVSDK_Smart; sourceTree = "<group>"; };
+		509C071C2654FB2900E33818 /* SampleHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleHandler.h; sourceTree = "<group>"; };
+		509C071D2654FB2900E33818 /* SampleHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleHandler.m; sourceTree = "<group>"; };
+		509C071E2654FB2900E33818 /* SimpleIPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleIPC.h; sourceTree = "<group>"; };
+		509C071F2654FB2900E33818 /* SimpleIPC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleIPC.m; sourceTree = "<group>"; };
+		509C07232654FB6B00E33818 /* ReplayKit2Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplayKit2Define.h; sourceTree = "<group>"; };
+		509C07262654FEDA00E33818 /* TencentScreenPusher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentScreenPusher.m; sourceTree = "<group>"; };
+		509C072A2654FEF700E33818 /* TencentScreenPusher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentScreenPusher.h; sourceTree = "<group>"; };
+		509C072B2654FF3100E33818 /* TencentScreenPusherFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentScreenPusherFactory.h; sourceTree = "<group>"; };
+		509C072C2654FF4500E33818 /* TencentScreenPusherFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentScreenPusherFactory.m; sourceTree = "<group>"; };
+		509C07332654FFA400E33818 /* TencentScreenPusherPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentScreenPusherPlugin.m; sourceTree = "<group>"; };
+		509C07372654FFB300E33818 /* TencentScreenPusherPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentScreenPusherPlugin.h; sourceTree = "<group>"; };
+		509C07382654FFD500E33818 /* TencentScreenPusherRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentScreenPusherRegister.h; sourceTree = "<group>"; };
+		509C07392654FFE600E33818 /* TencentScreenPusherRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentScreenPusherRegister.m; sourceTree = "<group>"; };
 		73FBFDC46F8507C15653AA31 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +159,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		509C06E22654F73000E33818 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				509C07192654FAA700E33818 /* TXLiteAVSDK_Smart.framework in Frameworks */,
+				509C070C2654F82500E33818 /* libc++.tbd in Frameworks */,
+				509C070F2654F89B00E33818 /* libresolv.9.tbd in Frameworks */,
+				509C06E72654F73000E33818 /* ReplayKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		97C146EB1CF9000F007C117D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,6 +205,7 @@
 			children = (
 				501E82CA26242EB00076BD47 /* GenerateTestUserSig.h */,
 				501E82CB26242EB00076BD47 /* GenerateTestUserSig.m */,
+				509C07252654FD0D00E33818 /* TencentScreenPushWidget */,
 				505D46B1262853EF0053C3A8 /* TencentCameraPushWidget */,
 				501E82E12624646F0076BD47 /* TencentPlayerWidget */,
 			);
@@ -162,13 +233,41 @@
 				505D46B2262854410053C3A8 /* TencentCameraPusher.h */,
 				505D46B3262854800053C3A8 /* TencentCameraPusher.m */,
 				505D46B526285B730053C3A8 /* TencentCameraPusherFactory.h */,
-				505D46B626285B910053C3A8 /* TencentCameraPushFactory.m */,
+				505D46B626285B910053C3A8 /* TencentCameraPusherFactory.m */,
 				505D46B826285C470053C3A8 /* TencentCameraPusherPlugin.h */,
 				505D46B926285C560053C3A8 /* TencentCameraPusherPlugin.m */,
 				505D46BB26285CF20053C3A8 /* TencentCameraPusherRegister.h */,
 				505D46BC26285D360053C3A8 /* TencentCameraPusherRegister.m */,
 			);
 			path = TencentCameraPushWidget;
+			sourceTree = "<group>";
+		};
+		509C06E82654F73000E33818 /* AceReplaykitUpload */ = {
+			isa = PBXGroup;
+			children = (
+				509C06EB2654F73000E33818 /* Info.plist */,
+				509C07232654FB6B00E33818 /* ReplayKit2Define.h */,
+				509C071C2654FB2900E33818 /* SampleHandler.h */,
+				509C071D2654FB2900E33818 /* SampleHandler.m */,
+				509C071E2654FB2900E33818 /* SimpleIPC.h */,
+				509C071F2654FB2900E33818 /* SimpleIPC.m */,
+			);
+			path = AceReplaykitUpload;
+			sourceTree = "<group>";
+		};
+		509C07252654FD0D00E33818 /* TencentScreenPushWidget */ = {
+			isa = PBXGroup;
+			children = (
+				509C072A2654FEF700E33818 /* TencentScreenPusher.h */,
+				509C07262654FEDA00E33818 /* TencentScreenPusher.m */,
+				509C072B2654FF3100E33818 /* TencentScreenPusherFactory.h */,
+				509C072C2654FF4500E33818 /* TencentScreenPusherFactory.m */,
+				509C07372654FFB300E33818 /* TencentScreenPusherPlugin.h */,
+				509C07332654FFA400E33818 /* TencentScreenPusherPlugin.m */,
+				509C07382654FFD500E33818 /* TencentScreenPusherRegister.h */,
+				509C07392654FFE600E33818 /* TencentScreenPusherRegister.m */,
+			);
+			path = TencentScreenPushWidget;
 			sourceTree = "<group>";
 		};
 		9740EEB11CF90186004384FC /* Flutter */ = {
@@ -188,6 +287,7 @@
 				501E82EB262467540076BD47 /* TXLiteAVSDK_Smart.framework */,
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
+				509C06E82654F73000E33818 /* AceReplaykitUpload */,
 				97C146EF1CF9000F007C117D /* Products */,
 				DAFD4716C661FF0FAB9AF13B /* Pods */,
 				F361C99F83BA791F8D7E8AFF /* Frameworks */,
@@ -198,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				97C146EE1CF9000F007C117D /* Runner.app */,
+				509C06E52654F73000E33818 /* AceReplaykitUpload.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,10 +335,14 @@
 		F361C99F83BA791F8D7E8AFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				509C07152654F9D300E33818 /* TXLiteAVSDK_Smart */,
+				509C070E2654F87400E33818 /* libresolv.tbd */,
 				501E82F1262469630076BD47 /* libresolv.9.tbd */,
 				501E82EF2624691B0076BD47 /* libz.tbd */,
 				501E82ED262468EF0076BD47 /* libc++.tbd */,
 				846D1E28048FDB02E620D315 /* Pods_Runner.framework */,
+				509C06E62654F73000E33818 /* ReplayKit.framework */,
+				509C06F22654F73100E33818 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -245,6 +350,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		509C06E42654F73000E33818 /* AceReplaykitUpload */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 509C07062654F73100E33818 /* Build configuration list for PBXNativeTarget "AceReplaykitUpload" */;
+			buildPhases = (
+				509C06E12654F73000E33818 /* Sources */,
+				509C06E22654F73000E33818 /* Frameworks */,
+				509C06E32654F73000E33818 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AceReplaykitUpload;
+			productName = AceReplaykitUpload;
+			productReference = 509C06E52654F73000E33818 /* AceReplaykitUpload.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		97C146ED1CF9000F007C117D /* Runner */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97C147051CF9000F007C117D /* Build configuration list for PBXNativeTarget "Runner" */;
@@ -258,10 +380,13 @@
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				609EB6227468E47F89E37C5F /* [CP] Embed Pods Frameworks */,
 				37DF4107C7B8262D63EA79A3 /* [CP] Copy Pods Resources */,
+				509C06FE2654F73100E33818 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				509C06FC2654F73100E33818 /* PBXTargetDependency */,
+				509C07122654F8C200E33818 /* PBXTargetDependency */,
 			);
 			name = Runner;
 			productName = Runner;
@@ -274,9 +399,13 @@
 		97C146E61CF9000F007C117D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
+					509C06E42654F73000E33818 = {
+						CreatedOnToolsVersion = 12.2;
+					};
 					97C146ED1CF9000F007C117D = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 1100;
@@ -297,11 +426,19 @@
 			projectRoot = "";
 			targets = (
 				97C146ED1CF9000F007C117D /* Runner */,
+				509C06E42654F73000E33818 /* AceReplaykitUpload */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		509C06E32654F73000E33818 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		97C146EC1CF9000F007C117D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -403,23 +540,37 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		509C06E12654F73000E33818 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				509C07212654FB2900E33818 /* SimpleIPC.m in Sources */,
+				509C07202654FB2900E33818 /* SampleHandler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		97C146EA1CF9000F007C117D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
 				505D46BA26285C560053C3A8 /* TencentCameraPusherPlugin.m in Sources */,
+				509C07342654FFA400E33818 /* TencentScreenPusherPlugin.m in Sources */,
 				501E82E02624645D0076BD47 /* TencentLivePlayerRegister.m in Sources */,
 				501E8217261EFE400076BD47 /* FlutterIosTextLabelFactory.m in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 				501E82CC26242EB00076BD47 /* GenerateTestUserSig.m in Sources */,
+				509C073D2655059F00E33818 /* SimpleIPC.m in Sources */,
 				501E8214261EFDC10076BD47 /* FlutterIosTextLabel.m in Sources */,
 				505D46B4262854800053C3A8 /* TencentCameraPusher.m in Sources */,
 				501E821A261EFE8F0076BD47 /* FlutterIosTextLabelPlugin.m in Sources */,
 				501E821E261EFF3A0076BD47 /* FlutterIosTextLabelRegister.m in Sources */,
 				501E82EA262465950076BD47 /* TencentLivePlayer.m in Sources */,
+				509C07302654FF5E00E33818 /* TencentScreenPusherFactory.m in Sources */,
+				509C073A2654FFE600E33818 /* TencentScreenPusherRegister.m in Sources */,
 				501E82CF26243CC30076BD47 /* AppFlutterMethodHandle.m in Sources */,
-				505D46B726285B910053C3A8 /* TencentCameraPushFactory.m in Sources */,
+				509C07272654FEDA00E33818 /* TencentScreenPusher.m in Sources */,
+				505D46B726285B910053C3A8 /* TencentCameraPusherFactory.m in Sources */,
 				501E82E7262464FA0076BD47 /* TencentLivePlayerFactory.m in Sources */,
 				505D46BD26285D360053C3A8 /* TencentCameraPusherRegister.m in Sources */,
 				501E82E4262464C50076BD47 /* TencentLivePlayerPlugin.m in Sources */,
@@ -427,6 +578,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		509C06FC2654F73100E33818 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 509C06E42654F73000E33818 /* AceReplaykitUpload */;
+			targetProxy = 509C06FB2654F73100E33818 /* PBXContainerItemProxy */;
+		};
+		509C07122654F8C200E33818 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 509C06E42654F73000E33818 /* AceReplaykitUpload */;
+			targetProxy = 509C07112654F8C200E33818 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		97C146FA1CF9000F007C117D /* Main.storyboard */ = {
@@ -539,6 +703,120 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Profile;
+		};
+		509C06FF2654F73100E33818 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 96R3CP2T5U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/TXLiteAVSDK_Smart.framework/Headers";
+				INFOPLIST_FILE = AceReplaykitUpload/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TXLiteAVSDK_Smart.framework",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.az.zbtest.AceReplaykitUpload;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		509C07002654F73100E33818 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 96R3CP2T5U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/TXLiteAVSDK_Smart.framework/Headers";
+				INFOPLIST_FILE = AceReplaykitUpload/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TXLiteAVSDK_Smart.framework",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.az.zbtest.AceReplaykitUpload;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		509C07012654F73100E33818 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 96R3CP2T5U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/TXLiteAVSDK_Smart.framework/Headers";
+				INFOPLIST_FILE = AceReplaykitUpload/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TXLiteAVSDK_Smart.framework",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.az.zbtest.AceReplaykitUpload;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Profile;
 		};
@@ -741,6 +1019,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		509C07062654F73100E33818 /* Build configuration list for PBXNativeTarget "AceReplaykitUpload" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				509C06FF2654F73100E33818 /* Debug */,
+				509C07002654F73100E33818 /* Release */,
+				509C07012654F73100E33818 /* Profile */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		97C146E91CF9000F007C117D /* Build configuration list for PBXProject "Runner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/tencent_pusher_controller.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_camera_pusher/tencent_pusher_controller.dart';
 
 class TencentPusherProvider extends InheritedWidget {
   const TencentPusherProvider({

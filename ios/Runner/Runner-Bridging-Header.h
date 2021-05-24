@@ -2,6 +2,7 @@
 #import "FlutterIosTextLabelRegister.h"
 #import "TencentLivePlayerRegister.h"
 #import "TencentCameraPusherRegister.h"
+#import "TencentScreenPusherRegister.h"
 #import "AppFlutterMethodHandle.h"
 
 #ifdef ENABLE_TRTC

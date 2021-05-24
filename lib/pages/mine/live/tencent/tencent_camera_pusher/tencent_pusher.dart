@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/tencent_pusher_controller.dart';
-import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/tencent_pusher_provider.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_camera_pusher/tencent_pusher_controller.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_camera_pusher/tencent_pusher_provider.dart';
 
 //拉流播放器
 class TencentPusher extends StatefulWidget {

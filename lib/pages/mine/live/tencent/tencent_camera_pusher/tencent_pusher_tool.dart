@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/tencent_pusher.dart';
-import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/tencent_pusher_controller.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_camera_pusher/tencent_pusher.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_camera_pusher/tencent_pusher_controller.dart';
 
 class TencentPusherTool {
   static TencentPusherController playerControll;

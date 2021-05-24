@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/model/tencent_live_event_model.dart';
-import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pusher/tencent_pusher_event.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_camera_pusher/tencent_pusher_event.dart';
 import 'package:flutter_widgets_example/utils/toast_util.dart';
 
 /*

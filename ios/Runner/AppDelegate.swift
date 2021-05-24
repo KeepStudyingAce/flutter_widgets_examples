@@ -23,6 +23,8 @@ import Flutter
     TencentLivePlayerRegister.register(with: self)
     //自定义腾讯直播摄像头推流
     TencentCameraPusherRegister.register(with: self)
+    //自定义腾讯直播录屏推流
+    TencentScreenPusherRegister.register(with: self)
     
     
     #warning("===处理flutter通信===")

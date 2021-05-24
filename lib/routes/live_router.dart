@@ -4,6 +4,7 @@ import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_camera_p
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_live_login_page.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_live_main_page.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_pull_live_page.dart';
+import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_screen_push_live_page.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
 import 'package:flutter_widgets_example/routes/routes.dart';
 import 'package:flutter/material.dart';
@@ -39,6 +40,13 @@ class LiveRouter implements IRouterProvider {
   // 腾讯直播摄像头推流页面
   static goTXCameraPusherPage(BuildContext context) {
     NavigatorUtil.pushTo(context, _cameraPusherPage);
+  }
+
+  static String _screenPusherPage = "/_screenPusherPage";
+
+  // 腾讯录屏推流页面
+  static goTXScreenPusherPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _screenPusherPage);
   }
 
   static String _aliLivePage = "/_aliLivePage";
@@ -82,6 +90,15 @@ class LiveRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             TencentCameraPushLivePage(),
+      ),
+    );
+
+    // 腾讯直播录屏推流
+    router.define(
+      _screenPusherPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            TencentScreenPushLivePage(),
       ),
     );
 

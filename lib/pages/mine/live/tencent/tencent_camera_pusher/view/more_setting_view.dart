@@ -57,7 +57,10 @@ class _MoreSettingViewState extends State<MoreSettingView> {
             fontSize: 14,
           ),
         ),
-        trailing: CupertinoSwitch(value: false, onChanged: onClick),
+        trailing: Transform.scale(
+          scale: 0.7,
+          child: CupertinoSwitch(value: false, onChanged: onClick),
+        ),
       ),
     );
   }
