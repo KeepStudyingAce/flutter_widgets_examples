@@ -28,7 +28,8 @@ class _TencentLiveMainPageState extends State<TencentLiveMainPage> {
   List<Widget> _buildList() {
     return [
       _buildItem("推流演示（摄像头推流）", () => LiveRouter.goTXCameraPusherPage(context)),
-      _buildItem("推流演示（录屏推流）", () => LiveRouter.goTXScreenPusherPage(context)),
+      _buildItem("推流演示（录屏推流，试用账号7天过期，未验证）",
+          () => LiveRouter.goTXScreenPusherPage(context)),
       _buildItem("拉流演示", () => LiveRouter.goTXPullLivePage(context)),
       _buildItem("连麦演示", () {}),
     ];

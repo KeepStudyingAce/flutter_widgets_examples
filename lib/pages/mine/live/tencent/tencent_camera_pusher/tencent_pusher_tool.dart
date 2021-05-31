@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'dart:typed_data';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_camera_pusher/tencent_pusher.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_camera_pusher/tencent_pusher_controller.dart';
 
@@ -73,6 +73,20 @@ class TencentPusherTool {
   static void switchPortrait() async {
     if (playerControll != null) {
       playerControll.switchPortrait();
+    }
+  }
+
+  //发送消息
+  static void snapShot({Function(Uint8List) imageCallback}) async {
+    if (playerControll != null) {
+      playerControll.snapShot(imageCallback: imageCallback);
+    }
+  }
+
+  //发送消息
+  static void sendMessage(String msg) async {
+    if (playerControll != null) {
+      playerControll.sendMessage(msg);
     }
   }
 

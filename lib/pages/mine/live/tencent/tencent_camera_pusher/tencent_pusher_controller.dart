@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
-
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/model/tencent_live_event_model.dart';
@@ -212,6 +212,28 @@ class TencentPusherController extends ChangeNotifier {
         ToastUtil.showToast(message);
       }
 
+      // notifyListeners();
+    }
+  }
+
+  //发送消息
+  void sendMessage(String msg) async {
+    if (_channel != null) {
+      String message = await _channel.invokeMethod("sendMessage");
+      if (message != null) {
+        ToastUtil.showToast(message);
+      }
+      // notifyListeners();
+    }
+  }
+
+  //截图
+  void snapShot({Function(Uint8List) imageCallback}) async {
+    if (_channel != null) {
+      Uint8List message = await _channel.invokeMethod("snapShot");
+      if (message != null) {
+        imageCallback(message);
+      }
       // notifyListeners();
     }
   }

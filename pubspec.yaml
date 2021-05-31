@@ -57,8 +57,10 @@ dependencies:
   flutter_baidu_mapapi_utils: ^2.0.0
   flutter_baidu_mapapi_search: ^2.0.0
   share: ^0.6.1+1
-  #权限请求
+  # 权限请求
   permission_handler: ^5.0.1+1
+  # 保存图片/文件到本地
+  image_gallery_saver: ^1.5.0
   #城市页面列表
   azlistview: ^1.1.0
   lpinyin: ^1.1.0

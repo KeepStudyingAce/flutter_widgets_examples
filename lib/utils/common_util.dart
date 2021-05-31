@@ -1,8 +1,62 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'dart:typed_data';
 import 'package:flutter_widgets_example/pages/home/home/azlistview/models.dart';
 import 'package:flutter_widgets_example/utils/toast_util.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
 
 class CommonUtils {
+  //检查功能权限
+  static Future<bool> checkPermission(Permission permissionGroup) async {
+    PermissionStatus status = await permissionGroup.request();
+    return status == PermissionStatus.granted;
+  }
+
+  // 申请权限
+  static Future<bool> requestPermission(Permission permissionGroup) async {
+    bool hasPermission = await checkPermission(permissionGroup);
+    if (!hasPermission) {
+      Map<Permission, PermissionStatus> map = {
+        permissionGroup: await permissionGroup.request()
+      };
+      ;
+      PermissionStatus permissionStatus = map[permissionGroup];
+      if (PermissionStatus.granted != permissionStatus) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  ///==========================保存图片到本地============================
+  static Future<bool> saveImage(Uint8List pngBytes) async {
+    bool saveSuccess = false;
+    try {
+      bool requestPermissionSuccess =
+          await requestPermission(Permission.storage);
+      if (!requestPermissionSuccess) {
+        return false;
+      }
+
+      /// result 当Platform.isIOS result 返回值为bool
+      /// 当Platform.isAndroid result 返回值为string  是保存的路径
+      final result = await ImageGallerySaver.saveImage(pngBytes); //这个对象就是图片数据
+
+      if (Platform.isIOS) {
+        saveSuccess = result["isSuccess"];
+      } else {
+        saveSuccess = (result != null && result != '');
+      }
+
+      return saveSuccess;
+    } catch (e) {
+      print(e);
+      return false;
+    }
+  }
+
   static String getImgPath(String name) {
     return 'lib/assets/$name';
   }

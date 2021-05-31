@@ -59,7 +59,15 @@
         [self stopPush];
     }else if ([[call method] isEqualToString:@"switchCamera"]) {
         [self switchCamera];
-    } else {
+    } else  if ([[call method] isEqualToString:@"sendMessage"]) {
+        [_pusher sendMessageEx:[[call arguments] dataUsingEncoding:NSUTF8StringEncoding]];
+    } else   if ([[call method] isEqualToString:@"snapShot"]) {
+        [_pusher snapshot:^(TXImage *img) {
+            if (img != nil) {
+                result(UIImagePNGRepresentation(img));
+            }
+        }];
+    } {
         //其他方法的回调
     }
 }
