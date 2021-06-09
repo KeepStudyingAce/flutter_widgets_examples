@@ -3,16 +3,13 @@ import 'dart:typed_data';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_camera_pusher/tencent_pusher.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_camera_pusher/tencent_pusher_controller.dart';
 
+//文件不必要，可以优化掉，使用controller控制视频状态，代码更简洁（后期优化）
 class TencentPusherTool {
   static TencentPusherController playerControll;
   static TencentPusher currentPlayer;
   static StreamSubscription _streamSubscription;
   //播放器初始化
-  static init(
-    TencentPusherController controller, {
-    bool autoPush = true,
-    Function finishInited,
-  }) {
+  static init(TencentPusherController controller, {bool autoPush = true}) {
     playerControll = controller;
     currentPlayer = TencentPusher(
       controller: controller,
@@ -20,7 +17,6 @@ class TencentPusherTool {
         if (autoPush) {
           TencentPusherTool.startPlayer();
         }
-        finishInited?.call();
       },
     );
   }

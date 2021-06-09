@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player.dart';
 import 'package:flutter_widgets_example/pages/mine/live/tencent/tencent_player/tencent_player_controller.dart';
-
+//文件不必要，可以优化掉，使用controller控制视频状态，代码更简洁（后期优化）
 class TencentPullTool {
   static TencentPlayerController playerControll;
   static TencentPlayer currentPlayer;
@@ -11,7 +11,6 @@ class TencentPullTool {
   static init(
     TencentPlayerController controller, {
     bool autoPlayer = true,
-    Function finishInited,
   }) {
     playerControll = controller;
     currentPlayer = TencentPlayer(
@@ -20,7 +19,6 @@ class TencentPullTool {
         if (autoPlayer) {
           TencentPullTool.startPlayer();
         }
-        finishInited?.call();
       },
     );
   }
