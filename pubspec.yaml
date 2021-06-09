@@ -68,6 +68,9 @@ dependencies:
   qr_code_scanner: ^0.3.5
   #自定义键盘
   cool_ui: "^0.6.1"
+  #感应器
+  sensors_plus: ^0.6.0
+  # snake: ^0.1.0
 
   #滚动到制定位置播放
   inview_notifier_list: ^1.0.0

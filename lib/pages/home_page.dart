@@ -180,6 +180,7 @@ class _HomePageState extends State<HomePage> {
           "ReorderList拖动排序列表", () => HomeRouter.goReorderListPage(context)),
       _buildItem("SliverAppBar(可以缩放的AppBar)",
           () => HomeRouter.goSliverAppBarPage(context)),
+      _buildItem("Senors(传感器)", () => HomeRouter.goSensorPage(context)),
       _buildItem(
           "StreamBuilder", () => HomeRouter.goStreamBuilderPage(context)),
       _buildItem("FlutterSwiper组件", () => HomeRouter.goSwiper(context)),

@@ -23,6 +23,7 @@ import 'package:flutter_widgets_example/pages/home/home/inview_notifier/inview_n
 import 'package:flutter_widgets_example/pages/home/home/layout_builder_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/overlayer_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/reorderable_list_page.dart';
+import 'package:flutter_widgets_example/pages/home/home/sensor_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/sliver_app_bar_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/stream_builder_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/swiper_page.dart';
@@ -139,6 +140,14 @@ class HomeRouter implements IRouterProvider {
   /// 跳到FutureBuildPage页面
   static goFutureBuildPage(BuildContext context) {
     NavigatorUtil.pushTo(context, _futureBuildPage);
+  }
+
+  ///SensorBuilderPage
+  static String _sensorPage = "/_sensorsPage";
+
+  /// 跳到SensorPage页面
+  static goSensorPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _sensorPage);
   }
 
   ///StreamBuilderPage
@@ -386,6 +395,14 @@ class HomeRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             FutureBuildPage(),
+      ),
+    );
+    //SensorPage
+    router.define(
+      _sensorPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            SensorPage(),
       ),
     );
     // StreamBuilderPage
