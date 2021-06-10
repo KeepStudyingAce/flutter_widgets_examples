@@ -53,6 +53,7 @@ class _MinePageState extends State<MinePage> {
 
   List<Widget> _buildList() {
     return [
+      _buildItem("模拟抽奖", () => MineRouter.goLotteryPage(context)),
       _buildItem("拖拽排序功能", () => MineRouter.goDragSortPage(context)),
       _buildItem("自定义键盘", () => MineRouter.goCustomKeyboardPage(context)),
       _buildItem("嵌套原生组件", () => MineRouter.goIOSComponentPage(context)),

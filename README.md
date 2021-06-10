@@ -43,3 +43,6 @@ iOS工程配置:
 6、TextField弹出自定义键盘：
 
     cool_ui:https://github.com/Im-Kevin/cool_ui
+
+
+## 腾讯直播相关，CocoaPods管理SDK时遇到一些问题，在appex中无法找到，所以暂时手动引入SDK库

@@ -1,6 +1,4 @@
 PODS:
-  - aeyrium_sensor (1.0.0):
-    - Flutter
   - AMap3DMap (7.8.0):
     - AMapFoundation (~> 1.6.4)
   - amap_flutter_map (0.0.1):
@@ -46,7 +44,6 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
-  - aeyrium_sensor (from `.symlinks/plugins/aeyrium_sensor/ios`)
   - amap_flutter_map (from `.symlinks/plugins/amap_flutter_map/ios`)
   - Flutter (from `Flutter`)
   - flutter_baidu_mapapi_base (from `.symlinks/plugins/flutter_baidu_mapapi_base/ios`)
@@ -68,8 +65,6 @@ SPEC REPOS:
     - MTBBarcodeScanner
 
 EXTERNAL SOURCES:
-  aeyrium_sensor:
-    :path: ".symlinks/plugins/aeyrium_sensor/ios"
   amap_flutter_map:
     :path: ".symlinks/plugins/amap_flutter_map/ios"
   Flutter:
@@ -96,7 +91,6 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/video_player/ios"
 
 SPEC CHECKSUMS:
-  aeyrium_sensor: cdaa0bdd7206824ea4fb910c627cad05275362e5
   AMap3DMap: 3e4fac78e3e023cefd47e7d7715ef5ea69bfd0fa
   amap_flutter_map: 979e54d227cedac6c7504a2151bfbf3bcf96760a
   AMapFoundation: 3638198dfa40be54648570c3520edefad288286b
