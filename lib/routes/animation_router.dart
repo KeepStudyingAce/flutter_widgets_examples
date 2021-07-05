@@ -4,6 +4,7 @@ import 'package:flutter_widgets_example/pages/home/animation/animation_container
 import 'package:flutter_widgets_example/pages/home/animation/animation_cross_fade_page.dart';
 import 'package:flutter_widgets_example/pages/home/animation/flip_text_page.dart';
 import 'package:flutter_widgets_example/pages/home/animation/hide_bottom_bar_page.dart';
+import 'package:flutter_widgets_example/pages/home/animation/live_favor_animation_page.dart';
 import 'package:flutter_widgets_example/pages/home/animation/matrix4_animation_page.dart';
 import 'package:flutter_widgets_example/pages/home/animation/spinkit_page.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
@@ -68,6 +69,14 @@ class AnimationRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _matrix4AnimationPage);
   }
 
+  ///直播点赞动画
+  static String _liveFavorAnimationPage = "/_liveFavorAnimationPage";
+
+  /// 跳到LiveFavorAnimationPage页面
+  static goLiveFavorAnimationPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _liveFavorAnimationPage);
+  }
+
   @override
   void initRouter(FluroRouter router) {
     // FlipTextPage页面
@@ -124,6 +133,15 @@ class AnimationRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             Matrix4AnimationPage(),
+      ),
+    );
+
+    // LiveFavorAnimationPage
+    router.define(
+      _liveFavorAnimationPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            LiveFavorAnimationPage(),
       ),
     );
   }

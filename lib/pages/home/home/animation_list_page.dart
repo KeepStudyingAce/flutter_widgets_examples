@@ -36,6 +36,8 @@ class _AnimationListPageState extends State<AnimationListPage> {
               () => AnimationRouter.goAnimatedBuildPage(context)),
           _buildItem("Matrix4Animation",
               () => AnimationRouter.goMatrix4AnimationPage(context)),
+          _buildItem("直播点赞动画",
+              () => AnimationRouter.goLiveFavorAnimationPage(context)),
         ],
       ),
     );
