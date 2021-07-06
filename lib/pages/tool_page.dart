@@ -42,8 +42,10 @@ class _ToolPageState extends State<ToolPage> {
 
   List<Widget> _buildList() {
     return [
-      _buildItem("FlutterSwiper组件", () => ToolRouter.goSwiper(context)),
+      _buildItem(
+          "AnimatedText组件", () => ToolRouter.goAnimatedTextPage(context)),
       _buildItem("DragList组件", () => ToolRouter.goDragListPage(context)),
+      _buildItem("FlutterSwiper组件", () => ToolRouter.goSwiper(context)),
     ];
   }
 
