@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "change_language" : MessageLookupByLibrary.simpleMessage("修改语言"),
     "tab_home" : MessageLookupByLibrary.simpleMessage("首页"),
     "tab_map" : MessageLookupByLibrary.simpleMessage("地图"),
-    "tab_mine" : MessageLookupByLibrary.simpleMessage("个人")
+    "tab_mine" : MessageLookupByLibrary.simpleMessage("个人"),
+    "tab_tool" : MessageLookupByLibrary.simpleMessage("工具")
   };
 }

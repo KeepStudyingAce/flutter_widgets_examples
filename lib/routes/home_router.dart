@@ -26,7 +26,6 @@ import 'package:flutter_widgets_example/pages/home/home/reorderable_list_page.da
 import 'package:flutter_widgets_example/pages/home/home/sensor_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/sliver_app_bar_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/stream_builder_page.dart';
-import 'package:flutter_widgets_example/pages/home/home/swiper_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/table_page.dart';
 import 'package:flutter_widgets_example/pages/home/home/transform_page.dart';
 import 'package:flutter_widgets_example/pages/root.dart';
@@ -49,12 +48,7 @@ class HomeRouter implements IRouterProvider {
         clearStack: true, transition: Fluro.TransitionType.fadeIn);
   }
 
-  static String _swiper = "/swiper";
-
-  /// 跳到Swiper页面
-  static goSwiper(BuildContext context) {
-    NavigatorUtil.pushTo(context, _swiper);
-  }
+  
 
   static String _animationListPage = "/_animation_list_page";
 
@@ -302,12 +296,7 @@ class HomeRouter implements IRouterProvider {
             handlerFunc:
                 (BuildContext context, Map<String, List<String>> params) =>
                     Root()));
-    // Swiper页面
-    router.define(_swiper,
-        handler: Fluro.Handler(
-            handlerFunc:
-                (BuildContext context, Map<String, List<String>> params) =>
-                    SwiperPage()));
+    
 
     // DragSortPage页面
     router.define(

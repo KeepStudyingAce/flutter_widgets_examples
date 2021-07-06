@@ -5,6 +5,7 @@ import 'package:flutter_widgets_example/routes/home_router.dart';
 import 'package:flutter_widgets_example/routes/live_router.dart';
 import 'package:flutter_widgets_example/routes/map_router.dart';
 import 'package:flutter_widgets_example/routes/mine_router.dart';
+import 'package:flutter_widgets_example/routes/tool_router.dart';
 
 class Application {
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey();
@@ -26,6 +27,7 @@ class Routers {
     _listRouter.add(AnimationRouter());
     _listRouter.add(MineRouter());
     _listRouter.add(LiveRouter());
+    _listRouter.add(ToolRouter());
 
     _listRouter.forEach((routerProvider) {
       routerProvider.initRouter(router);

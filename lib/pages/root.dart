@@ -4,6 +4,9 @@ import 'package:flutter_widgets_example/generated/l10n.dart';
 import 'package:flutter_widgets_example/pages/home_page.dart';
 import 'package:flutter_widgets_example/pages/map_page.dart';
 import 'package:flutter_widgets_example/pages/mine_page.dart';
+import 'package:flutter_widgets_example/pages/tool_page.dart';
+import 'package:hidden_drawer_menu/hidden_drawer/hidden_drawer_menu.dart';
+import 'package:provider/provider.dart';
 
 class Root extends StatefulWidget {
   Root({Key key}) : super(key: key);
@@ -17,7 +20,7 @@ class _RootState extends State<Root> {
   int _currentIndex = 0;
   @override
   void initState() {
-    pageList..add(HomePage())..add(MapPage())..add(MinePage());
+    pageList..add(HomePage())..add(MapPage())..add(ToolPage())..add(MinePage());
     super.initState();
   }
 
@@ -47,21 +50,39 @@ class _RootState extends State<Root> {
                         : CommonColors.subTextColor),
               )),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.map,
-                color: CommonColors.subTextColor,
-              ),
-              activeIcon: Icon(
-                Icons.map,
-                color: CommonColors.themeColor,
-              ),
-              title: Text(
-                S.of(context).tab_map,
-                style: TextStyle(
-                    color: _currentIndex == 1
-                        ? CommonColors.themeColor
-                        : CommonColors.subTextColor),
-              )),
+            icon: Icon(
+              Icons.map,
+              color: CommonColors.subTextColor,
+            ),
+            activeIcon: Icon(
+              Icons.map,
+              color: CommonColors.themeColor,
+            ),
+            title: Text(
+              S.of(context).tab_map,
+              style: TextStyle(
+                  color: _currentIndex == 1
+                      ? CommonColors.themeColor
+                      : CommonColors.subTextColor),
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.handyman,
+              color: CommonColors.subTextColor,
+            ),
+            activeIcon: Icon(
+              Icons.handyman,
+              color: CommonColors.themeColor,
+            ),
+            title: Text(
+              S.of(context).tab_tool,
+              style: TextStyle(
+                  color: _currentIndex == 2
+                      ? CommonColors.themeColor
+                      : CommonColors.subTextColor),
+            ),
+          ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.email,
@@ -74,7 +95,7 @@ class _RootState extends State<Root> {
             title: Text(
               S.of(context).tab_mine,
               style: TextStyle(
-                  color: _currentIndex == 2
+                  color: _currentIndex == 3
                       ? CommonColors.themeColor
                       : CommonColors.subTextColor),
             ),

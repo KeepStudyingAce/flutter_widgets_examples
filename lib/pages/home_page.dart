@@ -183,7 +183,7 @@ class _HomePageState extends State<HomePage> {
       _buildItem("Senors(传感器)", () => HomeRouter.goSensorPage(context)),
       _buildItem(
           "StreamBuilder", () => HomeRouter.goStreamBuilderPage(context)),
-      _buildItem("FlutterSwiper组件", () => HomeRouter.goSwiper(context)),
+      
       _buildItem("Table组件", () => HomeRouter.goTablePage(context)),
       _buildItem("Transform组件", () => HomeRouter.goTransformPage(context)),
     ];

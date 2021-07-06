@@ -75,6 +75,16 @@ class S {
     );
   }
 
+  /// `Tool`
+  String get tab_tool {
+    return Intl.message(
+      'Tool',
+      name: 'tab_tool',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `ChangeLanguage`
   String get change_language {
     return Intl.message(
