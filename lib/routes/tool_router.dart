@@ -2,6 +2,7 @@ import 'package:fluro/fluro.dart' as Fluro;
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets_example/pages/tool/animated_text_page.dart';
 import 'package:flutter_widgets_example/pages/tool/drag_list_page.dart';
+import 'package:flutter_widgets_example/pages/tool/like_button_page.dart';
 import 'package:flutter_widgets_example/pages/tool/swiper_page.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
 import 'package:flutter_widgets_example/routes/routes.dart';
@@ -28,6 +29,13 @@ class ToolRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _animatedTextPage);
   }
 
+  static String _likeButtonPage = "/_likeButtonPage";
+
+  /// 跳到LikeButtonPage页面
+  static goLikeButtonPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _likeButtonPage);
+  }
+
   @override
   void initRouter(Fluro.FluroRouter router) {
     router.define(
@@ -49,6 +57,13 @@ class ToolRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             AnimatedTextPage(),
+      ),
+    );
+    router.define(
+      _likeButtonPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            LikeButtonPage(),
       ),
     );
   }
