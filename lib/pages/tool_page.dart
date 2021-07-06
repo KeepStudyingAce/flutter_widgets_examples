@@ -46,6 +46,8 @@ class _ToolPageState extends State<ToolPage> {
           "AnimatedText组件", () => ToolRouter.goAnimatedTextPage(context)),
       _buildItem("DragList组件", () => ToolRouter.goDragListPage(context)),
       _buildItem("FlutterSwiper组件", () => ToolRouter.goSwiper(context)),
+      _buildItem(
+          "FlutterSpeedDial组件", () => ToolRouter.goSpeedDialPage(context)),
       _buildItem("LikeButton组件", () => ToolRouter.goLikeButtonPage(context)),
     ];
   }

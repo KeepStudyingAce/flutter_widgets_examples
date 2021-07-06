@@ -80,6 +80,9 @@ dependencies:
   #点赞效果
   like_button: ^1.0.4
 
+  #可展开选项浮动按钮
+  flutter_speed_dial: ^1.2.4
+
   #滚动到制定位置播放
   inview_notifier_list: ^1.0.0
   video_player: ^0.10.1+3

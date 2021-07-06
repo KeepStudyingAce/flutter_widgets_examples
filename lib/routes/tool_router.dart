@@ -2,6 +2,7 @@ import 'package:fluro/fluro.dart' as Fluro;
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets_example/pages/tool/animated_text_page.dart';
 import 'package:flutter_widgets_example/pages/tool/drag_list_page.dart';
+import 'package:flutter_widgets_example/pages/tool/flutter_speed_dial.dart';
 import 'package:flutter_widgets_example/pages/tool/like_button_page.dart';
 import 'package:flutter_widgets_example/pages/tool/swiper_page.dart';
 import 'package:flutter_widgets_example/routes/navigation_utils.dart';
@@ -36,6 +37,13 @@ class ToolRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _likeButtonPage);
   }
 
+  static String _speedDialPage = "/_speedDialPage";
+
+  /// 跳到SpeedDial页面
+  static goSpeedDialPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _speedDialPage);
+  }
+
   @override
   void initRouter(Fluro.FluroRouter router) {
     router.define(
@@ -64,6 +72,13 @@ class ToolRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             LikeButtonPage(),
+      ),
+    );
+    router.define(
+      _speedDialPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            SpeedDialPage(),
       ),
     );
   }
