@@ -518,6 +518,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.2.0"
+  scratcher:
+    dependency: "direct main"
+    description:
+      name: scratcher
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.4.2"
   scrollable_positioned_list:
     dependency: transitive
     description:
