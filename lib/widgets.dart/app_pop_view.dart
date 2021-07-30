@@ -65,7 +65,7 @@ class AppPopView {
         .push(_ModalBottomSheetRoute<T>(
       builder: builder,
       showFullScreen: showFullScreen,
-      theme: Theme.of(context, shadowThemeOnly: true),
+      theme: Theme.of(context),
       isScrollControlled: isScrollControlled,
       barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
       backgroundColor: backgroundColor,

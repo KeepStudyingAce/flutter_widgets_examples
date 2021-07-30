@@ -5,7 +5,6 @@ import 'package:flutter_widgets_example/pages/home_page.dart';
 import 'package:flutter_widgets_example/pages/map_page.dart';
 import 'package:flutter_widgets_example/pages/mine_page.dart';
 import 'package:flutter_widgets_example/pages/tool_page.dart';
-import 'package:hidden_drawer_menu/hidden_drawer/hidden_drawer_menu.dart';
 import 'package:provider/provider.dart';
 
 class Root extends StatefulWidget {

@@ -35,7 +35,7 @@ class FrostedGlassPage extends StatelessWidget {
                     ),
                     child: new Center(
                       child: new Text('Frosted',
-                          style: Theme.of(context).textTheme.display3),
+                          style: Theme.of(context).textTheme.bodyText1),
                     ),
                   ),
                 ),

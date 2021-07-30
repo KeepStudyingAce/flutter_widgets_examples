@@ -12,7 +12,6 @@ import 'package:flutter_widgets_example/providers/app_provider.dart';
 import 'package:flutter_widgets_example/routes/routes.dart';
 import 'package:flutter_widgets_example/utils/app_navigator_observer.dart';
 import 'package:flutter_widgets_example/widgets.dart/self_keyboard.dart';
-import 'package:hidden_drawer_menu/simple_hidden_drawer/provider/simple_hidden_drawer_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_baidu_mapapi_base/flutter_baidu_mapapi_base.dart'

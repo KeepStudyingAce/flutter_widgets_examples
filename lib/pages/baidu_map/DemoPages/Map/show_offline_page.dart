@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_widgets_example/utils/common_util.dart';
 
 import '../../CustomWidgets/map_appbar.dart';
 import 'package:flutter_baidu_mapapi_map/flutter_baidu_mapapi_map.dart';
@@ -266,10 +267,12 @@ class _ShowOfflineMapPageState extends State<ShowOfflineMapPage> {
   }
 
   requestPermiss() async {
-    Future<bool> isGranted = Permission.storage.isGranted;
+    Future<bool> isGranted =
+        CommonUtils.checkPermission(PermissionGroup.storage);
 
     isGranted.then((value) => {
-          if (null != value && false == value) {Permission.storage.request()}
+          if (null != value && false == value)
+            {CommonUtils.checkPermission(PermissionGroup.storage)}
         });
   }
 

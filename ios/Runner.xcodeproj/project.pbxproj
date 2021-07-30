@@ -10,6 +10,8 @@
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		2F138D88DEF9C29C45428F70 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846D1E28048FDB02E620D315 /* Pods_Runner.framework */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
+		3FC3706F599607329FB059B7 /* Pods_AceReplaykitUpload.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A027002131B9EEB668D7F6A /* Pods_AceReplaykitUpload.framework */; };
+		46EC40BEF9F3D94F9BA4CBE8 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9F5C6ADFD094AF52940A2B /* Pods_Runner.framework */; };
 		501E8214261EFDC10076BD47 /* FlutterIosTextLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E8213261EFDC10076BD47 /* FlutterIosTextLabel.m */; };
 		501E8217261EFE400076BD47 /* FlutterIosTextLabelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E8216261EFE400076BD47 /* FlutterIosTextLabelFactory.m */; };
 		501E821A261EFE8F0076BD47 /* FlutterIosTextLabelPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E8219261EFE8F0076BD47 /* FlutterIosTextLabelPlugin.m */; };
@@ -20,10 +22,10 @@
 		501E82E4262464C50076BD47 /* TencentLivePlayerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E82E3262464C50076BD47 /* TencentLivePlayerPlugin.m */; };
 		501E82E7262464FA0076BD47 /* TencentLivePlayerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E82E6262464FA0076BD47 /* TencentLivePlayerFactory.m */; };
 		501E82EA262465950076BD47 /* TencentLivePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 501E82E9262465950076BD47 /* TencentLivePlayer.m */; };
-		501E82EC262467540076BD47 /* TXLiteAVSDK_Smart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82EB262467540076BD47 /* TXLiteAVSDK_Smart.framework */; };
 		501E82EE262468EF0076BD47 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82ED262468EF0076BD47 /* libc++.tbd */; };
 		501E82F02624691B0076BD47 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82EF2624691B0076BD47 /* libz.tbd */; };
 		501E82F2262469630076BD47 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82F1262469630076BD47 /* libresolv.9.tbd */; };
+		505C802026B3DE8A0099173D /* Pods_Runner.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 846D1E28048FDB02E620D315 /* Pods_Runner.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		505D46B4262854800053C3A8 /* TencentCameraPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = 505D46B3262854800053C3A8 /* TencentCameraPusher.m */; };
 		505D46B726285B910053C3A8 /* TencentCameraPusherFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 505D46B626285B910053C3A8 /* TencentCameraPusherFactory.m */; };
 		505D46BA26285C560053C3A8 /* TencentCameraPusherPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 505D46B926285C560053C3A8 /* TencentCameraPusherPlugin.m */; };
@@ -32,7 +34,6 @@
 		509C06FD2654F73100E33818 /* AceReplaykitUpload.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 509C06E52654F73000E33818 /* AceReplaykitUpload.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		509C070C2654F82500E33818 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82ED262468EF0076BD47 /* libc++.tbd */; };
 		509C070F2654F89B00E33818 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82F1262469630076BD47 /* libresolv.9.tbd */; };
-		509C07192654FAA700E33818 /* TXLiteAVSDK_Smart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501E82EB262467540076BD47 /* TXLiteAVSDK_Smart.framework */; };
 		509C07202654FB2900E33818 /* SampleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 509C071D2654FB2900E33818 /* SampleHandler.m */; };
 		509C07212654FB2900E33818 /* SimpleIPC.m in Sources */ = {isa = PBXBuildFile; fileRef = 509C071F2654FB2900E33818 /* SimpleIPC.m */; };
 		509C07272654FEDA00E33818 /* TencentScreenPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = 509C07262654FEDA00E33818 /* TencentScreenPusher.m */; };
@@ -64,6 +65,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		505C802126B3DE8A0099173D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				505C802026B3DE8A0099173D /* Pods_Runner.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		509C06FE2654F73100E33818 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,6 +103,7 @@
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
+		4D9F5C6ADFD094AF52940A2B /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		501E8212261EFD6C0076BD47 /* FlutterIosTextLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlutterIosTextLabel.h; sourceTree = "<group>"; };
 		501E8213261EFDC10076BD47 /* FlutterIosTextLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlutterIosTextLabel.m; sourceTree = "<group>"; };
 		501E8215261EFE1E0076BD47 /* FlutterIosTextLabelFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlutterIosTextLabelFactory.h; sourceTree = "<group>"; };
@@ -111,7 +124,6 @@
 		501E82E6262464FA0076BD47 /* TencentLivePlayerFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentLivePlayerFactory.m; sourceTree = "<group>"; };
 		501E82E82624658A0076BD47 /* TencentLivePlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentLivePlayer.h; sourceTree = "<group>"; };
 		501E82E9262465950076BD47 /* TencentLivePlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentLivePlayer.m; sourceTree = "<group>"; };
-		501E82EB262467540076BD47 /* TXLiteAVSDK_Smart.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TXLiteAVSDK_Smart.framework; sourceTree = "<group>"; };
 		501E82ED262468EF0076BD47 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		501E82EF2624691B0076BD47 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		501E82F1262469630076BD47 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
@@ -142,7 +154,7 @@
 		509C07372654FFB300E33818 /* TencentScreenPusherPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentScreenPusherPlugin.h; sourceTree = "<group>"; };
 		509C07382654FFD500E33818 /* TencentScreenPusherRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TencentScreenPusherRegister.h; sourceTree = "<group>"; };
 		509C07392654FFE600E33818 /* TencentScreenPusherRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TencentScreenPusherRegister.m; sourceTree = "<group>"; };
-		73FBFDC46F8507C15653AA31 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
+		70E57F25AC03B9B6D61CAA1E /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
@@ -154,8 +166,13 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9CAAB6D0376CF5CE346AB10C /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
-		9F93A0DCC2A37A9546A7860D /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
+		9A027002131B9EEB668D7F6A /* Pods_AceReplaykitUpload.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AceReplaykitUpload.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABC0F8D34F795D69F07FEA7F /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
+		B153940ED332628320846F56 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
+		CD7B2E4C242FD4E2066C5141 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
+		DB3F58FF554254B24B08E545 /* Pods-AceReplaykitUpload.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AceReplaykitUpload.profile.xcconfig"; path = "Target Support Files/Pods-AceReplaykitUpload/Pods-AceReplaykitUpload.profile.xcconfig"; sourceTree = "<group>"; };
+		EFEAB27622042F4146690FF3 /* Pods-AceReplaykitUpload.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AceReplaykitUpload.debug.xcconfig"; path = "Target Support Files/Pods-AceReplaykitUpload/Pods-AceReplaykitUpload.debug.xcconfig"; sourceTree = "<group>"; };
+		FC265A189E8223C4501E34B4 /* Pods-AceReplaykitUpload.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AceReplaykitUpload.release.xcconfig"; path = "Target Support Files/Pods-AceReplaykitUpload/Pods-AceReplaykitUpload.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,10 +180,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				509C07192654FAA700E33818 /* TXLiteAVSDK_Smart.framework in Frameworks */,
 				509C070C2654F82500E33818 /* libc++.tbd in Frameworks */,
 				509C070F2654F89B00E33818 /* libresolv.9.tbd in Frameworks */,
 				509C06E72654F73000E33818 /* ReplayKit.framework in Frameworks */,
+				3FC3706F599607329FB059B7 /* Pods_AceReplaykitUpload.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,8 +194,8 @@
 				501E82F2262469630076BD47 /* libresolv.9.tbd in Frameworks */,
 				501E82F02624691B0076BD47 /* libz.tbd in Frameworks */,
 				501E82EE262468EF0076BD47 /* libc++.tbd in Frameworks */,
-				501E82EC262467540076BD47 /* TXLiteAVSDK_Smart.framework in Frameworks */,
 				2F138D88DEF9C29C45428F70 /* Pods_Runner.framework in Frameworks */,
+				46EC40BEF9F3D94F9BA4CBE8 /* Pods_Runner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +242,14 @@
 				501E82DF2624645D0076BD47 /* TencentLivePlayerRegister.m */,
 			);
 			path = TencentPlayerWidget;
+			sourceTree = "<group>";
+		};
+		505C807D26B3E4120099173D /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				846D1E28048FDB02E620D315 /* Pods_Runner.framework */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		505D46B1262853EF0053C3A8 /* TencentCameraPushWidget */ = {
@@ -284,13 +309,13 @@
 		97C146E51CF9000F007C117D = {
 			isa = PBXGroup;
 			children = (
-				501E82EB262467540076BD47 /* TXLiteAVSDK_Smart.framework */,
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
 				509C06E82654F73000E33818 /* AceReplaykitUpload */,
 				97C146EF1CF9000F007C117D /* Products */,
 				DAFD4716C661FF0FAB9AF13B /* Pods */,
 				F361C99F83BA791F8D7E8AFF /* Frameworks */,
+				505C807D26B3E4120099173D /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -325,9 +350,12 @@
 		DAFD4716C661FF0FAB9AF13B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9CAAB6D0376CF5CE346AB10C /* Pods-Runner.debug.xcconfig */,
-				9F93A0DCC2A37A9546A7860D /* Pods-Runner.release.xcconfig */,
-				73FBFDC46F8507C15653AA31 /* Pods-Runner.profile.xcconfig */,
+				EFEAB27622042F4146690FF3 /* Pods-AceReplaykitUpload.debug.xcconfig */,
+				FC265A189E8223C4501E34B4 /* Pods-AceReplaykitUpload.release.xcconfig */,
+				DB3F58FF554254B24B08E545 /* Pods-AceReplaykitUpload.profile.xcconfig */,
+				B153940ED332628320846F56 /* Pods-Runner.debug.xcconfig */,
+				ABC0F8D34F795D69F07FEA7F /* Pods-Runner.release.xcconfig */,
+				CD7B2E4C242FD4E2066C5141 /* Pods-Runner.profile.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -340,9 +368,10 @@
 				501E82F1262469630076BD47 /* libresolv.9.tbd */,
 				501E82EF2624691B0076BD47 /* libz.tbd */,
 				501E82ED262468EF0076BD47 /* libc++.tbd */,
-				846D1E28048FDB02E620D315 /* Pods_Runner.framework */,
 				509C06E62654F73000E33818 /* ReplayKit.framework */,
 				509C06F22654F73100E33818 /* UIKit.framework */,
+				9A027002131B9EEB668D7F6A /* Pods_AceReplaykitUpload.framework */,
+				4D9F5C6ADFD094AF52940A2B /* Pods_Runner.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -354,9 +383,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 509C07062654F73100E33818 /* Build configuration list for PBXNativeTarget "AceReplaykitUpload" */;
 			buildPhases = (
+				61878BB53CEA18CAF39EA6C2 /* [CP] Check Pods Manifest.lock */,
 				509C06E12654F73000E33818 /* Sources */,
 				509C06E22654F73000E33818 /* Frameworks */,
 				509C06E32654F73000E33818 /* Resources */,
+				505C802126B3DE8A0099173D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -499,6 +530,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61878BB53CEA18CAF39EA6C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AceReplaykitUpload-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		83A31108B60A301BDD2CAE79 /* [CP] Check Pods Manifest.lock */ = {
@@ -653,6 +706,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PODS_ROOT)";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -671,6 +725,7 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = 96R3CP2T5U;
 				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "i386 arm64";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
@@ -687,7 +742,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/permission_handler/permission_handler.framework/Headers\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/qr_code_scanner/qr_code_scanner.framework/Headers\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/share/share.framework/Headers\"",
-					"$(PROJECT_DIR)/TXLiteAVSDK_Smart.framework/Headers",
+					"$(PODS_ROOT)",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -708,6 +763,7 @@
 		};
 		509C06FF2654F73100E33818 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFEAB27622042F4146690FF3 /* Pods-AceReplaykitUpload.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -722,7 +778,10 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/TXLiteAVSDK_Smart.framework/Headers";
+				HEADER_SEARCH_PATHS = (
+					"$(PODS_ROOT)/**",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = AceReplaykitUpload/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -748,6 +807,7 @@
 		};
 		509C07002654F73100E33818 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC265A189E8223C4501E34B4 /* Pods-AceReplaykitUpload.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -762,7 +822,10 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/TXLiteAVSDK_Smart.framework/Headers";
+				HEADER_SEARCH_PATHS = (
+					"$(PODS_ROOT)/**",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = AceReplaykitUpload/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -785,6 +848,7 @@
 		};
 		509C07012654F73100E33818 /* Profile */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB3F58FF554254B24B08E545 /* Pods-AceReplaykitUpload.profile.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -799,7 +863,10 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/TXLiteAVSDK_Smart.framework/Headers";
+				HEADER_SEARCH_PATHS = (
+					"$(PODS_ROOT)/**",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = AceReplaykitUpload/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -867,6 +934,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PODS_ROOT)";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -916,6 +984,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PODS_ROOT)";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -936,6 +1005,7 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = 96R3CP2T5U;
 				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "i386 arm64";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
@@ -952,7 +1022,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/permission_handler/permission_handler.framework/Headers\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/qr_code_scanner/qr_code_scanner.framework/Headers\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/share/share.framework/Headers\"",
-					"$(PROJECT_DIR)/TXLiteAVSDK_Smart.framework/Headers",
+					"$(PODS_ROOT)",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -981,6 +1051,7 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = 96R3CP2T5U;
 				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "i386 arm64";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
@@ -997,7 +1068,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/permission_handler/permission_handler.framework/Headers\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/qr_code_scanner/qr_code_scanner.framework/Headers\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/share/share.framework/Headers\"",
-					"$(PROJECT_DIR)/TXLiteAVSDK_Smart.framework/Headers",
+					"$(PODS_ROOT)",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

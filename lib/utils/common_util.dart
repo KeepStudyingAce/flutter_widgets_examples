@@ -9,19 +9,20 @@ import 'package:image_gallery_saver/image_gallery_saver.dart';
 
 class CommonUtils {
   //检查功能权限
-  static Future<bool> checkPermission(Permission permissionGroup) async {
-    PermissionStatus status = await permissionGroup.request();
+  static Future<bool> checkPermission(PermissionGroup permissionGroup) async {
+    PermissionStatus status =
+        await PermissionHandler().checkPermissionStatus(permissionGroup);
     return status == PermissionStatus.granted;
   }
 
   // 申请权限
-  static Future<bool> requestPermission(Permission permissionGroup) async {
+  static Future<bool> requestPermission(PermissionGroup permissionGroup) async {
     bool hasPermission = await checkPermission(permissionGroup);
     if (!hasPermission) {
-      Map<Permission, PermissionStatus> map = {
-        permissionGroup: await permissionGroup.request()
-      };
-      ;
+      Map<PermissionGroup, PermissionStatus> map =
+          await PermissionHandler().requestPermissions(<PermissionGroup>[
+        permissionGroup // 在这里添加需要的权限
+      ]);
       PermissionStatus permissionStatus = map[permissionGroup];
       if (PermissionStatus.granted != permissionStatus) {
         return false;
@@ -35,7 +36,7 @@ class CommonUtils {
     bool saveSuccess = false;
     try {
       bool requestPermissionSuccess =
-          await requestPermission(Permission.storage);
+          await requestPermission(PermissionGroup.storage);
       if (!requestPermissionSuccess) {
         return false;
       }

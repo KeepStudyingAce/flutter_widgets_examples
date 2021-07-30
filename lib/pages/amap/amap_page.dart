@@ -1,3 +1,4 @@
+import 'package:flutter_widgets_example/utils/common_util.dart';
 import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
 
 import './pages/overlays/marker_add_after_map.dart';
@@ -60,12 +61,6 @@ final List<BasePage> _overlayPages = <BasePage>[
   PolygonDemoPage('Polygon操作', '演示Polygon的相关属性的操作'),
 ];
 
-final List<Permission> needPermissionList = [
-  Permission.location,
-  Permission.storage,
-  Permission.phone,
-];
-
 class AMapPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -77,22 +72,14 @@ class _AMapPageState extends State<AMapPage> {
   @override
   void initState() {
     super.initState();
-    _checkPermissions();
   }
 
   @override
   void reassemble() {
     super.reassemble();
-    _checkPermissions();
   }
 
-  void _checkPermissions() async {
-    Map<Permission, PermissionStatus> statuses =
-        await needPermissionList.request();
-    statuses.forEach((key, value) {
-      print('$key premissionStatus is $value');
-    });
-  }
+ 
 
   @override
   Widget build(BuildContext context) {

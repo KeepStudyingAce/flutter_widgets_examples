@@ -1,4 +1,5 @@
 import 'package:amap_flutter_map/amap_flutter_map.dart';
+import 'package:flutter_widgets_example/utils/common_util.dart';
 import '../../base_page.dart';
 import '../../const_config.dart';
 import 'package:flutter/material.dart';
@@ -30,8 +31,9 @@ class _BodyState extends State<_Body> {
   }
 
   void _requestLocaitonPermission() async {
-    PermissionStatus status = await Permission.location.request();
-    print('permissionStatus=====> $status');
+    CommonUtils.checkPermission(PermissionGroup.location).then((value) {
+      print('permissionStatus=====> $value');
+    });
   }
 
   @override
