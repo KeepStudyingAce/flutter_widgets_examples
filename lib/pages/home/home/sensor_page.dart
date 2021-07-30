@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets_example/widgets.dart/common_appbar.dart';
+import 'package:flutter_widgets_example/widgets.dart/snake_widget.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 
 class SensorPage extends StatefulWidget {
@@ -76,25 +77,24 @@ class _SensorPageState extends State<SensorPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          // Center(
-          //   child: DecoratedBox(
-          //     decoration: BoxDecoration(
-          //       border: Border.all(width: 1.0, color: Colors.black38),
-          //     ),
-          //     child: SizedBox(
-          //       height: _snakeRows * _snakeCellSize,
-          //       width: _snakeColumns * _snakeCellSize,
-          //       child: Snake(
-          //         rows: _snakeRows,
-          //         columns: _snakeColumns,
-          //         cellSize: _snakeCellSize,
-          //       ),
-          //     ),
-          //   ),
-          // ),
-
+          Center(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                border: Border.all(width: 1.0, color: Colors.black38),
+              ),
+              child: SizedBox(
+                height: _snakeRows * _snakeCellSize,
+                width: _snakeColumns * _snakeCellSize,
+                child: Snake(
+                  rows: _snakeRows,
+                  columns: _snakeColumns,
+                  cellSize: _snakeCellSize,
+                ),
+              ),
+            ),
+          ),
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(6.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -103,7 +103,7 @@ class _SensorPageState extends State<SensorPage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(6.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -112,7 +112,7 @@ class _SensorPageState extends State<SensorPage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(6.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
