@@ -98,7 +98,7 @@ SPEC CHECKSUMS:
   amap_flutter_map: 979e54d227cedac6c7504a2151bfbf3bcf96760a
   AMapFoundation: 3638198dfa40be54648570c3520edefad288286b
   BaiduMapKit: 907c6d9b74f66c3ff4741fc4b568ae0b339917f8
-  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
   flutter_baidu_mapapi_base: 90fddba11ec4435406a7211d6ee905b4311c31db
   flutter_baidu_mapapi_map: 771bf00671832b1fcddb17733518cd631529df16
   flutter_baidu_mapapi_search: 4cffaa74e739a4114595c4f82f790e1783bb612d
