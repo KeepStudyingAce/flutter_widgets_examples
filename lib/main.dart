@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 import 'package:cool_ui/cool_ui.dart';
 import 'package:easy_alert/easy_alert.dart';
 import 'package:flutter/rendering.dart';
@@ -20,43 +19,43 @@ import 'package:flutter_baidu_mapapi_base/flutter_baidu_mapapi_base.dart'
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  // 百度地图sdk初始化鉴权
-  if (Platform.isIOS) {
-    BMFMapSDK.setApiKeyAndCoordType(
-        'LoOyi174RzaW9PjUkgPo9Hewej4bX9LO', BMF_COORD_TYPE.BD09LL);
-  } else if (Platform.isAndroid) {
-    // Android 目前不支持接口设置Apikey,
-    // 请在主工程的Manifest文件里设置，详细配置方法请参考官网(https://lbsyun.baidu.com/)demo
-    BMFMapSDK.setCoordType(BMF_COORD_TYPE.BD09LL);
-  }
+  // // 百度地图sdk初始化鉴权 TODO： 由于context取值的问题暂时注释掉了
+  // if (Theme.of(Application.navigatorKey.currentContext).platform ==
+  //     TargetPlatform.iOS) {
+  //   BMFMapSDK.setApiKeyAndCoordType(
+  //       'LoOyi174RzaW9PjUkgPo9Hewej4bX9LO', BMF_COORD_TYPE.BD09LL);
+  // } else if (Theme.of(Application.navigatorKey.currentContext).platform ==
+  //     TargetPlatform.android) {
+  //   // Android 目前不支持接口设置Apikey,
+  //   // 请在主工程的Manifest文件里设置，详细配置方法请参考官网(https://lbsyun.baidu.com/)demo
+  //   BMFMapSDK.setCoordType(BMF_COORD_TYPE.BD09LL);
+  // }
   //自定义键盘注册
   SelfKeyBoard.register();
   //布局线是否展示
   debugPaintSizeEnabled = false;
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
-      .then((_) {
-    runZonedGuarded(() async {
-      runApp(
-        KeyboardRootWidget(
-          child: AlertProvider(
-            child: MultiProvider(
-              providers: [
-                ChangeNotifierProvider(create: (_) => AppProvider()),
-              ],
-              child: MyApp(),
-              //FlutterEasyLoading(child: MyApp()),
-            ),
-            config: AlertConfig(),
+
+  runZonedGuarded(() async {
+    runApp(
+      KeyboardRootWidget(
+        child: AlertProvider(
+          child: MultiProvider(
+            providers: [
+              ChangeNotifierProvider(create: (_) => AppProvider()),
+            ],
+            child: MyApp(),
+            // FlutterEasyLoading(child: MyApp()),
           ),
+          config: AlertConfig(),
         ),
-      );
-    }, (Object error, StackTrace stackTrace) {
-      _reportError(error, stackTrace.toString());
-    }, zoneSpecification:
-        ZoneSpecification(print: (zone1, delegate, zone2, content) {
-      delegate.print(zone2, "全局封装Print：$content");
-    }));
-  });
+      ),
+    );
+  }, (Object error, StackTrace stackTrace) {
+    _reportError(error, stackTrace.toString());
+  }, zoneSpecification:
+      ZoneSpecification(print: (zone1, delegate, zone2, content) {
+    delegate.print(zone2, "全局封装Print：$content");
+  }));
 }
 
 Future<void> _reportError(dynamic error, String stackTrace) async {
@@ -92,78 +91,77 @@ class _MyAppState extends State<MyApp> {
         //   },
         //   autoLoad: true,
         //   child:
-        Consumer<AppProvider>(builder: (context, appProvider, _) {
-      return MaterialApp(
-        localizationsDelegates: [
-          S.delegate,
-          // 下面两个不配置，iOS端会报错
-          GlobalMaterialLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-        ],
-        locale: appProvider.locale,
-        supportedLocales: S.delegate.supportedLocales,
-        onGenerateTitle: (context) => S.of(context).app_name,
-        theme: ThemeData(
-                primarySwatch:
-                    CommonColors.getMaterialColorFrom(CommonColors.whiteColor),
-                visualDensity: VisualDensity.adaptivePlatformDensity,
-                scaffoldBackgroundColor:
-                    CommonColors.background) //设置所有Scafford的背景色
-            .copyWith(
-          tabBarTheme: TabBarTheme(
-              //设置所有Tabbar的颜色
-              unselectedLabelStyle:
-                  TextStyle(fontWeight: CommonFont.fontWeightRegular),
-              labelStyle: TextStyle(fontWeight: CommonFont.fontWeightMiddle)),
-          textTheme: confirmTextTheme(ThemeData().textTheme),
-          accentTextTheme: confirmTextTheme(ThemeData().accentTextTheme),
-          primaryTextTheme: confirmTextTheme(ThemeData().primaryTextTheme),
-        ),
-        onGenerateRoute: Application.rootRouter.generator,
-        navigatorObservers: [AppNavigatorObserver()],
-        navigatorKey: Application.navigatorKey,
-        //系统切换语言时候监听
-        localeResolutionCallback:
-            (Locale _locale, Iterable<Locale> supportedLocales) {
-          Locale locale;
-          if (S.delegate.isSupported(_locale)) {
-            locale = _locale;
-          } else {
-            // 默认中文
-            locale = Locale("zh", 'CH');
-          }
-          S.load(locale);
-          return locale;
-        },
-        builder: (context, widget) {
-          return MediaQuery(
-            ///设置文字大小不随系统设置改变
-            data: MediaQuery.of(context).copyWith(
-              textScaleFactor: 1.0,
-              boldText: false,
-            ),
-            child: widget,
-          );
-        },
-      );
-    }
-            // ),
-            );
+        //TODO： 由于flutter_web运行报错所以将provider使用注释
+        //   Consumer<AppProvider>(builder: (context, appProvider, _) {
+        // return
+        MaterialApp(
+      localizationsDelegates: [
+        S.delegate,
+        // 下面两个不配置，iOS端会报错
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      // locale: appProvider.locale,
+      supportedLocales: S.delegate.supportedLocales,
+      onGenerateTitle: (context) => S.of(context).app_name,
+      theme: ThemeData(
+              primarySwatch:
+                  CommonColors.getMaterialColorFrom(CommonColors.whiteColor),
+              visualDensity: VisualDensity.adaptivePlatformDensity,
+              scaffoldBackgroundColor:
+                  CommonColors.background) //设置所有Scafford的背景色
+          .copyWith(
+        tabBarTheme: TabBarTheme(
+            //设置所有Tabbar的颜色
+            unselectedLabelStyle:
+                TextStyle(fontWeight: CommonFont.fontWeightRegular),
+            labelStyle: TextStyle(fontWeight: CommonFont.fontWeightMiddle)),
+        textTheme: confirmTextTheme(ThemeData().textTheme),
+        accentTextTheme: confirmTextTheme(ThemeData().accentTextTheme),
+        primaryTextTheme: confirmTextTheme(ThemeData().primaryTextTheme),
+      ),
+      onGenerateRoute: Application.rootRouter.generator,
+      navigatorObservers: [AppNavigatorObserver()],
+      navigatorKey: Application.navigatorKey,
+      //系统切换语言时候监听
+      localeResolutionCallback:
+          (Locale _locale, Iterable<Locale> supportedLocales) {
+        Locale locale;
+        if (S.delegate.isSupported(_locale)) {
+          locale = _locale;
+        } else {
+          // 默认中文
+          locale = Locale("zh", 'CH');
+        }
+        S.load(locale);
+        return locale;
+      },
+      builder: (context, widget) {
+        return MediaQuery(
+          ///设置文字大小不随系统设置改变
+          data: MediaQuery.of(context).copyWith(
+            textScaleFactor: 1.0,
+            boldText: false,
+          ),
+          child: widget,
+        );
+      },
+      //   );
+      // }
+      // ),
+    );
   }
 
   /// 处理两平台不是默认字体的问题
   confirmTextTheme(TextTheme textTheme) {
     getCopyTextStyle(TextStyle textStyle) {
-      return textStyle.copyWith(
-          fontFamilyFallback: Platform.isIOS
-              ? [
-                  // "Alibaba-PuHuiTi", 数组中没有的字体会往后顺延
-                  "PingFang SC",
-                  ".SF UI Text",
-                  ".SF UI Display"
-                ]
-              : ["Alibaba-PuHuiTi", "Roboto"]);
+      return textStyle.copyWith(fontFamilyFallback: [
+        // "Alibaba-PuHuiTi", 数组中没有的字体会往后顺延
+        "PingFang SC",
+        ".SF UI Text",
+        ".SF UI Display"
+      ]);
     }
 
     return textTheme.copyWith(
