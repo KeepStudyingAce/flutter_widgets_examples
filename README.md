@@ -80,6 +80,23 @@
 用编辑器打开index.html,能看到源文件,把最前面的< base href="/">,改成< base href="">
 
 方法2:
-用编辑器打开index.html,能看到源文件,把< base href="/">",改成你服务器的路径比喻说:
+用编辑器打开index.html,能看到源文件,把< base href="/">,改成你服务器的路径比喻说:
 < base href="http://192.168.1.80:3350/web/">
+
+5、本地安装好tomcat后将打包好的web文件夹放在tomcat目录下的webapps下，具体路径和访问路径一致就行，我的是
+        
+    webapps/flutter_app/web
+    
+然后将index.html文件的
+        
+    < base href="/">
+改为
+    
+    < base href="http://localhost:8080/flutter_app/web/">
+
+本地打开地址：
+    
+    http://localhost:8080/flutter_app/web
+
+即能看到。
 
