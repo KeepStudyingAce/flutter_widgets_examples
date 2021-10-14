@@ -84,11 +84,11 @@ class _RootState extends State<Root> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.email,
+              Icons.person,
               color: CommonColors.subTextColor,
             ),
             activeIcon: Icon(
-              Icons.email,
+              Icons.person,
               color: CommonColors.themeColor,
             ),
             title: Text(

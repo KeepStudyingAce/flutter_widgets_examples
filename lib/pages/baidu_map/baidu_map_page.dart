@@ -18,13 +18,12 @@ class _BaiduMapState extends State<BaiduMap> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return  Scaffold(
           appBar: BMFAppBar(
             title: '百度地图flutter插件Demo',
             isBack: true,
           ),
-          body: FlutterBMFMapDemo()),
+          body: FlutterBMFMapDemo(),
     );
   }
 }
