@@ -50,6 +50,7 @@ class _ToolPageState extends State<ToolPage> {
           "FlutterSpeedDial组件", () => ToolRouter.goSpeedDialPage(context)),
       _buildItem("LikeButton组件", () => ToolRouter.goLikeButtonPage(context)),
       _buildItem("Scratcher组件(刮刮卡)", () => ToolRouter.goScratcherPage(context)),
+      _buildItem("瀑布流组件", () => ToolRouter.goFlowPage(context)),
     ];
   }
 

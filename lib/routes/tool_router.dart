@@ -2,6 +2,7 @@ import 'package:fluro/fluro.dart' as Fluro;
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets_example/pages/tool/animated_text_page.dart';
 import 'package:flutter_widgets_example/pages/tool/drag_list_page.dart';
+import 'package:flutter_widgets_example/pages/tool/flow_page.dart';
 import 'package:flutter_widgets_example/pages/tool/flutter_speed_dial.dart';
 import 'package:flutter_widgets_example/pages/tool/like_button_page.dart';
 import 'package:flutter_widgets_example/pages/tool/scratcher_page.dart';
@@ -52,6 +53,13 @@ class ToolRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _scratcherPage);
   }
 
+  static String _flowPage = "/_flowPage";
+
+  /// 跳到瀑布流页面
+  static goFlowPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _flowPage);
+  }
+
   @override
   void initRouter(Fluro.FluroRouter router) {
     router.define(
@@ -94,6 +102,13 @@ class ToolRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             ScratcherPage(),
+      ),
+    );
+    router.define(
+      _flowPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            FlowPage(),
       ),
     );
   }
