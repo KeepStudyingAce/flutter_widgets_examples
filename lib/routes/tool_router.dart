@@ -4,6 +4,7 @@ import 'package:flutter_widgets_example/pages/tool/animated_text_page.dart';
 import 'package:flutter_widgets_example/pages/tool/drag_list_page.dart';
 import 'package:flutter_widgets_example/pages/tool/flow_page.dart';
 import 'package:flutter_widgets_example/pages/tool/flutter_speed_dial.dart';
+import 'package:flutter_widgets_example/pages/tool/ios_tableview_page.dart';
 import 'package:flutter_widgets_example/pages/tool/like_button_page.dart';
 import 'package:flutter_widgets_example/pages/tool/scratcher_page.dart';
 import 'package:flutter_widgets_example/pages/tool/swiper_page.dart';
@@ -60,6 +61,13 @@ class ToolRouter implements IRouterProvider {
     NavigatorUtil.pushTo(context, _flowPage);
   }
 
+  static String _iosTableViewPage = "/_iosTableViewPage";
+
+  /// 跳到仿iOS的tableView页面
+  static goTableViewPage(BuildContext context) {
+    NavigatorUtil.pushTo(context, _iosTableViewPage);
+  }
+
   @override
   void initRouter(Fluro.FluroRouter router) {
     router.define(
@@ -109,6 +117,14 @@ class ToolRouter implements IRouterProvider {
       handler: Fluro.Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
             FlowPage(),
+      ),
+    );
+
+    router.define(
+      _iosTableViewPage,
+      handler: Fluro.Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            IOSTableViewPage(),
       ),
     );
   }

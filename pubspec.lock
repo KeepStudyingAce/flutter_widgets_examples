@@ -490,6 +490,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.2.0"
+  rf_section_listview:
+    dependency: "direct main"
+    description:
+      name: rf_section_listview
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.3"
   scratcher:
     dependency: "direct main"
     description:

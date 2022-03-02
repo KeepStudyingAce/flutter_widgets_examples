@@ -51,6 +51,7 @@ class _ToolPageState extends State<ToolPage> {
       _buildItem("LikeButton组件", () => ToolRouter.goLikeButtonPage(context)),
       _buildItem("Scratcher组件(刮刮卡)", () => ToolRouter.goScratcherPage(context)),
       _buildItem("瀑布流组件", () => ToolRouter.goFlowPage(context)),
+      _buildItem("仿iOStableView组建", () => ToolRouter.goTableViewPage(context)),
     ];
   }
 
